@@ -9,18 +9,30 @@
 </head>
 <body>
 
+<!-- Header / Navigation -->
+<header class="header">
+    <div class="logo">
+        <img src="images/logo.png" alt="Moto Moto Palomino Logo">
+    </div>
+    <nav class="nav">
+        <a href="#section-motorcycles" id="nav-motorcycles">Our Motorcycles</a>
+        <a href="#section-contact" id="nav-contact">Contact</a>
+        <a href="#section-reviews" id="nav-reviews">Reviews</a>
+    </nav>
+</header>
+
 <!-- Hero Section -->
-<header class="hero">
+<section class="hero">
     <img src="images/hero.jpeg" alt="Moto Moto Palomino Hero">
     <div class="hero-text">
         <h1 id="hero-title">Moto Moto Palomino</h1>
         <button id="lang-btn">ES</button>
     </div>
-</header>
+</section>
 
 <!-- Motorcycles -->
-<section class="motorcycles">
-    <h2 id="section-motorcycles">Our Motorcycles</h2>
+<section class="motorcycles" id="section-motorcycles">
+    <h2 id="section-motorcycles-title">Our Motorcycles</h2>
     <div class="bike">
         <img src="images/navi.jpeg" alt="Honda Navi 110 automatic">
         <h3>Honda Navi 110 Automatic</h3>
@@ -39,20 +51,16 @@
 </section>
 
 <!-- Contact -->
-<section class="contact">
-    <h2 id="section-contact">Contact</h2>
+<section class="contact" id="section-contact">
+    <h2 id="section-contact-title">Contact</h2>
     <p>Phone: +57 321 6172816</p>
-    <!-- WhatsApp button -->
     <p><a class="whatsapp-btn" href="https://wa.me/573216172816?text=Hi%20I%20want%20to%20rent%20a%20motorbike" target="_blank">
         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
     </a></p>
-    <!-- Instagram -->
     <p><a class="instagram-btn" href="https://www.instagram.com/palomino.motomoto/" target="_blank">
         <i class="fab fa-instagram"></i> Instagram
     </a></p>
-    <!-- Address -->
     <p>Address: Calle 1a C #8-26, Palomino, La Guajira, Colombia</p>
-    <!-- Google Maps -->
     <div class="map">
         <iframe
             src="https://maps.app.goo.gl/8zrSovowsN4na9jYA?g_st=iw"
@@ -62,8 +70,8 @@
 </section>
 
 <!-- Customer Reviews -->
-<section class="reviews">
-    <h2 id="section-reviews">Customer Reviews</h2>
+<section class="reviews" id="section-reviews">
+    <h2 id="section-reviews-title">Customer Reviews</h2>
     <div class="reviews-container">
         <div class="review">
             <p>"Excellent service and friendly staff!"</p>
@@ -85,28 +93,20 @@ const langBtn = document.getElementById('lang-btn');
 langBtn.addEventListener('click', () => {
     const isEnglish = langBtn.textContent === 'ES';
     if (isEnglish) {
-        // Change to Spanish
+        // Spanish
         langBtn.textContent = 'EN';
         document.getElementById('hero-title').textContent = 'Moto Moto Palomino';
-        document.getElementById('section-motorcycles').textContent = 'Nuestras Motos';
+        document.getElementById('section-motorcycles-title').textContent = 'Nuestras Motos';
         document.getElementById('price-navi').innerHTML = '100.000 COP / día<br>500.000 COP / semana<br>1.500.000 COP / mes';
         document.getElementById('price-nkd').innerHTML = '110.000 COP / día<br>550.000 COP / semana<br>1.650.000 COP / mes';
         document.getElementById('price-ttr').innerHTML = 'Precios por definir';
-        document.getElementById('section-contact').textContent = 'Contacto';
-        document.getElementById('section-reviews').textContent = 'Reseñas de Clientes';
+        document.getElementById('section-contact-title').textContent = 'Contacto';
+        document.getElementById('section-reviews-title').textContent = 'Reseñas de Clientes';
     } else {
-        // Change back to English
+        // English
         langBtn.textContent = 'ES';
         document.getElementById('hero-title').textContent = 'Moto Moto Palomino';
-        document.getElementById('section-motorcycles').textContent = 'Our Motorcycles';
+        document.getElementById('section-motorcycles-title').textContent = 'Our Motorcycles';
         document.getElementById('price-navi').innerHTML = '100.000 COP / day<br>500.000 COP / week<br>1.500.000 COP / month';
         document.getElementById('price-nkd').innerHTML = '110.000 COP / day<br>550.000 COP / week<br>1.650.000 COP / month';
-        document.getElementById('price-ttr').innerHTML = 'Prices TBD';
-        document.getElementById('section-contact').textContent = 'Contact';
-        document.getElementById('section-reviews').textContent = 'Customer Reviews';
-    }
-});
-</script>
-
-</body>
-</html>
+        document
