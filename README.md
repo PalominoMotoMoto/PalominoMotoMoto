@@ -10,6 +10,10 @@ This repository contains the website for **Moto Moto Palomino**, a motorcycle re
 - Interactive **Google Maps link** to the exact location.
 
 ## 📁 Repository Structure
+/index.html → Main webpage
+/style.css → Stylesheet
+/images/ → All images used on the website (bikes, hero, logo)
+README.md → This file
 
 ## ⚡ Usage
 1. Open `index.html` in a browser to preview the site locally.
