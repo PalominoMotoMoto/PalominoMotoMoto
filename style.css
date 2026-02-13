@@ -6,6 +6,30 @@
     font-family: Arial, sans-serif;
 }
 
+/* Header / Navigation */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+}
+
+.header .logo img {
+    height: 50px;
+}
+
+.nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: #ff6600;
+}
+
 /* Hero Section */
 .hero {
     position: relative;
@@ -219,4 +243,3 @@
         padding: 6px 12px;
     }
 }
-
