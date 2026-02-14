@@ -63,7 +63,7 @@ nav a, nav button{
 
 /* ----------------- SECTIONS ----------------- */
 .section{
-  padding:60px 20px;
+  padding:10px 10px;
   max-width:1000px;
   margin:auto;
 }
@@ -188,3 +188,4 @@ footer{
   .bike, .review-card{flex-direction:column;text-align:center;}
   .review-slider-container .slider-btn{display:none;}
 }
+
