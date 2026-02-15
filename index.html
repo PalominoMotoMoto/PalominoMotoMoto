@@ -1,206 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Moto Moto Palomino</title>
-<link rel="stylesheet" href="style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moto Moto Palomino – Moto Rentals in Palomino, Colombia</title>
+    <meta name="description" content="Rent reliable motorbikes in Palomino, Colombia. Honda Navi, AKT NKD &amp; more. WhatsApp us for same-day rental. Calle 1a C #8-26.">
+    <!-- Open Graph für schöne Vorschau beim Teilen (og:image mit voller URL ersetzen wenn Seite online) -->
+    <meta property="og:title" content="Moto Moto Palomino – Moto Rentals in Palomino, Colombia">
+    <meta property="og:description" content="Rent reliable motorbikes in Palomino, Colombia. Honda Navi, AKT NKD &amp; more. WhatsApp us for same-day rental.">
+    <meta property="og:image" content="images/hero.jpeg">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+<a href="#bikes" class="skip-link">Skip to main content</a>
 
-<header id="navbar">
-  <!-- Logo verlinkt auf Seitenanfang -->
-  <a href="#"><img src="images/logo.png" class="logo"></a>
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <button type="button" class="close" id="modalClose" onclick="closeModal()" aria-label="Close">×</button>
+    <img class="modal-content" id="fullImage">
+</div>
 
-  <nav>
-    <a href="#bikes" id="navBikes">Motos</a>
-    <a href="#contact" id="navContact">Contact</a>
-    <button id="langBtn" onclick="switchLang()">ES</button>
-  </nav>
+<header id="navbar" class="navbar-top">
+    <a href="#" class="logo-link"><img src="images/logo.png" class="logo" alt="Moto Moto Palomino"></a>
+    <nav class="nav-links">
+        <a href="#bikes" id="navBikes" class="nav-link">Motos</a>
+        <a href="#contact" id="navContact" class="nav-link">Contact</a>
+        <button type="button" id="darkModeBtn" class="lang-btn dark-mode-btn" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌙</button>
+        <button type="button" id="langBtn" class="lang-btn" onclick="switchLang()">ES</button>
+    </nav>
 </header>
 
 <section class="hero">
-<div class="hero-text">
-<h1>Moto Moto Palomino</h1>
-<p id="subtitle">Reliable Moto Rentals in Palomino, Colombia</p>
-<a class="btn" href="#bikes" id="viewBtn">View Motos</a>
-</div>
+    <div class="hero-gradient"></div>
+    <div class="hero-box">
+        <span class="hero-badge" id="heroBadge">Palomino · Colombia</span>
+        <h1 class="hero-title">Moto Moto Palomino</h1>
+        <p id="subtitle" class="hero-subtitle">Reliable Moto Rentals in Palomino, Colombia</p>
+        <div class="hero-btn-container">
+            <a class="btn hero-btn" href="#bikes" id="viewBtn">View Motos</a>
+        </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true"><span class="hero-scroll-arrow"></span></div>
 </section>
 
 <section id="bikes" class="section">
-<h2 id="bikesTitle">Our Motos</h2>
+    <h2 id="bikesTitle">Our Motos</h2>
 
-<div class="bike">
-<img src="images/navi.jpeg">
-<div>
-<h3>Honda Navi 110 Automatic</h3>
-<ul>
-<li>100.000 COP / <span class="day">day</span></li>
-<li>500.000 COP / <span class="week">week</span></li>
-<li>1.500.000 COP / <span class="month">month</span></li>
-</ul>
-</div>
-</div>
+    <div class="bike">
+        <img src="images/navi.jpeg" alt="Honda Navi 110 Automatic – Moto rental Palomino" loading="lazy" onclick="openModal(this.src)" class="clickable-img">
+        <div class="bike-info">
+            <h3>Honda Navi 110 Automatic</h3>
+            <div class="price-container">
+                <div class="price-item"><span class="price-val">100.000 <small>COP</small></span><span class="price-label day">day</span></div>
+                <div class="price-item"><span class="price-val">500.000 <small>COP</small></span><span class="price-label week">week</span></div>
+                <div class="price-item"><span class="price-val">1.500.000 <small>COP</small></span><span class="price-label month">month</span></div>
+            </div>
+            <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20Honda%20Navi%20110%20Automatic" class="btn whatsapp bike-wa" target="_blank" rel="noopener noreferrer">
+                <img src="images/whatsapp.png" alt="" class="btn-icon"> <span id="bikeWaNaviText">Book now</span>
+            </a>
+        </div>
+    </div>
 
-<div class="bike">
-<img src="images/nkd.jpeg">
-<div>
-<h3>AKT NKD 125 Manual</h3>
-<ul>
-<li>110.000 COP / <span class="day">day</span></li>
-<li>550.000 COP / <span class="week">week</span></li>
-<li>1.650.000 COP / <span class="month">month</span></li>
-</ul>
-</div>
-</div>
+    <div class="bike">
+        <img src="images/nkd.jpeg" alt="AKT NKD 125 Manual – Moto rental Palomino" loading="lazy" onclick="openModal(this.src)" class="clickable-img">
+        <div class="bike-info">
+            <h3>AKT NKD 125 Manual</h3>
+            <div class="price-container">
+                <div class="price-item"><span class="price-val">110.000 <small>COP</small></span><span class="price-label day">day</span></div>
+                <div class="price-item"><span class="price-val">550.000 <small>COP</small></span><span class="price-label week">week</span></div>
+                <div class="price-item"><span class="price-val">1.650.000 <small>COP</small></span><span class="price-label month">month</span></div>
+            </div>
+            <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20AKT%20NKD%20125%20Manual" class="btn whatsapp bike-wa" target="_blank" rel="noopener noreferrer">
+                <img src="images/whatsapp.png" alt="" class="btn-icon"> <span id="bikeWaNkdText">Book now</span>
+            </a>
+        </div>
+    </div>
 
-<div class="bike coming">
-<img src="images/ttr.jpeg">
-<div>
-<h3>AKT TTR 200 Manual</h3>
-<p id="coming">Coming soon — prices t.b.d.</p>
-</div>
-</div>
-
+    <div class="bike coming">
+        <img src="images/ttr.jpeg" alt="AKT TTR 200 Manual – Coming soon" loading="lazy" onclick="openModal(this.src)" class="clickable-img">
+        <div class="bike-info">
+            <h3>AKT TTR 200 Manual</h3>
+            <p id="coming" class="coming-text">Coming soon — Stay tuned!</p>
+        </div>
+    </div>
 </section>
 
 <section id="contact" class="section dark">
-<h2 id="contactTitle">Contact</h2>
+    <h2 id="contactTitle">Contact</h2>
+    <div class="contact-info">
+        <p><strong id="phoneLabel">Phone:</strong> +57 321 6172816</p>
+        
+        <div class="contact-buttons">
+            <a href="https://wa.me/573216172816?text=Hi%20I%20want%20to%20rent%20a%20motorbike" class="btn whatsapp">
+                <img src="images/whatsapp.png" alt="WhatsApp" class="btn-icon"> WhatsApp Chat
+            </a>
+            <a class="btn insta" href="https://www.instagram.com/palomino.motomoto/" target="_blank" rel="noopener noreferrer">
+                <img src="images/insta.png" alt="Instagram" class="btn-icon"> Instagram
+            </a>
+        </div>
 
-<p><strong id="phoneLabel">Phone:</strong> +57 321 6172816</p>
+        <p class="address">
+            <strong>Moto Moto Palomino</strong><br>
+            Calle 1a C #8-26, Palomino, Colombia
+        </p>
 
-<!-- WhatsApp Button unter Telefonnummer -->
-<a href="https://wa.me/573216172816?text=Hi%20I%20want%20to%20rent%20a%20motorbike" class="btn whatsapp">
-WhatsApp
-</a>
+        <a class="btn map-link-btn" id="mapBtn" href="https://www.google.com/maps/search/?api=1&query=Moto+Moto+Palomino&query_place_id=ChIJN67hMry19I4Rwil7TuySrrs" target="_blank" rel="noopener noreferrer">
+            Open Map
+        </a>
+    </div>
 
-<!-- Instagram Button direkt unter WhatsApp -->
-<br><br>
-<a class="btn insta" href="https://www.instagram.com/palomino.motomoto/" target="_blank">
-<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24">
-<path fill="white" d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10z"/>
-</svg>
-Instagram
-</a>
-
-<br><br>
-
-<p>
-Moto Moto Palomino<br>
-Calle 1a C #8-26<br>
-Palomino, Colombia
-</p>
-
-<a class="btn" id="mapBtn"
-href="https://maps.app.goo.gl/8zrSovowsN4na9jYA?g_st=iw"
-target="_blank">
-Open Map
-</a>
-
-<div class="map">
-<iframe 
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.012345678!2d-73.5577924!3d11.2451105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef4b5bc32e1ae37%3A0xbbae92ec4e7b29c2!2sMoto+Moto+Palomino!5e0!3m2!1sen!2sco!4v1686700000000"
-width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-
+    <div class="map">
+        <!-- Offizieller Google Maps Embed: Adresse oder "Teilen > Karte einbetten" in Google Maps -->
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.6262446624915!2d-73.5570535!3d11.2450893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef4b2bc32e1ae37%3A0xbbae92ec4e7b29c2!2sMoto%20Moto%20Palomino!5e0!3m2!1sde!2sco!4v1739635200000!5m2!1sde!2sco"
+            width="100%"
+            height="350"
+            style="border:0; border-radius: 15px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Moto Moto Palomino auf Google Maps">
+        </iframe>
+    </div>
 </section>
 
 <section id="reviews" class="section reviews-section">
-<h2 id="reviewsTitle">Customer Reviews</h2>
-
-<div class="review-slider-container">
-  <button class="slider-btn left" onclick="slideReviews(-1)">&#10094;</button>
-
-  <div class="reviews-container" id="reviewsContainer">
-    <div class="review-card" data-en="Great bikes and excellent service! Loved riding around Palomino." data-es="¡Excelentes motos y servicio! Disfruté mucho mi paseo por Palomino.">
-      <div class="stars">
-        <svg class="star" viewBox="0 0 24 24"><path fill="#FFD700" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.164L12 18.896l-7.334 3.86 1.4-8.164-5.934-5.782 8.2-1.192z"/></svg>
-        <svg class="star" viewBox="0 0 24 24"><path fill="#FFD700" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.164L12 18.896l-7.334 3.86 1.4-8.164-5.934-5.782 8.2-1.192z"/></svg>
-        <svg class="star" viewBox="0 0 24 24"><path fill="#FFD700" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.164L12 18.896l-7.334 3.86 1.4-8.164-5.934-5.782 8.2-1.192z"/></svg>
-        <svg class="star" viewBox="0 0 24 24"><path fill="#FFD700" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.164L12 18.896l-7.334 3.86 1.4-8.164-5.934-5.782 8.2-1.192z"/></svg>
-        <svg class="star" viewBox="0 0 24 24"><path fill="#FFD700" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.164L12 18.896l-7.334 3.86 1.4-8.164-5.934-5.782 8.2-1.192z"/></svg>
-      </div>
-      <p class="review-text">Great bikes and excellent service! Loved riding around Palomino.</p>
+    <div class="reviews-header">
+        <h2 id="reviewsTitle">Customer Reviews</h2>
+        <p class="reviews-subtitle" id="reviewsSubtitle">What our riders say about us</p>
     </div>
-
-    <div class="review-card" data-en="Easy rental process and friendly staff. Highly recommended!" data-es="Proceso de alquiler fácil y personal amable. ¡Altamente recomendado!">
-      <div class="stars">
-        <svg class="star" viewBox="0 0 24 24"><path fill="#FFD700" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.164L12 18.896l-7.334 3.86 1.4-8.164-5.934-5.782 8.2-1.192z"/></svg>
-        <svg class="star" viewBox="0 0 24 24"><path fill="#FFD700" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.164L12 18.896l-7.334 3.86 1.4-8.164-5.934-5.782 8.2-1.192z"/></svg>
-        <svg class="star" viewBox="0 0 24 24"><path fill="#FFD700" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.164L12 18.896l-7.334 3.86 1.4-8.164-5.934-5.782 8.2-1.192z"/></svg>
-        <svg class="star" viewBox="0 0 24 24"><path fill="#FFD700" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.164L12 18.896l-7.334 3.86 1.4-8.164-5.934-5.782 8.2-1.192z"/></svg>
-      </div>
-      <p class="review-text">Easy rental process and friendly staff. Highly recommended!</p>
+    <div class="review-slider-container">
+        <button class="slider-btn left" onclick="slideReviews(-1)" aria-label="Previous reviews"><span class="slider-arrow"></span></button>
+        <div class="reviews-container" id="reviewsContainer">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Great bikes and excellent service! Loved riding around Palomino.</p>
+                <div class="review-author"><span class="review-avatar">D</span> David M.</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Easy rental process and friendly staff. Highly recommended!</p>
+                <div class="review-author"><span class="review-avatar">S</span> Sarah L.</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Affordable prices and perfect bikes for exploring the coast.</p>
+                <div class="review-author"><span class="review-avatar">T</span> Thomas K.</div>
+            </div>
+        </div>
+        <button class="slider-btn right" onclick="slideReviews(1)" aria-label="Next reviews"><span class="slider-arrow"></span></button>
     </div>
-
-    <div class="review-card" data-en="Affordable prices and perfect bikes for exploring the coast." data-es="Precios asequibles y motos perfectas para explorar la costa.">
-      <div class="stars">
-        <svg class="star" viewBox="0 0 24 24"><path fill="#FFD700" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.164L12 18.896l-7.334 3.86 1.4-8.164-5.934-5.782 8.2-1.192z"/></svg>
-        <svg class="star" viewBox="0 0 24 24"><path fill="#FFD700" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.164L12 18.896l-7.334 3.86 1.4-8.164-5.934-5.782 8.2-1.192z"/></svg>
-        <svg class="star" viewBox="0 0 24 24"><path fill="#FFD700" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.782 1.4 8.164L12 18.896l-7.334 3.86 1.4-8.164-5.934-5.782 8.2-1.192z"/></svg>
-      </div>
-      <p class="review-text">Affordable prices and perfect bikes for exploring the coast.</p>
-    </div>
-
-  </div>
-
-  <button class="slider-btn right" onclick="slideReviews(1)">&#10095;</button>
-</div>
 </section>
 
 <footer>© 2026 Moto Moto Palomino</footer>
 
 <script>
-window.addEventListener("scroll",()=>{document.getElementById("navbar").classList.toggle("shadow",window.scrollY>50);});
+window.addEventListener("scroll", function(){
+    var nav = document.getElementById("navbar");
+    nav.classList.toggle("navbar-scrolled", window.scrollY > 30);
+});
+
+(function(){
+    if (localStorage.getItem("darkMode") === "1") document.documentElement.classList.add("dark-mode");
+    updateDarkModeIcon();
+})();
+function toggleDarkMode(){
+    document.documentElement.classList.toggle("dark-mode");
+    localStorage.setItem("darkMode", document.documentElement.classList.contains("dark-mode") ? "1" : "0");
+    updateDarkModeIcon();
+}
+function updateDarkModeIcon(){
+    var btn = document.getElementById("darkModeBtn");
+    if (!btn) return;
+    btn.textContent = document.documentElement.classList.contains("dark-mode") ? "☀️" : "🌙";
+    btn.setAttribute("aria-label", document.documentElement.classList.contains("dark-mode") ? "Switch to light mode" : "Switch to dark mode");
+}
+
+function openModal(src) { 
+    var modal = document.getElementById("imageModal");
+    modal.style.display = "block"; 
+    document.getElementById("fullImage").src = src;
+    document.getElementById("modalClose").focus();
+}
+function closeModal() { 
+    document.getElementById("imageModal").style.display = "none"; 
+}
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") closeModal();
+});
 
 let lang="en";
 function switchLang(){
-const btn=document.getElementById("langBtn");
-if(lang==="en"){
-lang="es";
-btn.innerText="EN"; 
-navBikes.innerText="Motos";
-navContact.innerText="Contacto";
-subtitle.innerText="Alquiler de motos en Palomino";
-bikesTitle.innerText="Nuestras Motos";
-reviewsTitle.innerText="Reseñas de Clientes";
-contactTitle.innerText="Contacto";
-viewBtn.innerText="Ver Motos";
-mapBtn.innerText="Abrir mapa";
-phoneLabel.innerText="Teléfono:";
-coming.innerText="Próximamente — precios por definir";
-document.querySelectorAll(".day").forEach(e=>e.innerText="día");
-document.querySelectorAll(".week").forEach(e=>e.innerText="semana");
-document.querySelectorAll(".month").forEach(e=>e.innerText="mes");
-document.querySelectorAll(".review-card").forEach(rc=>{rc.querySelector(".review-text").innerText=rc.dataset.es});
-}else{
-lang="en";
-btn.innerText="ES"; 
-navBikes.innerText="Motorcycles";
-navContact.innerText="Contact";
-subtitle.innerText="Reliable Moto Rentals in Palomino, Colombia";
-bikesTitle.innerText="Our Motos";
-reviewsTitle.innerText="Customer Reviews";
-contactTitle.innerText="Contact";
-viewBtn.innerText="View Motos";
-mapBtn.innerText="Open Map";
-phoneLabel.innerText="Phone:";
-coming.innerText="Coming soon — prices t.b.d.";
-document.querySelectorAll(".day").forEach(e=>e.innerText="day");
-document.querySelectorAll(".week").forEach(e=>e.innerText="week");
-document.querySelectorAll(".month").forEach(e=>e.innerText="month");
-document.querySelectorAll(".review-card").forEach(rc=>{rc.querySelector(".review-text").innerText=rc.dataset.en});
-}
+    const btn=document.getElementById("langBtn");
+    const navBikes = document.getElementById("navBikes");
+    const navContact = document.getElementById("navContact");
+    const subtitle = document.getElementById("subtitle");
+    const bikesTitle = document.getElementById("bikesTitle");
+    const reviewsTitle = document.getElementById("reviewsTitle");
+    const contactTitle = document.getElementById("contactTitle");
+    const viewBtn = document.getElementById("viewBtn");
+    const mapBtn = document.getElementById("mapBtn");
+    const phoneLabel = document.getElementById("phoneLabel");
+    const coming = document.getElementById("coming");
+    const heroBadge = document.getElementById("heroBadge");
+
+    if(lang==="en"){
+        lang="es"; btn.innerText="EN";
+        navBikes.innerText="Motos"; navContact.innerText="Contacto";
+        subtitle.innerText="Alquiler de motos confiable en Palomino";
+        if(heroBadge) heroBadge.innerText="Palomino · Colombia";
+        bikesTitle.innerText="Nuestras Motos"; reviewsTitle.innerText="Reseñas";
+        var reviewsSub = document.getElementById("reviewsSubtitle"); if(reviewsSub) reviewsSub.innerText="Lo que dicen nuestros clientes";
+        contactTitle.innerText="Contacto"; viewBtn.innerText="Ver Motos";
+        mapBtn.innerText="Abrir mapa"; phoneLabel.innerText="Teléfono:";
+        if(coming) coming.innerText="Próximamente — precios por definir";
+        document.querySelectorAll(".day").forEach(e=>e.innerText="día");
+        document.querySelectorAll(".week").forEach(e=>e.innerText="semana");
+        document.querySelectorAll(".month").forEach(e=>e.innerText="mes");
+        var t1=document.getElementById("bikeWaNaviText"); if(t1) t1.innerText="Reservar ahora";
+        var t2=document.getElementById("bikeWaNkdText"); if(t2) t2.innerText="Reservar ahora";
+    } else {
+        lang="en"; btn.innerText="ES";
+        navBikes.innerText="Motos"; navContact.innerText="Contact";
+        subtitle.innerText="Reliable Moto Rentals in Palomino, Colombia";
+        if(heroBadge) heroBadge.innerText="Palomino · Colombia";
+        bikesTitle.innerText="Our Motos"; reviewsTitle.innerText="Customer Reviews";
+        var reviewsSub = document.getElementById("reviewsSubtitle"); if(reviewsSub) reviewsSub.innerText="What our riders say about us";
+        contactTitle.innerText="Contact"; viewBtn.innerText="View Motos";
+        mapBtn.innerText="Open Map"; phoneLabel.innerText="Phone:";
+        if(coming) coming.innerText="Coming soon — Stay tuned!";
+        document.querySelectorAll(".day").forEach(e=>e.innerText="day");
+        document.querySelectorAll(".week").forEach(e=>e.innerText="week");
+        document.querySelectorAll(".month").forEach(e=>e.innerText="month");
+        var t1=document.getElementById("bikeWaNaviText"); if(t1) t1.innerText="Book now";
+        var t2=document.getElementById("bikeWaNkdText"); if(t2) t2.innerText="Book now";
+    }
 }
 
 function slideReviews(direction){
-const container=document.getElementById("reviewsContainer");
-container.scrollBy({left:direction*320, behavior:"smooth"});
+    const container=document.getElementById("reviewsContainer");
+    container.scrollBy({left:direction*320, behavior:"smooth"});
 }
 </script>
-
 </body>
 </html>
-
-
