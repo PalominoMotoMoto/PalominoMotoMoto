@@ -364,7 +364,28 @@ footer { text-align: center; padding: 30px; background: var(--color-footer); col
     .hero-scroll-hint { bottom: 16px; }
     .bike { flex-direction: column; text-align: center; }
     .bike img { width: 100%; }
-    .review-slider-container { padding: 0 16px; gap: 8px; }
-    .review-card { flex: 0 0 280px; padding: 20px 20px 16px; }
+    /* Preise: alle drei in einer Zeile */
+    .price-container {
+        gap: 6px;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    .price-item {
+        min-width: 0;
+        flex: 1 1 0;
+        padding: 8px 6px;
+    }
+    .price-val { font-size: 0.85rem; }
+    .price-val small { font-size: 0.65rem; }
+    .price-label { font-size: 0.6rem; }
+    /* Reviews auf Mobil: Karte fast volle Breite, Pfeile ausgeblendet (Swipe) */
+    .review-slider-container { padding: 0 12px; gap: 12px; }
+    .reviews-container { padding: 16px 0 24px; }
+    .review-card {
+        flex: 0 0 88%;
+        max-width: 520px;
+        margin: 0 auto;
+    }
+    .slider-btn { display: none; }
     .contact-buttons { flex-direction: column; }
 }
