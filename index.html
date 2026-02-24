@@ -16,6 +16,38 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoRental",
+      "name": "Moto Moto Palomino",
+      "url": "https://motomotopalomino.com/",
+      "image": "https://motomotopalomino.com/images/logo.png",
+      "telephone": "+57 321 6172816",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle 1a C #8-26",
+        "addressLocality": "Palomino",
+        "addressRegion": "La Guajira",
+        "addressCountry": "CO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 11.2450893,
+        "longitude": -73.5570535
+      },
+      "sameAs": [
+        "https://www.google.com/maps/search/?api=1&query=Moto+Moto+Palomino&query_place_id=ChIJN67hMry19I4Rwil7TuySrrs",
+        "https://www.instagram.com/palomino.motomoto/"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": 8
+      }
+    }
+    </script>
 </head>
 
 <body>
@@ -38,6 +70,10 @@
 
 <section class="hero">
     <div class="hero-gradient"></div>
+    <div class="hero-scroll-hint" aria-hidden="true"><span class="hero-scroll-arrow"></span></div>
+</section>
+
+<section class="hero-text">
     <div class="hero-box">
         <span class="hero-badge" id="heroBadge">Palomino · Colombia</span>
         <h1 class="hero-title">Moto Moto Palomino</h1>
@@ -46,7 +82,6 @@
             <a class="btn hero-btn" href="#bikes" id="viewBtn">View Motos</a>
         </div>
     </div>
-    <div class="hero-scroll-hint" aria-hidden="true"><span class="hero-scroll-arrow"></span></div>
 </section>
 
 <section id="bikes" class="section">
@@ -140,18 +175,43 @@
         <div class="reviews-container" id="reviewsContainer">
             <div class="review-card">
                 <div class="review-stars">★★★★★</div>
-                <p class="review-text">Great bikes and excellent service! Loved riding around Palomino.</p>
-                <div class="review-author"><span class="review-avatar">D</span> David M.</div>
+                <p class="review-text" id="review1Text">Fair prices and very competent staff. Everything worked perfectly. Thank you!</p>
+                <div class="review-author"><span class="review-avatar">J</span> Johanna E</div>
             </div>
             <div class="review-card">
                 <div class="review-stars">★★★★★</div>
-                <p class="review-text">Easy rental process and friendly staff. Highly recommended!</p>
-                <div class="review-author"><span class="review-avatar">S</span> Sarah L.</div>
+                <p class="review-text" id="review2Text">Staff is fluent in many languages, friendly and competent. New 125cc bikes – super fun and great value for money!</p>
+                <div class="review-author"><span class="review-avatar">J</span> Julius L</div>
             </div>
             <div class="review-card">
                 <div class="review-stars">★★★★★</div>
-                <p class="review-text">Affordable prices and perfect bikes for exploring the coast.</p>
-                <div class="review-author"><span class="review-avatar">T</span> Thomas K.</div>
+                <p class="review-text" id="review3Text">I had a great trip, the motorbike was in very good condition. I always received quick feedback and professional help from the owner whenever I had a question on the road. Totally recommend!</p>
+                <div class="review-author"><span class="review-avatar">G</span> Gina T.</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text" id="review4Text">Excellent service and very friendly, helpful and professional owners. The motorbikes are in perfect condition and we really enjoyed the flexibility they gave us for our trips around the region. Thank you!</p>
+                <div class="review-author"><span class="review-avatar">M</span> Matthias M.</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text" id="review5Text">Great bike – super new, clean and dependable. We also appreciated the contract and professionalism. Thank you!</p>
+                <div class="review-author"><span class="review-avatar">K</span> Katie Faye D.</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text" id="review6Text">Everything was excellent, great bikes and incredible service. I hope to ride those routes again – thank you Moto Moto!</p>
+                <div class="review-author"><span class="review-avatar">N</span> Nashia Flores C.</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text" id="review7Text">We rented the two Honda Navis for a week and visited places around Palomino, which we loved because we could explore more. The owners were very kind and attentive in case anything happened with the bikes, which are new and worked perfectly.</p>
+                <div class="review-author"><span class="review-avatar">L</span> Lina C.</div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text" id="review8Text">Great moto rental, really good prices and awesome staff. Totally recommend it! Thanks guys.</p>
+                <div class="review-author"><span class="review-avatar">D</span> David E.</div>
             </div>
         </div>
         <button class="slider-btn right" onclick="slideReviews(1)" aria-label="Next reviews"><span class="slider-arrow"></span></button>
@@ -225,6 +285,14 @@ function switchLang(){
         document.querySelectorAll(".month").forEach(e=>e.innerText="mes");
         var t1=document.getElementById("bikeWaNaviText"); if(t1) t1.innerText="Reservar ahora";
         var t2=document.getElementById("bikeWaNkdText"); if(t2) t2.innerText="Reservar ahora";
+        var r1=document.getElementById("review1Text"); if(r1) r1.innerText="Precios justos y personal muy competente. Todo funcionó perfectamente. ¡Gracias!";
+        var r2=document.getElementById("review2Text"); if(r2) r2.innerText="El personal habla varios idiomas, es amable y competente. Motos 125cc nuevas: súper divertidas y con gran relación calidad-precio.";
+        var r3=document.getElementById("review3Text"); if(r3) r3.innerText="Tuve un viaje increíble, la moto estaba en muy buen estado. Siempre recibí respuestas rápidas y ayuda profesional del dueño cuando tenía alguna duda en la carretera. ¡Totalmente recomendado!";
+        var r4=document.getElementById("review4Text"); if(r4) r4.innerText="Servicio excelente y dueños muy amables, atentos y profesionales. Las motos están en perfecto estado y disfrutamos mucho la flexibilidad que nos dieron para nuestros recorridos por la región. ¡Muchas gracias!";
+        var r5=document.getElementById("review5Text"); if(r5) r5.innerText="Moto excelente: muy nueva, limpia y confiable. También apreciamos el contrato y la profesionalidad. ¡Gracias!";
+        var r6=document.getElementById("review6Text"); if(r6) r6.innerText="Todo excelente, buenas motos e increíble atención. ¡Espero volver a manejar por esas rutas! ¡Gracias Moto Moto!";
+        var r7=document.getElementById("review7Text"); if(r7) r7.innerText="Rentamos las dos Honda Navis por una semana y estuvimos visitando lugares cercanos a Palomino, lo que nos encantó porque pudimos explorar más. Los dueños muy amables y atentos, y las motos nuevas funcionaron perfecto.";
+        var r8=document.getElementById("review8Text"); if(r8) r8.innerText="Excelente alquiler de motos, muy buenos precios y personal increíble. Totalmente recomendado, ¡gracias!";
     } else {
         lang="en"; btn.innerText="ES";
         navBikes.innerText="Motos"; navContact.innerText="Contact";
@@ -240,6 +308,14 @@ function switchLang(){
         document.querySelectorAll(".month").forEach(e=>e.innerText="month");
         var t1=document.getElementById("bikeWaNaviText"); if(t1) t1.innerText="Book now";
         var t2=document.getElementById("bikeWaNkdText"); if(t2) t2.innerText="Book now";
+        var r1=document.getElementById("review1Text"); if(r1) r1.innerText="Fair prices and very competent staff. Everything worked perfectly. Thank you!";
+        var r2=document.getElementById("review2Text"); if(r2) r2.innerText="Staff is fluent in many languages, friendly and competent. New 125cc bikes – super fun and great value for money!";
+        var r3=document.getElementById("review3Text"); if(r3) r3.innerText="I had a great trip, the motorbike was in very good condition. I always received quick feedback and professional help from the owner whenever I had a question on the road. Totally recommend!";
+        var r4=document.getElementById("review4Text"); if(r4) r4.innerText="Excellent service and very friendly, helpful and professional owners. The motorbikes are in perfect condition and we really enjoyed the flexibility they gave us for our trips around the region. Thank you!";
+        var r5=document.getElementById("review5Text"); if(r5) r5.innerText="Great bike – super new, clean and dependable. We also appreciated the contract and professionalism. Thank you!";
+        var r6=document.getElementById("review6Text"); if(r6) r6.innerText="Everything was excellent, great bikes and incredible service. I hope to ride those routes again – thank you Moto Moto!";
+        var r7=document.getElementById("review7Text"); if(r7) r7.innerText="We rented the two Honda Navis for a week and visited places around Palomino, which we loved because we could explore more. The owners were very kind and attentive in case anything happened with the bikes, which are new and worked perfectly.";
+        var r8=document.getElementById("review8Text"); if(r8) r8.innerText="Great moto rental, really good prices and awesome staff. Totally recommend it! Thanks guys.";
     }
 }
 
