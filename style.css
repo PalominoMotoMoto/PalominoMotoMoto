@@ -84,13 +84,29 @@ a:focus-visible, button:focus-visible {
 header {
     display: flex; justify-content: space-between; align-items: center;
     padding: 16px 40px; position: sticky; top: 0; z-index: 1000;
-    background: transparent; transition: background .35s ease, box-shadow .35s ease, padding .25s ease;
-}
-header.navbar-scrolled {
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    transition: background .35s ease, box-shadow .35s ease, padding .25s ease;
+}
+header.navbar-scrolled {
+    /* gleiche Optik wie normaler Header, nur falls du später wieder unterscheiden willst */
+}
+/* Dark-Mode: oben auf der Seite Header transparent und Links hell,
+   beim Scrollen wieder fester, dunkler Header (siehe html.dark-mode header.navbar-scrolled oben) */
+html.dark-mode header:not(.navbar-scrolled) {
+    background: transparent;
+    box-shadow: none;
+}
+html.dark-mode header:not(.navbar-scrolled) .nav-link {
+    color: rgba(255, 255, 255, 0.95);
+}
+html.dark-mode header:not(.navbar-scrolled) .lang-btn,
+html.dark-mode header:not(.navbar-scrolled) .dark-mode-btn {
+    color: rgba(255, 255, 255, 0.95);
+    background: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
 }
 .logo-link { display: flex; align-items: center; transition: opacity .25s; }
 .logo-link:hover { opacity: 0.9; }
@@ -99,7 +115,7 @@ header.navbar-scrolled {
 .nav-link {
     padding: 8px 4px; margin: 0 4px; text-decoration: none; border: none; background: none;
     font-weight: 600; font-size: 15px; color: inherit; cursor: pointer;
-    color: rgba(255, 255, 255, 0.95); transition: color .25s, opacity .25s;
+    color: var(--color-text); transition: color .25s, opacity .25s;
     position: relative;
 }
 header.navbar-scrolled .nav-link { color: var(--color-text); }
@@ -111,8 +127,8 @@ header.navbar-scrolled .nav-link { color: var(--color-text); }
 .nav-link:hover::after { transform: scaleX(1); }
 .lang-btn {
     margin-left: 12px; padding: 8px 16px; font-size: 13px; font-weight: 600;
-    color: rgba(255, 255, 255, 0.95); background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 999px;
+    color: var(--color-text); background: transparent; border-color: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.15); border-radius: 999px;
     cursor: pointer; transition: background .25s, color .25s, border-color .25s;
 }
 header.navbar-scrolled .lang-btn {
@@ -130,6 +146,7 @@ header.navbar-scrolled .lang-btn:hover {
     position: relative;
     background: url("images/hero.jpeg") center/cover no-repeat;
     min-height: 520px; display: flex; align-items: center; justify-content: center; color: white; text-align: center;
+    margin-top: 0px; /* Abstand unter dem Header, damit der Text klar darunter beginnt */
 }
 .hero-gradient {
     position: absolute; inset: 0;
@@ -138,12 +155,24 @@ header.navbar-scrolled .lang-btn:hover {
 }
 .hero-box {
     position: relative; z-index: 1;
-    background: rgba(0, 0, 0, 0.35); padding: 48px 56px; border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    padding: 48px 56px; border-radius: 16px;
     max-width: 90%;
     animation: heroFadeIn 0.8s ease-out;
+}
+/* Textbereich unter dem Hero-Bild */
+.hero-text {
+    padding: 40px 20px 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.hero-text .hero-box {
+    background: var(--color-card);
+    color: var(--color-text);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.hero-text .hero-subtitle {
+    color: var(--color-text-muted);
 }
 @keyframes heroFadeIn {
     from { opacity: 0; transform: translateY(20px); }
@@ -231,8 +260,11 @@ header.navbar-scrolled .lang-btn:hover {
 .map { margin-top: 30px; }
 
 /* ===== Reviews ===== */
-.reviews-section { background: linear-gradient(180deg, #f8f9fa 0%, var(--color-bg) 100%); border-radius: var(--radius); }
-.reviews-header { text-align: center; margin-bottom: 36px; }
+.reviews-section {
+    background: linear-gradient(180deg, #f8f9fa 0%, var(--color-bg) 100%);
+    border-radius: var(--radius);
+}
+.reviews-header { text-align: center; margin-bottom: 28px; }
 .reviews-header h2 { margin-bottom: 6px; }
 .reviews-subtitle {
     margin: 8px 0 0; font-size: 1.05rem; font-weight: 400; color: var(--color-text-muted);
@@ -246,10 +278,15 @@ header.navbar-scrolled .lang-btn:hover {
 .reviews-container::-webkit-scrollbar { display: none; }
 .review-card {
     flex: 0 0 320px;
-    background: var(--color-card); padding: 24px 26px 20px; border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06); color: var(--color-text);
-    text-align: left; position: relative;
-    border: 1px solid rgba(0,0,0,0.04);
+    background: var(--color-card);
+    padding: 18px 22px 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    color: var(--color-text);
+    text-align: left;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-left: 4px solid var(--color-primary);
     transition: transform .25s ease, box-shadow .25s ease;
 }
 .review-card:hover {
@@ -257,11 +294,16 @@ header.navbar-scrolled .lang-btn:hover {
     box-shadow: 0 12px 32px rgba(0,0,0,0.1);
 }
 .review-stars {
-    position: relative; margin-bottom: 14px; font-size: 1.15rem; letter-spacing: 2px;
-    color: var(--color-star); filter: drop-shadow(0 1px 2px rgba(245, 197, 66, 0.3));
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: var(--color-star);
 }
 .review-text {
-    margin: 0 0 20px; font-size: 1rem; line-height: 1.55; color: var(--color-text);
+    margin: 0 0 14px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--color-text);
     padding-right: 8px;
 }
 .review-author {
