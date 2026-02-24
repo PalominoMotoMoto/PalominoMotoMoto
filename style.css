@@ -241,7 +241,7 @@ header.navbar-scrolled .lang-btn:hover {
 .price-container { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
 .price-item {
     background: #f1f2f6; padding: 10px; border-radius: 10px;
-    display: flex; flex-direction: column; align-items: center; min-width: 100px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px;
 }
 .price-val { font-weight: 800; font-size: 0.95rem; color: var(--color-text); }
 .price-val small { font-size: 0.7rem; color: var(--color-price); }
