@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" href="images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <script type="application/ld+json">
@@ -77,7 +77,8 @@
     <div class="hero-box">
         <span class="hero-badge" id="heroBadge">Palomino · Colombia</span>
         <h1 class="hero-title">Moto Moto Palomino</h1>
-        <p id="subtitle" class="hero-subtitle">Reliable Moto Rentals in Palomino, Colombia</p>
+        <p id="heroTagline" class="hero-subtitle">Explore Palomino by Motorcycle</p>
+        <p id="subtitle" class="hero-subtitle">Fast • Easy • Affordable</p>
         <div class="hero-btn-container">
             <a class="btn hero-btn" href="#bikes" id="viewBtn">View Motos</a>
         </div>
@@ -230,6 +231,16 @@
 
 <footer>© 2026 Moto Moto Palomino</footer>
 
+<a
+    class="floating-wa pulse-wa"
+    href="https://wa.me/573216172816?text=Hi%20I%20want%20to%20rent%20a%20motorbike"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp"
+>
+    <img src="images/whatsapp.png" alt="" class="floating-wa-icon">
+</a>
+
 <script>
 window.addEventListener("scroll", function(){
     var nav = document.getElementById("navbar");
@@ -270,6 +281,7 @@ function switchLang(){
     const btn=document.getElementById("langBtn");
     const navBikes = document.getElementById("navBikes");
     const navContact = document.getElementById("navContact");
+    const heroTagline = document.getElementById("heroTagline");
     const subtitle = document.getElementById("subtitle");
     const bikesTitle = document.getElementById("bikesTitle");
     const reviewsTitle = document.getElementById("reviewsTitle");
@@ -292,7 +304,8 @@ function switchLang(){
     if(lang==="en"){
         lang="es"; btn.innerText="EN";
         navBikes.innerText="Motos"; navContact.innerText="Contacto";
-        subtitle.innerText="Alquiler de motos confiable en Palomino";
+        if(heroTagline) heroTagline.innerText="Explora Palomino en moto";
+        subtitle.innerText="Rápido • Fácil • Económico";
         if(heroBadge) heroBadge.innerText="Palomino · Colombia";
         bikesTitle.innerText="Nuestras Motos"; reviewsTitle.innerText="Reseñas";
         var reviewsSub = document.getElementById("reviewsSubtitle"); if(reviewsSub) reviewsSub.innerText="Lo que dicen nuestros clientes";
@@ -324,7 +337,8 @@ function switchLang(){
     } else {
         lang="en"; btn.innerText="ES";
         navBikes.innerText="Motos"; navContact.innerText="Contact";
-        subtitle.innerText="Reliable Moto Rentals in Palomino, Colombia";
+        if(heroTagline) heroTagline.innerText="Explore Palomino by Motorcycle";
+        subtitle.innerText="Fast • Easy • Affordable";
         if(heroBadge) heroBadge.innerText="Palomino · Colombia";
         bikesTitle.innerText="Our Motos"; reviewsTitle.innerText="Customer Reviews";
         var reviewsSub = document.getElementById("reviewsSubtitle"); if(reviewsSub) reviewsSub.innerText="What our riders say about us";
