@@ -1,31 +1,41 @@
 /* ===== Brand & Layout ===== */
 :root {
+    /* Palette: primary + neutrals (minimalistisch) */
     --color-primary: #e63946;
-    --color-primary-hover: #c92f3c;
+    --color-primary-hover: #cf3140;
+    --color-bg: #f6f7f9;
+    --color-card: #ffffff;
+    --color-text: #121826;
+    --color-text-muted: #4b5563;
+    --color-border: rgba(17, 24, 39, 0.10);
+
+    /* Brand accents */
     --color-wa: #25d366;
     --color-wa-hover: #20bd5a;
     --color-insta: #E1306C;
-    --color-dark: #111;
-    --color-footer: #222;
-    --color-text: #333;
-    --color-text-muted: #555;
-    --color-bg: #fafafa;
-    --color-card: #fff;
     --color-star: #f5c542;
-    --color-price: #e63946;
-    --font: "DM Sans", system-ui, sans-serif;
+    --color-price: var(--color-primary);
+
+    /* Layout & elevation */
+    --font: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     --section-gap: 64px;
     --radius: 14px;
+    --radius-lg: 18px;
+    --shadow-sm: 0 6px 18px rgba(17, 24, 39, 0.08);
+    --shadow-md: 0 14px 40px rgba(17, 24, 39, 0.14);
+    --shadow-btn: 0 10px 26px rgba(17, 24, 39, 0.14);
 }
 
 /* ===== Dark Mode ===== */
 html.dark-mode {
-    --color-bg: #1a1a1c;
-    --color-text: #e8e8e8;
-    --color-text-muted: #a0a0a0;
-    --color-card: #252528;
-    --color-footer: #0d0d0f;
-    --color-dark: #1e1e22;
+    --color-bg: #0f1115;
+    --color-text: #e7e9ee;
+    --color-text-muted: #a7afbf;
+    --color-card: #171a21;
+    --color-footer: #0b0d11;
+    --color-border: rgba(255, 255, 255, 0.10);
+    --shadow-sm: 0 10px 28px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 18px 46px rgba(0, 0, 0, 0.45);
 }
 html.dark-mode header.navbar-scrolled {
     background: rgba(30, 30, 34, 0.92);
@@ -84,14 +94,11 @@ a:focus-visible, button:focus-visible {
 header {
     display: flex; justify-content: space-between; align-items: center;
     padding: 16px 40px; position: sticky; top: 0; z-index: 1000;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.86);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-sm);
     transition: background .35s ease, box-shadow .35s ease, padding .25s ease;
-}
-header.navbar-scrolled {
-    /* gleiche Optik wie normaler Header, nur falls du später wieder unterscheiden willst */
 }
 /* Dark-Mode: oben auf der Seite Header transparent und Links hell,
    beim Scrollen wieder fester, dunkler Header (siehe html.dark-mode header.navbar-scrolled oben) */
@@ -169,11 +176,29 @@ header.navbar-scrolled .lang-btn:hover {
 .hero-text .hero-box {
     background: var(--color-card);
     color: var(--color-text);
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    max-width: 860px;
+    width: calc(100% - 40px);
+    padding: 34px 38px;
+}
+.hero-text .hero-title {
+    text-shadow: none;
+    letter-spacing: -0.03em;
+}
+.hero-text .hero-badge {
+    color: var(--color-text-muted);
+    background: rgba(17, 24, 39, 0.04);
+    border: 1px solid var(--color-border);
 }
 .hero-text .hero-subtitle {
     color: var(--color-text-muted);
+    margin: 0 0 10px;
+    font-size: 1.02rem;
+    line-height: 1.55;
 }
+.hero-text .hero-subtitle:last-of-type { margin-bottom: 18px; }
 @keyframes heroFadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -212,9 +237,13 @@ header.navbar-scrolled .lang-btn:hover {
 
 .btn {
     background: var(--color-primary); color: white; padding: 12px 25px; border-radius: 6px;
-    text-decoration: none; display: inline-block; transition: .3s; font-weight: 600; border: none;
+    text-decoration: none; display: inline-block;
+    transition: transform .18s ease, background .18s ease, box-shadow .18s ease, filter .18s ease;
+    font-weight: 600; border: none;
+    box-shadow: var(--shadow-btn);
 }
-.btn:hover { transform: scale(1.05); background: var(--color-primary-hover); }
+.btn:hover { transform: translateY(-2px); background: var(--color-primary-hover); }
+.btn:active { transform: translateY(0); filter: brightness(0.98); }
 @keyframes pulse-wa {
     0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
     50% { transform: scale(1.02); box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
@@ -226,6 +255,7 @@ header.navbar-scrolled .lang-btn:hover {
 .insta { background: var(--color-insta); }
 .insta:hover { background: #c41e5a; }
 .map-link-btn { margin-top: 20px; background: var(--color-text-muted); }
+.map-link-btn:hover { filter: brightness(1.05); }
 
 .section { padding: var(--section-gap) 20px; max-width: 900px; margin: 0 auto; }
 .section h2 { text-align: center; font-size: 36px; font-weight: 700; margin-bottom: 40px; }
@@ -233,9 +263,25 @@ header.navbar-scrolled .lang-btn:hover {
 .bike {
     display: flex; gap: 30px; margin-bottom: 30px; align-items: center;
     background: var(--color-card); padding: 20px; border-radius: var(--radius);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
-.bike img { width: 300px; border-radius: 12px; cursor: pointer; object-fit: cover; height: 200px; }
+.bike:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(230, 57, 70, 0.22);
+}
+.bike img {
+    width: 300px;
+    height: 200px;
+    border-radius: 12px;
+    cursor: pointer;
+    object-fit: cover;
+    display: block;
+    border: 1px solid var(--color-border);
+    background: rgba(0,0,0,0.02);
+}
 .coming { background: #fff5f6; }
 .bike-info h3 { margin: 0 0 8px; }
 .bike-spec {
@@ -253,8 +299,11 @@ header.navbar-scrolled .lang-btn:hover {
 
 .price-container { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
 .price-item {
-    background: #f1f2f6; padding: 10px; border-radius: 10px;
+    background: rgba(17, 24, 39, 0.04);
+    padding: 10px;
+    border-radius: 12px;
     display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px;
+    border: 1px solid var(--color-border);
 }
 .price-val { font-weight: 800; font-size: 0.95rem; color: var(--color-text); }
 .price-val small { font-size: 0.7rem; color: var(--color-price); }
@@ -265,8 +314,10 @@ header.navbar-scrolled .lang-btn:hover {
 }
 .bike-wa .btn-icon { width: 16px; height: 16px; }
 
-.dark { background: var(--color-dark); color: white; text-align: center; border-radius: var(--radius); padding: 40px 20px; }
+.dark { background: #111318; color: white; text-align: center; border-radius: var(--radius); padding: 40px 20px; }
 #contact.section { padding-top: 16px; padding-bottom: 28px; }
+.dark a { color: rgba(255,255,255,0.92); }
+.dark a:hover { color: white; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
 .contact-buttons { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 15px; align-items: center; margin: 20px 0; }
 .contact-buttons .btn { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 0; }
 .contact-buttons .btn-icon { width: 24px; height: 24px; object-fit: contain; }
@@ -294,17 +345,17 @@ header.navbar-scrolled .lang-btn:hover {
     background: var(--color-card);
     padding: 18px 22px 18px;
     border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-sm);
     color: var(--color-text);
     text-align: left;
     position: relative;
-    border: 1px solid rgba(0,0,0,0.06);
+    border: 1px solid var(--color-border);
     border-left: 4px solid var(--color-primary);
     transition: transform .25s ease, box-shadow .25s ease;
 }
 .review-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-md);
 }
 .review-stars {
     margin-bottom: 8px;
@@ -333,16 +384,16 @@ header.navbar-scrolled .lang-btn:hover {
     flex-shrink: 0;
     width: 48px; height: 48px;
     border-radius: 50%;
-    border: 1px solid rgba(0,0,0,0.08);
+    border: 1px solid var(--color-border);
     background: var(--color-card);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    box-shadow: var(--shadow-sm);
     cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     transition: box-shadow .2s, transform .2s, background .2s;
 }
 .slider-btn:hover {
-    background: #f8f8f8;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    background: rgba(17, 24, 39, 0.03);
+    box-shadow: var(--shadow-md);
     transform: scale(1.05);
 }
 .slider-btn:active { transform: scale(0.98); }
@@ -360,11 +411,36 @@ header.navbar-scrolled .lang-btn:hover {
 }
 
 .modal { display: none; position: fixed; z-index: 2000; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
-.modal-content { margin: auto; display: block; max-width: 80%; border-radius: 10px; }
+.modal-content { margin: auto; display: block; max-width: min(900px, 86vw); border-radius: 14px; border: 1px solid rgba(255,255,255,0.12); }
 .close {
     position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold;
     cursor: pointer; background: none; border: none; padding: 0; line-height: 1;
 }
+
+/* ===== Floating WhatsApp Button ===== */
+.floating-wa {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
+    background: var(--color-wa);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1500;
+    text-decoration: none;
+    transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.floating-wa:hover {
+    background: var(--color-wa-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.28);
+}
+.floating-wa:active { transform: translateY(0); }
+.floating-wa-icon { width: 26px; height: 26px; display: block; }
 
 footer { text-align: center; padding: 30px; background: var(--color-footer); color: white; }
 
@@ -404,6 +480,37 @@ footer { text-align: center; padding: 30px; background: var(--color-footer); col
         max-width: 520px;
         margin: 0 auto;
     }
-    .slider-btn { display: none; }
     .contact-buttons { flex-direction: column; }
+    .floating-wa { right: 14px; bottom: 14px; width: 54px; height: 54px; }
+}
+
+@media (max-width: 600px) {
+    /* Abstände optimieren */
+    .section { padding: 30px 15px; }
+    .section h2 { font-size: 28px; margin-bottom: 24px; }
+
+    /* Hero-Bereich verbessern */
+    .hero { min-height: 360px; }
+    .hero-text { padding: 22px 15px 0; }
+    .hero-text .hero-box { padding: 22px 18px; }
+    .hero-title { font-size: 28px; }
+    .hero-subtitle { font-size: 0.95rem; margin-bottom: 16px; }
+    .hero-btn { padding: 12px 22px; }
+
+    /* Bike-Layout anpassen */
+    .bike { gap: 18px; padding: 16px; }
+    .bike img { height: auto; }
+    .bike-spec { margin-bottom: 8px; }
+    .bike-desc { font-size: 0.95rem; }
+    .price-container { margin-top: 12px; }
+    .bike-wa { padding: 10px 14px; font-size: 0.9rem; }
+    .bike-wa .btn-icon { width: 18px; height: 18px; }
+
+    /* Slider-Pfeile ausblenden (<600px) */
+    .slider-btn { display: none; }
+    .review-slider-container { padding: 0 10px; }
+    .review-card { flex: 0 0 92%; }
+
+    /* Gesamtlayout touch-friendly */
+    .lang-btn { padding: 10px 14px; }
 }
