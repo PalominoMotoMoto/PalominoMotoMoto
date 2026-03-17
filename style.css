@@ -237,6 +237,19 @@ header.navbar-scrolled .lang-btn:hover {
 }
 .bike img { width: 300px; border-radius: 12px; cursor: pointer; object-fit: cover; height: 200px; }
 .coming { background: #fff5f6; }
+.bike-info h3 { margin: 0 0 8px; }
+.bike-spec {
+    margin: 0 0 10px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+}
+.bike-desc {
+    margin: 0 0 6px;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+.bike-desc:last-of-type { margin-bottom: 12px; }
 
 .price-container { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
 .price-item {
