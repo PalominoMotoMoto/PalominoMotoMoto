@@ -91,10 +91,13 @@
         <img src="images/navi.jpeg" alt="Honda Navi 110 Automatic – Moto rental Palomino" loading="lazy" onclick="openModal(this.src)" class="clickable-img">
         <div class="bike-info">
             <h3>Honda Navi 110 Automatic</h3>
+            <p class="bike-spec" id="naviSpec">110cc – Automatic</p>
+            <p class="bike-desc" id="naviDesc1">Perfect for city rides &amp; short trips</p>
+            <p class="bike-desc" id="naviDesc2">Easy-to-ride automatic scooter</p>
             <div class="price-container">
-                <div class="price-item"><span class="price-val">110.000 <small>COP</small></span><span class="price-label day">day</span></div>
-                <div class="price-item"><span class="price-val">550.000 <small>COP</small></span><span class="price-label week">week</span></div>
-                <div class="price-item"><span class="price-val">1.650.000 <small>COP</small></span><span class="price-label month">month</span></div>
+                <div class="price-item"><span class="price-val">100.000 <small>COP</small></span><span class="price-label day">day</span></div>
+                <div class="price-item"><span class="price-val">500.000 <small>COP</small></span><span class="price-label week">week</span></div>
+                <div class="price-item"><span class="price-val">1.500.000 <small>COP</small></span><span class="price-label month">month</span></div>
             </div>
             <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20Honda%20Navi%20110%20Automatic" class="btn whatsapp bike-wa" target="_blank" rel="noopener noreferrer">
                 <img src="images/whatsapp.png" alt="" class="btn-icon"> <span id="bikeWaNaviText">Book now</span>
@@ -106,10 +109,13 @@
         <img src="images/nkd.jpeg" alt="AKT NKD 125 Manual – Moto rental Palomino" loading="lazy" onclick="openModal(this.src)" class="clickable-img">
         <div class="bike-info">
             <h3>AKT NKD 125 Manual</h3>
+            <p class="bike-spec" id="nkdSpec">125cc – Manual</p>
+            <p class="bike-desc" id="nkdDesc1">Ideal for exploring the countryside</p>
+            <p class="bike-desc" id="nkdDesc2">Fuel efficient &amp; fun to ride</p>
             <div class="price-container">
-                <div class="price-item"><span class="price-val">120.000 <small>COP</small></span><span class="price-label day">day</span></div>
-                <div class="price-item"><span class="price-val">600.000 <small>COP</small></span><span class="price-label week">week</span></div>
-                <div class="price-item"><span class="price-val">1.800.000 <small>COP</small></span><span class="price-label month">month</span></div>
+                <div class="price-item"><span class="price-val">110.000 <small>COP</small></span><span class="price-label day">day</span></div>
+                <div class="price-item"><span class="price-val">550.000 <small>COP</small></span><span class="price-label week">week</span></div>
+                <div class="price-item"><span class="price-val">1.650.000 <small>COP</small></span><span class="price-label month">month</span></div>
             </div>
             <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20AKT%20NKD%20125%20Manual" class="btn whatsapp bike-wa" target="_blank" rel="noopener noreferrer">
                 <img src="images/whatsapp.png" alt="" class="btn-icon"> <span id="bikeWaNkdText">Book now</span>
@@ -121,6 +127,9 @@
         <img src="images/ttr.jpeg" alt="AKT TTR 200 Manual – Coming soon" loading="lazy" onclick="openModal(this.src)" class="clickable-img">
         <div class="bike-info">
             <h3>AKT TTR 200 Manual</h3>
+            <p class="bike-spec" id="ttrSpec">200cc – Off-road</p>
+            <p class="bike-desc" id="ttrDesc1">Built for off-road adventure</p>
+            <p class="bike-desc" id="ttrDesc2">Powerful 200cc engine with luggage rack</p>
             <p id="coming" class="coming-text">Coming soon — Stay tuned!</p>
         </div>
     </div>
@@ -130,6 +139,7 @@
     <h2 id="contactTitle">Contact</h2>
     <div class="contact-info">
         <p><strong id="phoneLabel">Phone:</strong> +57 321 6172816</p>
+        <p><strong id="emailLabel">Email:</strong> <a href="mailto:palominomotomoto@gmail.com">palominomotomoto@gmail.com</a></p>
         
         <div class="contact-buttons">
             <a href="https://wa.me/573216172816?text=Hi%20I%20want%20to%20rent%20a%20motorbike" class="btn whatsapp">
@@ -269,6 +279,15 @@ function switchLang(){
     const phoneLabel = document.getElementById("phoneLabel");
     const coming = document.getElementById("coming");
     const heroBadge = document.getElementById("heroBadge");
+    const naviSpec = document.getElementById("naviSpec");
+    const naviDesc1 = document.getElementById("naviDesc1");
+    const naviDesc2 = document.getElementById("naviDesc2");
+    const nkdSpec = document.getElementById("nkdSpec");
+    const nkdDesc1 = document.getElementById("nkdDesc1");
+    const nkdDesc2 = document.getElementById("nkdDesc2");
+    const ttrSpec = document.getElementById("ttrSpec");
+    const ttrDesc1 = document.getElementById("ttrDesc1");
+    const ttrDesc2 = document.getElementById("ttrDesc2");
 
     if(lang==="en"){
         lang="es"; btn.innerText="EN";
@@ -280,6 +299,15 @@ function switchLang(){
         contactTitle.innerText="Contacto"; viewBtn.innerText="Ver Motos";
         mapBtn.innerText="Abrir mapa"; phoneLabel.innerText="Teléfono:";
         if(coming) coming.innerText="Próximamente — precios por definir";
+        if(naviSpec) naviSpec.innerText="110cc – Automática";
+        if(naviDesc1) naviDesc1.innerText="Perfecta para la ciudad y trayectos cortos";
+        if(naviDesc2) naviDesc2.innerText="Scooter automático fácil de manejar";
+        if(nkdSpec) nkdSpec.innerText="125cc – Manual";
+        if(nkdDesc1) nkdDesc1.innerText="Ideal para explorar el campo";
+        if(nkdDesc2) nkdDesc2.innerText="Eficiente en combustible y divertida de manejar";
+        if(ttrSpec) ttrSpec.innerText="200cc – Off-road";
+        if(ttrDesc1) ttrDesc1.innerText="Hecha para la aventura off-road";
+        if(ttrDesc2) ttrDesc2.innerText="Potente motor 200cc con parrilla portaequipaje";
         document.querySelectorAll(".day").forEach(e=>e.innerText="día");
         document.querySelectorAll(".week").forEach(e=>e.innerText="semana");
         document.querySelectorAll(".month").forEach(e=>e.innerText="mes");
@@ -303,6 +331,15 @@ function switchLang(){
         contactTitle.innerText="Contact"; viewBtn.innerText="View Motos";
         mapBtn.innerText="Open Map"; phoneLabel.innerText="Phone:";
         if(coming) coming.innerText="Coming soon — Stay tuned!";
+        if(naviSpec) naviSpec.innerText="110cc – Automatic";
+        if(naviDesc1) naviDesc1.innerText="Perfect for city rides & short trips";
+        if(naviDesc2) naviDesc2.innerText="Easy-to-ride automatic scooter";
+        if(nkdSpec) nkdSpec.innerText="125cc – Manual";
+        if(nkdDesc1) nkdDesc1.innerText="Ideal for exploring the countryside";
+        if(nkdDesc2) nkdDesc2.innerText="Fuel efficient & fun to ride";
+        if(ttrSpec) ttrSpec.innerText="200cc – Off-road";
+        if(ttrDesc1) ttrDesc1.innerText="Built for off-road adventure";
+        if(ttrDesc2) ttrDesc2.innerText="Powerful 200cc engine with luggage rack";
         document.querySelectorAll(".day").forEach(e=>e.innerText="day");
         document.querySelectorAll(".week").forEach(e=>e.innerText="week");
         document.querySelectorAll(".month").forEach(e=>e.innerText="month");
@@ -326,4 +363,3 @@ function slideReviews(direction){
 </script>
 </body>
 </html>
-
