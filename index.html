@@ -8,7 +8,7 @@
     <!-- Open Graph für schöne Vorschau beim Teilen (og:image mit voller URL ersetzen wenn Seite online) -->
     <meta property="og:title" content="Moto Moto Palomino – Moto Rentals in Palomino, Colombia">
     <meta property="og:description" content="Rent reliable motorbikes in Palomino, Colombia. Honda Navi, AKT NKD &amp; more. WhatsApp us for same-day rental.">
-    <meta property="og:image" content="images/hero.jpeg">
+    <meta property="og:image" content="images/hero/IMG_4070.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="apple-touch-icon" href="images/logo.png">
@@ -58,6 +58,19 @@
     <img class="modal-content" id="fullImage">
 </div>
 
+<!-- Hero: Galerie-Lightbox (alle JPGs, Swipe + Pfeile + Tastatur) -->
+<div id="heroLightbox" class="hero-lightbox" role="dialog" aria-modal="true" aria-label="Photo gallery" aria-hidden="true" onclick="heroLightboxOuterClick(event)">
+    <div class="hero-lightbox__inner" onclick="event.stopPropagation()">
+        <button type="button" class="hero-lightbox__close" id="heroLightboxClose" onclick="closeHeroLightbox()" aria-label="Close gallery">×</button>
+        <button type="button" class="hero-lightbox__nav hero-lightbox__nav--prev" id="heroLightboxPrev" onclick="heroLightboxStep(-1)" aria-label="Previous photo"><span class="hero-lightbox__nav-char" aria-hidden="true">‹</span></button>
+        <button type="button" class="hero-lightbox__nav hero-lightbox__nav--next" id="heroLightboxNext" onclick="heroLightboxStep(1)" aria-label="Next photo"><span class="hero-lightbox__nav-char" aria-hidden="true">›</span></button>
+        <div class="hero-lightbox__stage" id="heroLightboxStage">
+            <img class="hero-lightbox__img" id="heroLightboxImg" alt="">
+        </div>
+        <p class="hero-lightbox__counter" id="heroLightboxCounter" aria-live="polite">1 / 5</p>
+    </div>
+</div>
+
 <header id="navbar" class="navbar-top">
     <a href="#" class="logo-link"><img src="images/logo.png" class="logo" alt="Moto Moto Palomino"></a>
     <nav class="nav-links">
@@ -68,19 +81,62 @@
     </nav>
 </header>
 
-<section class="hero">
-    <div class="hero-gradient"></div>
-    <div class="hero-scroll-hint" aria-hidden="true"><span class="hero-scroll-arrow"></span></div>
-</section>
-
-<section class="hero-text">
-    <div class="hero-box">
-        <span class="hero-badge" id="heroBadge">Palomino · Colombia</span>
-        <h1 class="hero-title">Moto Moto Palomino</h1>
-        <p id="heroTagline" class="hero-subtitle">Explore Palomino by Motorcycle</p>
-        <p id="subtitle" class="hero-subtitle">Fast • Easy • Affordable</p>
-        <div class="hero-btn-container">
-            <a class="btn hero-btn" href="#bikes" id="viewBtn">View Motos</a>
+<section class="hero hero-stack" aria-label="Welcome">
+    <div class="hero-media">
+        <div class="hero-fallback-bg" aria-hidden="true"></div>
+        <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="images/hero/IMG_4070.jpg"
+        >
+            <source src="images/hero/video_hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero-gradient" aria-hidden="true"></div>
+        <div class="hero-content">
+            <div class="hero-box hero-box--over-video">
+                <span class="hero-badge" id="heroBadge">Palomino · Colombia</span>
+                <h1 class="hero-title">Moto Moto Palomino</h1>
+                <p id="heroTagline" class="hero-subtitle">Explore Palomino by Motorcycle</p>
+                <p id="subtitle" class="hero-subtitle">Fast • Easy • Affordable</p>
+                <div class="hero-btn-container">
+                    <a class="btn hero-btn" href="#bikes" id="viewBtn">View Motos</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint" aria-hidden="true"><span class="hero-scroll-arrow"></span></div>
+    </div>
+    <div class="hero-gallery-shell hero-gallery-shell--animate" aria-label="Hero photo gallery">
+        <!-- Reihenfolge: IMG_4020 zuerst, IMG_3851 zuletzt; IMG_3864 nicht verwendet -->
+        <div class="hero-gallery-track" role="list">
+            <div class="hero-gallery-item" role="listitem">
+                <button type="button" class="hero-gallery-card" onclick="openHeroLightbox(0)" aria-label="Open gallery at photo 1">
+                    <img src="images/hero/IMG_4020.JPG" alt="Palomino — Moto Moto gallery photo 1" width="480" height="300" loading="lazy" decoding="async">
+                </button>
+            </div>
+            <div class="hero-gallery-item" role="listitem">
+                <button type="button" class="hero-gallery-card" onclick="openHeroLightbox(1)" aria-label="Open gallery at photo 2">
+                    <img src="images/hero/IMG_4070.jpg" alt="Palomino — Moto Moto gallery photo 2" width="480" height="300" loading="lazy" decoding="async">
+                </button>
+            </div>
+            <div class="hero-gallery-item" role="listitem">
+                <button type="button" class="hero-gallery-card" onclick="openHeroLightbox(2)" aria-label="Open gallery at photo 3">
+                    <img src="images/hero/IMG_4072.jpg" alt="Palomino — Moto Moto gallery photo 3" width="480" height="300" loading="lazy" decoding="async">
+                </button>
+            </div>
+            <div class="hero-gallery-item" role="listitem">
+                <button type="button" class="hero-gallery-card" onclick="openHeroLightbox(3)" aria-label="Open gallery at photo 4">
+                    <img src="images/hero/IMG_5749.jpg" alt="Palomino — Moto Moto gallery photo 4" width="480" height="300" loading="lazy" decoding="async">
+                </button>
+            </div>
+            <div class="hero-gallery-item" role="listitem">
+                <button type="button" class="hero-gallery-card" onclick="openHeroLightbox(4)" aria-label="Open gallery at photo 5">
+                    <img src="images/hero/IMG_3851.JPG" alt="Palomino — Moto Moto gallery photo 5" width="480" height="300" loading="lazy" decoding="async">
+                </button>
+            </div>
         </div>
     </div>
 </section>
@@ -248,6 +304,14 @@ window.addEventListener("scroll", function(){
 });
 
 (function(){
+    var v = document.querySelector(".hero-video");
+    if (!v) return;
+    var tryPlay = function(){ v.play().catch(function(){}); };
+    tryPlay();
+    document.addEventListener("visibilitychange", function(){ if (!document.hidden) tryPlay(); });
+})();
+
+(function(){
     if (localStorage.getItem("darkMode") === "1") document.documentElement.classList.add("dark-mode");
     updateDarkModeIcon();
 })();
@@ -272,7 +336,106 @@ function openModal(src) {
 function closeModal() { 
     document.getElementById("imageModal").style.display = "none"; 
 }
+
+/** Hero-Galerie: gleiche Reihenfolge wie Thumbnails (4020 → … → 3851; ohne IMG_3864) */
+var HERO_GALLERY_URLS = [
+    "images/hero/IMG_4020.JPG",
+    "images/hero/IMG_4070.jpg",
+    "images/hero/IMG_4072.jpg",
+    "images/hero/IMG_5749.jpg",
+    "images/hero/IMG_3851.JPG"
+];
+var heroLightboxIndex = 0;
+var heroLightboxLastFocus = null;
+
+function heroLightboxIsOpen() {
+    var lb = document.getElementById("heroLightbox");
+    return lb && lb.classList.contains("is-open");
+}
+
+function openHeroLightbox(index) {
+    var lb = document.getElementById("heroLightbox");
+    if (!lb || !HERO_GALLERY_URLS.length) return;
+    heroLightboxLastFocus = document.activeElement;
+    heroLightboxIndex = Math.max(0, Math.min(index, HERO_GALLERY_URLS.length - 1));
+    lb.classList.add("is-open");
+    lb.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    heroLightboxRender();
+    var c = document.getElementById("heroLightboxClose");
+    if (c) c.focus();
+}
+
+function closeHeroLightbox() {
+    var lb = document.getElementById("heroLightbox");
+    if (!lb) return;
+    lb.classList.remove("is-open");
+    lb.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    var img = document.getElementById("heroLightboxImg");
+    if (img) img.removeAttribute("src");
+    if (heroLightboxLastFocus && typeof heroLightboxLastFocus.focus === "function") {
+        try { heroLightboxLastFocus.focus(); } catch (x) {}
+    }
+    heroLightboxLastFocus = null;
+}
+
+function heroLightboxOuterClick(e) {
+    if (e.target === e.currentTarget) closeHeroLightbox();
+}
+
+function heroLightboxStep(delta) {
+    if (!HERO_GALLERY_URLS.length) return;
+    heroLightboxIndex = (heroLightboxIndex + delta + HERO_GALLERY_URLS.length) % HERO_GALLERY_URLS.length;
+    heroLightboxRender();
+}
+
+function heroLightboxRender() {
+    var img = document.getElementById("heroLightboxImg");
+    var counter = document.getElementById("heroLightboxCounter");
+    var url = HERO_GALLERY_URLS[heroLightboxIndex];
+    if (img && url) {
+        img.src = url;
+        img.alt = "Gallery photo " + (heroLightboxIndex + 1) + " of " + HERO_GALLERY_URLS.length + " — Moto Moto Palomino";
+    }
+    if (counter) counter.textContent = (heroLightboxIndex + 1) + " / " + HERO_GALLERY_URLS.length;
+}
+
+(function initHeroLightboxSwipe(){
+    var stage = document.getElementById("heroLightboxStage");
+    if (!stage) return;
+    var startX = 0;
+    stage.addEventListener("touchstart", function(e) {
+        if (!heroLightboxIsOpen()) return;
+        startX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    stage.addEventListener("touchend", function(e) {
+        if (!heroLightboxIsOpen()) return;
+        var dx = e.changedTouches[0].clientX - startX;
+        if (dx > 55) heroLightboxStep(-1);
+        else if (dx < -55) heroLightboxStep(1);
+    }, { passive: true });
+})();
+
 document.addEventListener("keydown", function(e) {
+    if (heroLightboxIsOpen()) {
+        if (e.key === "Escape") {
+            e.preventDefault();
+            closeHeroLightbox();
+            return;
+        }
+        if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            heroLightboxStep(-1);
+            return;
+        }
+        if (e.key === "ArrowRight") {
+            e.preventDefault();
+            heroLightboxStep(1);
+            return;
+        }
+        return;
+    }
     if (e.key === "Escape") closeModal();
 });
 
