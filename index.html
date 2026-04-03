@@ -102,6 +102,7 @@
                 <h1 class="hero-title">Moto Moto Palomino</h1>
                 <p id="heroTagline" class="hero-subtitle">Explore Palomino by Motorcycle</p>
                 <p id="subtitle" class="hero-subtitle">Fast • Easy • Affordable</p>
+                <p class="hero-subtitle hero-benefits" id="heroBenefits">Helmets included • Unlimited km • Insurance included (SOAT) • Trusted by travelers</p>
                 <div class="hero-btn-container">
                     <a class="btn hero-btn" href="#bikes" id="viewBtn">View Motos</a>
                 </div>
@@ -147,10 +148,11 @@
     <div class="bike">
         <img src="images/navi.jpeg" alt="Honda Navi 110 Automatic – Moto rental Palomino" loading="lazy" onclick="openModal(this.src)" class="clickable-img">
         <div class="bike-info">
-            <h3>Honda Navi 110 Automatic</h3>
-            <p class="bike-spec" id="naviSpec">110cc – Automatic</p>
-            <p class="bike-desc" id="naviDesc1">Perfect for city rides &amp; short trips</p>
-            <p class="bike-desc" id="naviDesc2">Easy-to-ride automatic scooter</p>
+                <h3>Honda Navi 110cc automatic <span class="bike-model">(model 2026)</span></h3>
+            <ul class="bike-bullets" aria-label="Highlights">
+                <li class="bike-bullet" id="naviDesc1">Perfect for city rides &amp; short trips</li>
+                <li class="bike-bullet" id="naviDesc2">Easy-to-ride automatic scooter</li>
+            </ul>
             <div class="price-container">
                 <div class="price-item"><span class="price-val">120.000 <small>COP</small></span><span class="price-label day">day</span></div>
                 <div class="price-item"><span class="price-val">600.000 <small>COP</small></span><span class="price-label week">week</span></div>
@@ -165,10 +167,11 @@
     <div class="bike">
         <img src="images/nkd.jpeg" alt="AKT NKD 125 Manual – Moto rental Palomino" loading="lazy" onclick="openModal(this.src)" class="clickable-img">
         <div class="bike-info">
-            <h3>AKT NKD 125 Manual</h3>
-            <p class="bike-spec" id="nkdSpec">125cc – Manual</p>
-            <p class="bike-desc" id="nkdDesc1">Ideal for exploring the countryside</p>
-            <p class="bike-desc" id="nkdDesc2">Fuel efficient &amp; fun to ride</p>
+                <h3>AKT NKD 125cc manual <span class="bike-model">(model 2026)</span></h3>
+            <ul class="bike-bullets" aria-label="Highlights">
+                <li class="bike-bullet" id="nkdDesc1">Ideal for exploring the countryside</li>
+                <li class="bike-bullet" id="nkdDesc2">Fuel efficient &amp; fun to ride</li>
+            </ul>
             <div class="price-container">
                 <div class="price-item"><span class="price-val">130.000 <small>COP</small></span><span class="price-label day">day</span></div>
                 <div class="price-item"><span class="price-val">650.000 <small>COP</small></span><span class="price-label week">week</span></div>
@@ -180,14 +183,22 @@
         </div>
     </div>
 
-    <div class="bike coming">
-        <img src="images/ttr.jpeg" alt="AKT TTR 200 Manual – Coming soon" loading="lazy" onclick="openModal(this.src)" class="clickable-img">
+    <div class="bike">
+        <img src="images/ttr.jpeg" alt="AKT TTR 200 Manual – Moto rental Palomino" loading="lazy" onclick="openModal(this.src)" class="clickable-img">
         <div class="bike-info">
-            <h3>AKT TTR 200 Manual</h3>
-            <p class="bike-spec" id="ttrSpec">200cc – Off-road</p>
-            <p class="bike-desc" id="ttrDesc1">Built for off-road adventure</p>
-            <p class="bike-desc" id="ttrDesc2">Powerful 200cc engine with luggage rack</p>
-            <p id="coming" class="coming-text">Coming soon — Stay tuned!</p>
+                <h3>AKT TTR 200cc manual <span class="bike-model">(model 2027)</span></h3>
+            <ul class="bike-bullets" aria-label="Highlights">
+                <li class="bike-bullet" id="ttrDesc1">Built for off-road adventure</li>
+                <li class="bike-bullet" id="ttrDesc2">Powerful 200cc engine with luggage rack</li>
+            </ul>
+            <div class="price-container">
+                <div class="price-item"><span class="price-val">160.000 <small>COP</small></span><span class="price-label day">day</span></div>
+                <div class="price-item"><span class="price-val">800.000 <small>COP</small></span><span class="price-label week">week</span></div>
+                <div class="price-item"><span class="price-val">2.800.000 <small>COP</small></span><span class="price-label month">month</span></div>
+            </div>
+            <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20AKT%20TTR%20200%20Manual" class="btn whatsapp bike-wa" target="_blank" rel="noopener noreferrer">
+                <img src="images/whatsapp.png" alt="" class="btn-icon"> <span>Book now</span>
+            </a>
         </div>
     </div>
 </section>
@@ -282,6 +293,57 @@
             </div>
         </div>
         <button class="slider-btn right" onclick="slideReviews(1)" aria-label="Next reviews"><span class="slider-arrow"></span></button>
+    </div>
+</section>
+
+<section id="faqs" class="section">
+    <h2 id="faqsTitle">FAQs</h2>
+    <div class="faq-list" role="list">
+        <div class="faq-item" role="listitem">
+            <button type="button" class="faq-question" id="faqBtn0" aria-expanded="false" aria-controls="faqPanel0" onclick="toggleFaq(0)">
+                <span class="faq-question__text" id="faqQ0">Is delivery available in Palomino?</span>
+                <span class="faq-question__icon" id="faqIcon0" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faqPanel0" hidden>
+                <p class="faq-answer__text" id="faqA0">Yes, we offer delivery in Palomino for an extra 10.000 COP.</p>
+            </div>
+        </div>
+        <div class="faq-item" role="listitem">
+            <button type="button" class="faq-question" id="faqBtn1" aria-expanded="false" aria-controls="faqPanel1" onclick="toggleFaq(1)">
+                <span class="faq-question__text" id="faqQ1">Is there a deposit?</span>
+                <span class="faq-question__icon" id="faqIcon1" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faqPanel1" hidden>
+                <p class="faq-answer__text" id="faqA1">Yes, the deposit is 200.000 COP.</p>
+            </div>
+        </div>
+        <div class="faq-item" role="listitem">
+            <button type="button" class="faq-question" id="faqBtn2" aria-expanded="false" aria-controls="faqPanel2" onclick="toggleFaq(2)">
+                <span class="faq-question__text" id="faqQ2">What documents do I need to rent a motorcycle?</span>
+                <span class="faq-question__icon" id="faqIcon2" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faqPanel2" hidden>
+                <p class="faq-answer__text" id="faqA2">You need your passport and a valid driver’s license.</p>
+            </div>
+        </div>
+        <div class="faq-item" role="listitem">
+            <button type="button" class="faq-question" id="faqBtn3" aria-expanded="false" aria-controls="faqPanel3" onclick="toggleFaq(3)">
+                <span class="faq-question__text" id="faqQ3">Is insurance included?</span>
+                <span class="faq-question__icon" id="faqIcon3" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faqPanel3" hidden>
+                <p class="faq-answer__text" id="faqA3">Yes, SOAT insurance is included in the rental.</p>
+            </div>
+        </div>
+        <div class="faq-item" role="listitem">
+            <button type="button" class="faq-question" id="faqBtn4" aria-expanded="false" aria-controls="faqPanel4" onclick="toggleFaq(4)">
+                <span class="faq-question__text" id="faqQ4">Do the bikes have a luggage rack?</span>
+                <span class="faq-question__icon" id="faqIcon4" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer" id="faqPanel4" hidden>
+                <p class="faq-answer__text" id="faqA4">A luggage rack is only available on the TTR 200.</p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -439,6 +501,17 @@ document.addEventListener("keydown", function(e) {
     if (e.key === "Escape") closeModal();
 });
 
+function toggleFaq(index){
+    var btn=document.getElementById("faqBtn"+index);
+    var panel=document.getElementById("faqPanel"+index);
+    var icon=document.getElementById("faqIcon"+index);
+    if(!btn || !panel) return;
+    var expanded = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", String(!expanded));
+    panel.hidden = expanded;
+    if(icon) icon.textContent = expanded ? "+" : "−";
+}
+
 let lang="en";
 function switchLang(){
     const btn=document.getElementById("langBtn");
@@ -446,6 +519,7 @@ function switchLang(){
     const navContact = document.getElementById("navContact");
     const heroTagline = document.getElementById("heroTagline");
     const subtitle = document.getElementById("subtitle");
+    const heroBenefits = document.getElementById("heroBenefits");
     const bikesTitle = document.getElementById("bikesTitle");
     const reviewsTitle = document.getElementById("reviewsTitle");
     const contactTitle = document.getElementById("contactTitle");
@@ -454,6 +528,18 @@ function switchLang(){
     const phoneLabel = document.getElementById("phoneLabel");
     const coming = document.getElementById("coming");
     const heroBadge = document.getElementById("heroBadge");
+    const faqsTitle = document.getElementById("faqsTitle");
+
+    const faqQ0 = document.getElementById("faqQ0");
+    const faqA0 = document.getElementById("faqA0");
+    const faqQ1 = document.getElementById("faqQ1");
+    const faqA1 = document.getElementById("faqA1");
+    const faqQ2 = document.getElementById("faqQ2");
+    const faqA2 = document.getElementById("faqA2");
+    const faqQ3 = document.getElementById("faqQ3");
+    const faqA3 = document.getElementById("faqA3");
+    const faqQ4 = document.getElementById("faqQ4");
+    const faqA4 = document.getElementById("faqA4");
     const naviSpec = document.getElementById("naviSpec");
     const naviDesc1 = document.getElementById("naviDesc1");
     const naviDesc2 = document.getElementById("naviDesc2");
@@ -469,7 +555,19 @@ function switchLang(){
         navBikes.innerText="Motos"; navContact.innerText="Contacto";
         if(heroTagline) heroTagline.innerText="Explora Palomino en moto";
         subtitle.innerText="Rápido • Fácil • Económico";
+        if(heroBenefits) heroBenefits.innerText="Cascos incluidos • Kilómetros ilimitados • Seguro incluido (SOAT) • Confiado por viajeros";
         if(heroBadge) heroBadge.innerText="Palomino · Colombia";
+        if(faqsTitle) faqsTitle.innerText="Preguntas frecuentes";
+        if(faqQ0) faqQ0.innerText="¿Hay entrega disponible en Palomino?";
+        if(faqA0) faqA0.innerText="Sí, ofrecemos entrega en Palomino por 10.000 COP adicionales.";
+        if(faqQ1) faqQ1.innerText="¿Hay depósito?";
+        if(faqA1) faqA1.innerText="Sí, el depósito es de 200.000 COP.";
+        if(faqQ2) faqQ2.innerText="¿Qué documentos necesito para alquilar una moto?";
+        if(faqA2) faqA2.innerText="Necesitas tu pasaporte y una licencia de conducción válida.";
+        if(faqQ3) faqQ3.innerText="¿Incluye seguro?";
+        if(faqA3) faqA3.innerText="Sí, el seguro SOAT está incluido en el alquiler.";
+        if(faqQ4) faqQ4.innerText="¿Las motos tienen parrilla para equipaje?";
+        if(faqA4) faqA4.innerText="La parrilla para equipaje solo está disponible en la TTR 200.";
         bikesTitle.innerText="Nuestras Motos"; reviewsTitle.innerText="Reseñas";
         var reviewsSub = document.getElementById("reviewsSubtitle"); if(reviewsSub) reviewsSub.innerText="Lo que dicen nuestros clientes";
         contactTitle.innerText="Contacto"; viewBtn.innerText="Ver Motos";
@@ -502,7 +600,19 @@ function switchLang(){
         navBikes.innerText="Motos"; navContact.innerText="Contact";
         if(heroTagline) heroTagline.innerText="Explore Palomino by Motorcycle";
         subtitle.innerText="Fast • Easy • Affordable";
+        if(heroBenefits) heroBenefits.innerText="Helmets included • Unlimited km • Insurance included (SOAT) • Trusted by travelers";
         if(heroBadge) heroBadge.innerText="Palomino · Colombia";
+        if(faqsTitle) faqsTitle.innerText="FAQs";
+        if(faqQ0) faqQ0.innerText="Is delivery available in Palomino?";
+        if(faqA0) faqA0.innerText="Yes, we offer delivery in Palomino for an extra 10.000 COP.";
+        if(faqQ1) faqQ1.innerText="Is there a deposit?";
+        if(faqA1) faqA1.innerText="Yes, the deposit is 200.000 COP.";
+        if(faqQ2) faqQ2.innerText="What documents do I need to rent a motorcycle?";
+        if(faqA2) faqA2.innerText="You need your passport and a valid driver’s license.";
+        if(faqQ3) faqQ3.innerText="Is insurance included?";
+        if(faqA3) faqA3.innerText="Yes, SOAT insurance is included in the rental.";
+        if(faqQ4) faqQ4.innerText="Do the bikes have a luggage rack?";
+        if(faqA4) faqA4.innerText="A luggage rack is only available on the TTR 200.";
         bikesTitle.innerText="Our Motos"; reviewsTitle.innerText="Customer Reviews";
         var reviewsSub = document.getElementById("reviewsSubtitle"); if(reviewsSub) reviewsSub.innerText="What our riders say about us";
         contactTitle.innerText="Contact"; viewBtn.innerText="View Motos";
