@@ -271,6 +271,12 @@ header.navbar-scrolled .lang-btn:hover {
     text-shadow: 0 1px 14px rgba(0, 0, 0, 0.35);
 }
 
+.hero-benefits {
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.84);
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.28);
+}
+
 .hero-box--over-video .hero-subtitle:last-of-type {
     margin-bottom: 22px;
 }
@@ -450,6 +456,11 @@ html.dark-mode .hero-gallery-track {
 }
 .coming { background: #fff5f6; }
 .bike-info h3 { margin: 0 0 8px; }
+.bike-model {
+    font-size: 0.72em;
+    font-weight: 700;
+    letter-spacing: 0;
+}
 .bike-spec {
     margin: 0 0 10px;
     font-weight: 700;
@@ -462,6 +473,21 @@ html.dark-mode .hero-gallery-track {
     line-height: 1.5;
 }
 .bike-desc:last-of-type { margin-bottom: 12px; }
+
+.bike-bullets {
+    margin: 0 0 10px;
+    padding-left: 18px;
+    color: var(--color-text-muted);
+}
+
+.bike-bullets li {
+    margin: 0 0 6px;
+    line-height: 1.45;
+}
+
+.bike-bullets li:last-child {
+    margin-bottom: 0;
+}
 
 .price-container { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
 .price-item {
@@ -575,6 +601,77 @@ html.dark-mode .hero-gallery-track {
     border-right: none;
     border-left: 10px solid var(--color-text);
 }
+
+/* ===== FAQs accordion ===== */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 18px 22px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    text-align: left;
+    font-family: inherit;
+    color: var(--color-text);
+    transition: background .2s ease;
+}
+
+.faq-question:hover { background: rgba(17, 24, 39, 0.03); }
+
+.faq-question__text {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.faq-question__icon {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(17, 24, 39, 0.05);
+    color: var(--color-text-muted);
+    font-weight: 800;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.faq-answer {
+    padding: 0 22px 18px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.faq-answer__text {
+    margin: 0;
+}
+
+html.dark-mode .faq-question__icon {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.92);
+}
+
+html.dark-mode .faq-question:hover { background: rgba(255, 255, 255, 0.05); }
 
 .modal { display: none; position: fixed; z-index: 2000; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
 .modal-content { margin: auto; display: block; max-width: min(900px, 86vw); border-radius: 14px; border: 1px solid rgba(255,255,255,0.12); }
