@@ -1,652 +1,1100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moto Moto Palomino – Moto Rentals in Palomino, Colombia</title>
-    <meta name="description" content="Rent reliable motorbikes in Palomino, Colombia. Honda Navi, AKT NKD &amp; more. WhatsApp us for same-day rental. Calle 1a C #8-26.">
-    <!-- Open Graph für schöne Vorschau beim Teilen (og:image mit voller URL ersetzen wenn Seite online) -->
-    <meta property="og:title" content="Moto Moto Palomino – Moto Rentals in Palomino, Colombia">
-    <meta property="og:description" content="Rent reliable motorbikes in Palomino, Colombia. Honda Navi, AKT NKD &amp; more. WhatsApp us for same-day rental.">
-    <meta property="og:image" content="images/hero/IMG_4070.jpg">
-    <meta property="og:type" content="website">
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="apple-touch-icon" href="images/logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Moto Moto Palomino – Rent a motorcycle in Palomino, Colombia. Honda Navi 110, AKT NKD 125, AKT TTR 200. Helmets, SOAT insurance & unlimited km included.">
+<meta name="keywords" content="moto rental Palomino, motorcycle rent Colombia, moto alquiler Palomino, rent bike Palomino">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Moto Moto Palomino – Motorcycle Rental in Colombia">
+<meta property="og:description" content="Explore Palomino and the Sierra Nevada by motorcycle. Fast booking, helmets & insurance included. From 120.000 COP/day.">
+<meta property="og:image" content="https://motomotopalomino.com/images/hero/IMG_4070.jpg">
+<meta property="og:url" content="https://motomotopalomino.com">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="images/favicon.png" type="image/png">
+<title>Moto Moto Palomino – Motorcycle Rental | Palomino, Colombia</title>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "AutoRental",
-      "name": "Moto Moto Palomino",
-      "url": "https://motomotopalomino.com/",
-      "image": "https://motomotopalomino.com/images/logo.png",
-      "telephone": "+57 321 6172816",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Calle 1a C #8-26",
-        "addressLocality": "Palomino",
-        "addressRegion": "La Guajira",
-        "addressCountry": "CO"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 11.2450893,
-        "longitude": -73.5570535
-      },
-      "sameAs": [
-        "https://www.google.com/maps/search/?api=1&query=Moto+Moto+Palomino&query_place_id=ChIJN67hMry19I4Rwil7TuySrrs",
-        "https://www.instagram.com/palomino.motomoto/"
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": 8
-      }
-    }
-    </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Moto Moto Palomino",
+  "description": "Motorcycle rental in Palomino, Colombia",
+  "url": "https://motomotopalomino.com",
+  "telephone": "+573216172816",
+  "email": "palominomotomoto@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle 1a C #8-26",
+    "addressLocality": "Palomino",
+    "addressCountry": "CO"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 11.2603, "longitude": -73.5726 },
+  "openingHours": "Mo-Su 08:00-20:00",
+  "priceRange": "$$",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "8" }
+}
+</script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+:root {
+  --black:      #0a0908;
+  --dark:       #111009;
+  --dark-card:  #161410;
+  --border:     rgba(255,255,255,0.07);
+  --border-warm: rgba(200,129,42,0.2);
+  --gold:       #c8812a;
+  --gold-light: #e8a84a;
+  --gold-pale:  rgba(200,129,42,0.12);
+  --sand:       #f0ebe0;
+  --sand-muted: rgba(240,235,224,0.6);
+  --sand-dim:   rgba(240,235,224,0.35);
+  --white:      #faf9f6;
+  --radius:     6px;
+  --radius-lg:  12px;
+  --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--black);
+  color: var(--sand);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: inherit; }
+
+.label {
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold);
+}
+.heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  line-height: 0.95; letter-spacing: 0.02em; color: var(--white);
+}
+.section-wrap { padding: 6rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s var(--transition), transform 0.7s var(--transition); }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* NAV */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 64px; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 1.5rem;
+  transition: background var(--transition), border-color var(--transition), height var(--transition);
+  border-bottom: 1px solid transparent;
+}
+.nav.scrolled {
+  background: rgba(10,9,8,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom-color: var(--border); height: 56px;
+}
+.nav-logo { display: flex; align-items: center; }
+.nav-logo img { height: 46px; width: 46px; clip-path: circle(43% at 50% 50%); }
+.nav-menu { display: flex; align-items: center; gap: 2rem; list-style: none; }
+.nav-menu a {
+  font-size: 0.8rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--sand-muted); transition: color var(--transition);
+}
+.nav-menu a:hover { color: var(--white); }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+
+.lang-switcher {
+  display: flex; align-items: center;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden;
+}
+.lang-switcher button {
+  background: none; border: none; border-right: 1px solid var(--border);
+  color: var(--sand-dim); font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.35rem 0.6rem;
+  transition: background var(--transition), color var(--transition);
+}
+.lang-switcher button:last-child { border-right: none; }
+.lang-switcher button:hover { color: var(--white); }
+.lang-switcher button.active { background: var(--gold); color: var(--black); }
+
+.nav-cta {
+  background: var(--gold); color: var(--black);
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.5rem 1.2rem; border-radius: var(--radius);
+  transition: background var(--transition);
+}
+.nav-cta:hover { background: var(--gold-light); }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
+.hamburger span { display: block; width: 22px; height: 1.5px; background: var(--sand); border-radius: 2px; transition: transform var(--transition), opacity var(--transition); }
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.mobile-drawer {
+  display: none; position: fixed; inset: 0; z-index: 190;
+  background: var(--black); flex-direction: column; align-items: center; justify-content: center;
+  gap: 2.5rem; opacity: 0; transition: opacity 0.3s;
+}
+.mobile-drawer.open { display: flex; opacity: 1; }
+.mobile-drawer a {
+  font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; letter-spacing: 0.05em;
+  color: var(--sand); transition: color var(--transition);
+}
+.mobile-drawer a:hover { color: var(--gold); }
+.mobile-drawer .drawer-cta {
+  font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--gold); color: var(--black); padding: 0.9rem 2.5rem; border-radius: var(--radius);
+}
+
+/* HERO */
+.hero {
+  position: relative; height: 100svh; min-height: 640px;
+  display: flex; align-items: flex-end; overflow: hidden;
+}
+.hero-video-wrap { position: absolute; inset: 0; }
+.hero-video-wrap video, .hero-video-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.hero-gradient {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(10,9,8,0.85) 0%, rgba(10,9,8,0.2) 60%, transparent 100%),
+              linear-gradient(to top, rgba(10,9,8,1) 0%, rgba(10,9,8,0.5) 30%, transparent 60%);
+}
+.hero-content { position: relative; z-index: 2; padding: 0 1.5rem 4rem; width: 100%; max-width: 680px; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; margin-bottom: 1.2rem; }
+.hero-eyebrow-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(0.8); } }
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 14vw, 9rem); line-height: 0.88; letter-spacing: 0.01em;
+  color: var(--white); margin-bottom: 1.4rem;
+}
+.hero-title em { color: var(--gold); font-style: normal; }
+.hero-sub { font-size: clamp(0.95rem, 2vw, 1.05rem); font-weight: 300; color: var(--sand-muted); max-width: 400px; margin-bottom: 2rem; }
+.hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--gold); color: var(--black);
+  font-weight: 600; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.95rem 2rem; border-radius: var(--radius);
+  transition: background var(--transition), transform 0.15s;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-primary svg { width: 14px; height: 14px; flex-shrink: 0; }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  color: var(--sand-muted); font-size: 0.82rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
+  border-bottom: 1px solid var(--border); padding-bottom: 2px;
+  transition: color var(--transition), border-color var(--transition);
+}
+.btn-ghost:hover { color: var(--white); border-color: var(--sand); }
+
+.hero-stats {
+  position: absolute; bottom: 2rem; right: 1.5rem; z-index: 2;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 1.5rem;
+}
+.hero-logo { width: 110px; height: 110px; clip-path: circle(43% at 50% 50%); filter: drop-shadow(0 4px 20px rgba(0,0,0,0.55)); flex-shrink: 0; }
+.hero-stat { text-align: right; }
+.stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--white); line-height: 1; letter-spacing: 0.02em; }
+.stat-label { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sand-dim); }
+
+/* STRIP */
+.strip { background: var(--gold); overflow: hidden; height: 40px; display: flex; align-items: center; }
+.strip-track { display: flex; gap: 3rem; animation: stripScroll 20s linear infinite; white-space: nowrap; width: max-content; }
+@keyframes stripScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.strip-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--black); }
+.strip-dot { width: 4px; height: 4px; background: rgba(0,0,0,0.3); border-radius: 50%; }
+
+/* BIKES */
+.bikes-section { background: var(--dark); border-top: 1px solid var(--border); }
+.bikes-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 3rem; gap: 1rem; flex-wrap: wrap; }
+.bikes-header-text .label { margin-bottom: 0.6rem; }
+.bikes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+
+.bike-card { background: var(--dark-card); display: flex; flex-direction: column; transition: background var(--transition); position: relative; }
+.bike-card:hover { background: #1f1c16; }
+.bike-card.featured::before {
+  content: attr(data-popular);
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 10;
+  background: var(--gold); color: var(--black);
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 0.25rem 1rem; border-radius: 0 0 var(--radius) var(--radius);
+}
+.bike-img { position: relative; aspect-ratio: 3/2; overflow: hidden; background: #0d0b08; }
+.bike-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4,0,0.2,1), filter 0.4s;
+  filter: brightness(0.88) saturate(0.85); cursor: zoom-in;
+}
+.bike-card:hover .bike-img img { transform: scale(1.05); filter: brightness(0.95) saturate(0.95); }
+.bike-badges { position: absolute; bottom: 0.8rem; left: 0.8rem; display: flex; gap: 0.4rem; }
+.b-badge { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 3rem; }
+.b-cc { background: var(--gold); color: var(--black); }
+.b-type { background: rgba(10,9,8,0.75); backdrop-filter: blur(6px); color: var(--sand); border: 1px solid rgba(255,255,255,0.12); }
+
+.bike-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+.bike-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; letter-spacing: 0.03em; color: var(--white); margin-bottom: 0.2rem; }
+.bike-sub { font-size: 0.7rem; color: var(--sand-dim); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.1rem; }
+.bike-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem; }
+.bike-tag { font-size: 0.68rem; color: var(--sand-muted); background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 0.2rem 0.55rem; border-radius: 2rem; }
+.bike-price-row { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 1.25rem; }
+.price-cell { padding: 0.85rem 0.5rem; text-align: center; }
+.price-cell + .price-cell { border-left: 1px solid var(--border); }
+.price-period { display: block; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sand-dim); margin-bottom: 0.3rem; }
+.price-val { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--white); letter-spacing: 0.02em; line-height: 1; }
+.price-cur { font-size: 0.58rem; color: var(--sand-dim); letter-spacing: 0.1em; display: block; margin-top: 0.2rem; }
+.bike-book {
+  display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.85rem;
+  border-radius: var(--radius); border: 1px solid var(--border-warm); background: var(--gold-pale);
+  color: var(--gold-light); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  transition: background var(--transition), border-color var(--transition), color var(--transition); margin-top: auto;
+}
+.bike-book:hover { background: var(--gold); border-color: var(--gold); color: var(--black); }
+.bike-book svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+/* HOW */
+.how-section { background: var(--black); border-top: 1px solid var(--border); }
+.steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-top: 3rem; }
+.step { background: var(--dark-card); padding: 2rem 1.5rem; }
+.step-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: rgba(200,129,42,0.18); line-height: 1; margin-bottom: 0.75rem; }
+.step-title { font-size: 0.9rem; font-weight: 600; color: var(--white); margin-bottom: 0.4rem; }
+.step-desc { font-size: 0.8rem; color: var(--sand-dim); line-height: 1.55; }
+
+/* INCLUDED */
+.included-section { background: var(--dark); border-top: 1px solid var(--border); }
+.included-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-top: 3rem; }
+.included-item { background: var(--dark-card); padding: 2rem 1.75rem; display: flex; align-items: flex-start; gap: 1.1rem; transition: background var(--transition); }
+.included-item:hover { background: #1f1c16; }
+.included-icon-wrap { width: 42px; height: 42px; flex-shrink: 0; background: var(--gold-pale); border: 1px solid var(--border-warm); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+.included-name { font-size: 0.88rem; font-weight: 600; color: var(--white); margin-bottom: 0.2rem; }
+.included-desc { font-size: 0.75rem; color: var(--sand-dim); }
+
+/* GALLERY */
+.gallery-section { background: var(--black); border-top: 1px solid var(--border); }
+.gallery-mosaic { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 260px 260px; gap: 2px; border-radius: var(--radius-lg); overflow: hidden; margin-top: 3rem; }
+.gallery-cell { position: relative; overflow: hidden; background: var(--dark-card); cursor: pointer; }
+.gallery-cell:first-child { grid-row: span 2; }
+.gallery-cell img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), filter 0.4s; filter: brightness(0.82) saturate(0.8); }
+.gallery-cell:hover img { transform: scale(1.06); filter: brightness(1) saturate(1); }
+.gallery-cell-overlay { position: absolute; inset: 0; background: rgba(10,9,8,0.2); transition: background var(--transition); }
+.gallery-cell:hover .gallery-cell-overlay { background: transparent; }
+
+/* REVIEWS */
+.reviews-section { background: var(--dark); border-top: 1px solid var(--border); }
+.reviews-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2.5rem; gap: 1rem; flex-wrap: wrap; }
+.reviews-rating { display: flex; align-items: center; gap: 0.75rem; }
+.reviews-stars { color: var(--gold); font-size: 1rem; letter-spacing: 0.05em; }
+.reviews-avg { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--white); line-height: 1; }
+.reviews-count { font-size: 0.75rem; color: var(--sand-dim); }
+.reviews-scroll-wrap { overflow: hidden; }
+.reviews-track { display: flex; gap: 1px; animation: reviewsScroll 32s linear infinite; width: max-content; }
+.reviews-track:hover { animation-play-state: paused; }
+@keyframes reviewsScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.review-card { width: 300px; flex-shrink: 0; background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; margin-right: 1px; }
+.rc-stars { font-size: 0.7rem; color: var(--gold); letter-spacing: 0.12em; margin-bottom: 0.75rem; }
+.rc-text { font-size: 0.85rem; color: var(--sand-muted); line-height: 1.6; font-style: italic; margin-bottom: 1rem; }
+.rc-author { font-size: 0.72rem; color: var(--sand-dim); font-weight: 500; letter-spacing: 0.06em; }
+
+/* FAQ */
+.faq-section { background: var(--black); border-top: 1px solid var(--border); }
+.faq-wrap { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; margin-top: 3rem; }
+.faq-aside .heading { margin-top: 0.6rem; }
+.faq-aside p { font-size: 0.88rem; color: var(--sand-dim); margin-top: 1rem; line-height: 1.65; }
+.faq-contact-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.25rem; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid rgba(200,129,42,0.3); padding-bottom: 2px; transition: border-color var(--transition); }
+.faq-contact-link:hover { border-color: var(--gold); }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-btn { width: 100%; background: none; border: none; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; padding: 1.25rem 0; color: var(--sand); font-size: 0.92rem; font-weight: 400; text-align: left; line-height: 1.4; transition: color var(--transition); }
+.faq-btn:hover { color: var(--white); }
+.faq-icon { width: 22px; height: 22px; flex-shrink: 0; border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--sand-dim); font-size: 1rem; transition: transform 0.3s, border-color var(--transition), color var(--transition); }
+.faq-item.open .faq-icon { transform: rotate(45deg); border-color: var(--gold); color: var(--gold); }
+.faq-answer { max-height: 0; overflow: hidden; font-size: 0.85rem; color: var(--sand-dim); line-height: 1.7; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.4s; }
+.faq-item.open .faq-answer { max-height: 200px; padding-bottom: 1.25rem; }
+
+/* CONTACT */
+.contact-section { background: var(--dark); border-top: 1px solid var(--border); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+.contact-details { display: flex; flex-direction: column; gap: 1.25rem; }
+.contact-row { display: flex; align-items: flex-start; gap: 1rem; }
+.contact-icon { width: 40px; height: 40px; flex-shrink: 0; background: var(--gold-pale); border: 1px solid var(--border-warm); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+.contact-lbl { display: block; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sand-dim); margin-bottom: 0.15rem; }
+.contact-val { font-size: 0.88rem; color: var(--sand); transition: color var(--transition); }
+.contact-val:hover { color: var(--gold-light); }
+.contact-actions { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
+.action-btn { display: flex; align-items: center; gap: 0.85rem; padding: 1rem 1.25rem; border-radius: var(--radius); font-size: 0.85rem; font-weight: 500; transition: opacity var(--transition), transform 0.15s; border: 1px solid; }
+.action-btn:hover { opacity: 0.85; transform: translateX(4px); }
+.action-btn img { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
+.btn-wa { background: rgba(37,211,102,0.08); border-color: rgba(37,211,102,0.2); color: #4ade80; }
+.btn-ig { background: rgba(232,113,254,0.08); border-color: rgba(232,113,254,0.2); color: #e879f9; }
+.map-link { display: flex; flex-direction: column; align-items: center; justify-content: center; aspect-ratio: 4/3; border-radius: var(--radius-lg); border: 1px solid var(--border); background: var(--dark-card); gap: 0.75rem; color: var(--sand-dim); font-size: 0.82rem; transition: border-color var(--transition), color var(--transition); letter-spacing: 0.06em; }
+.map-link:hover { border-color: var(--gold); color: var(--gold-light); }
+.map-link svg { width: 28px; height: 28px; opacity: 0.45; }
+
+/* FOOTER */
+footer { background: var(--black); border-top: 1px solid var(--border); padding: 2.5rem 1.5rem; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.25rem; }
+.footer-logo img { height: 38px; opacity: 0.6; clip-path: circle(43% at 50% 50%); }
+.footer-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.footer-nav a { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sand-dim); transition: color var(--transition); }
+.footer-nav a:hover { color: var(--sand); }
+.footer-copy { font-size: 0.72rem; color: var(--sand-dim); }
+
+/* WA FAB */
+.wa-fab { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 100; width: 54px; height: 54px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(37,211,102,0.35); transition: transform 0.2s, box-shadow 0.2s; }
+.wa-fab:hover { transform: scale(1.08); box-shadow: 0 6px 32px rgba(37,211,102,0.45); }
+.wa-fab img { width: 28px; height: 28px; }
+
+/* LIGHTBOX */
+.lightbox { display: none; position: fixed; inset: 0; z-index: 300; background: rgba(0,0,0,0.94); align-items: center; justify-content: center; }
+.lightbox.open { display: flex; }
+.lb-img { max-width: 90vw; max-height: 86vh; object-fit: contain; border-radius: var(--radius); }
+.lb-close, .lb-prev, .lb-next { position: absolute; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background var(--transition); }
+.lb-close:hover, .lb-prev:hover, .lb-next:hover { background: rgba(255,255,255,0.14); }
+.lb-close { top: 1.25rem; right: 1.25rem; width: 40px; height: 40px; font-size: 1.1rem; }
+.lb-prev { left: 1.25rem; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; font-size: 1.3rem; }
+.lb-next { right: 1.25rem; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; font-size: 1.3rem; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .bikes-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: repeat(2,1fr); }
+  .faq-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+@media (max-width: 768px) {
+  .nav-menu { display: none; }
+  .nav-right .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .hero-title { font-size: clamp(3.5rem, 18vw, 6rem); }
+  .hero-stats { display: none; }
+  .section-wrap { padding: 4rem 1.25rem; }
+  .bikes-header { flex-direction: column; align-items: flex-start; }
+  .gallery-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3,180px); }
+  .gallery-cell:first-child { grid-row: span 1; grid-column: span 2; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .map-link { aspect-ratio: 16/9; }
+  .included-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .footer-nav { display: none; }
+}
+@media (max-width: 480px) {
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .reviews-header { flex-direction: column; align-items: flex-start; }
+  .gallery-mosaic { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .gallery-cell:first-child { grid-column: span 1; }
+  .gallery-cell { aspect-ratio: 4/3; }
+}
+</style>
 </head>
-
 <body>
-<a href="#bikes" class="skip-link">Skip to main content</a>
 
-<div id="imageModal" class="modal" onclick="closeModal()">
-    <button type="button" class="close" id="modalClose" onclick="closeModal()" aria-label="Close">×</button>
-    <img class="modal-content" id="fullImage">
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo" aria-label="Moto Moto Palomino">
+    <img src="images/logo.png" alt="Moto Moto Palomino">
+  </a>
+  <ul class="nav-menu">
+    <li><a href="#bikes" data-t="nav_motos"></a></li>
+    <li><a href="#included" data-t="nav_included"></a></li>
+    <li><a href="#reviews" data-t="nav_reviews"></a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher" id="langSwitcher">
+      <button data-lang="en">EN</button>
+      <button data-lang="es">ES</button>
+      <button data-lang="fr">FR</button>
+      <button data-lang="de">DE</button>
+    </div>
+    <a href="https://wa.me/573216172816?text=Hi%20I%20want%20to%20rent%20a%20motorbike" class="nav-cta" target="_blank" rel="noopener" data-t="nav_book"></a>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="drawer" role="dialog" aria-modal="true">
+  <a href="#bikes" class="drawer-link" data-t="nav_motos"></a>
+  <a href="#included" class="drawer-link" data-t="nav_included"></a>
+  <a href="#reviews" class="drawer-link" data-t="nav_reviews"></a>
+  <a href="#faq" class="drawer-link">FAQ</a>
+  <a href="https://wa.me/573216172816?text=Hi%20I%20want%20to%20rent%20a%20motorbike" class="drawer-cta" target="_blank" rel="noopener" data-t="book_wa"></a>
 </div>
 
-<!-- Hero: Galerie-Lightbox (alle JPGs, Swipe + Pfeile + Tastatur) -->
-<div id="heroLightbox" class="hero-lightbox" role="dialog" aria-modal="true" aria-label="Photo gallery" aria-hidden="true" onclick="heroLightboxOuterClick(event)">
-    <div class="hero-lightbox__inner" onclick="event.stopPropagation()">
-        <button type="button" class="hero-lightbox__close" id="heroLightboxClose" onclick="closeHeroLightbox()" aria-label="Close gallery">×</button>
-        <button type="button" class="hero-lightbox__nav hero-lightbox__nav--prev" id="heroLightboxPrev" onclick="heroLightboxStep(-1)" aria-label="Previous photo"><span class="hero-lightbox__nav-char" aria-hidden="true">‹</span></button>
-        <button type="button" class="hero-lightbox__nav hero-lightbox__nav--next" id="heroLightboxNext" onclick="heroLightboxStep(1)" aria-label="Next photo"><span class="hero-lightbox__nav-char" aria-hidden="true">›</span></button>
-        <div class="hero-lightbox__stage" id="heroLightboxStage">
-            <img class="hero-lightbox__img" id="heroLightboxImg" alt="">
-        </div>
-        <p class="hero-lightbox__counter" id="heroLightboxCounter" aria-live="polite">1 / 5</p>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline poster="images/hero/IMG_4070.jpg" preload="auto">
+      <source src="images/hero/video_hero.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-gradient"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-dot"></div>
+      <span class="label">Palomino · Colombia</span>
     </div>
+    <h1 class="hero-title">Moto Moto<br><em>Palomino.</em></h1>
+    <p class="hero-sub" data-t="hero_sub"></p>
+    <div class="hero-actions">
+      <a href="#bikes" class="btn-primary">
+        <span data-t="hero_view"></span>
+        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://wa.me/573216172816?text=Hi%20I%20want%20to%20rent%20a%20motorbike" class="btn-ghost" target="_blank" rel="noopener" data-t="hero_whatsapp"></a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <img src="images/logo.png" alt="Moto Moto Palomino" class="hero-logo">
+    <div class="hero-stat">
+      <div class="stat-num">100+</div>
+      <div class="stat-label" data-t="stat_riders"></div>
+    </div>
+    <div class="hero-stat">
+      <div class="stat-num">5.0</div>
+      <div class="stat-label" data-t="stat_rating"></div>
+    </div>
+    <div class="hero-stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label" data-t="stat_bikes"></div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track" id="stripTrack"></div>
 </div>
 
-<header id="navbar" class="navbar-top">
-    <a href="#" class="logo-link"><img src="images/logo.png" class="logo" alt="Moto Moto Palomino"></a>
-    <nav class="nav-links">
-        <a href="#bikes" id="navBikes" class="nav-link">Motos</a>
-        <a href="#contact" id="navContact" class="nav-link">Contact</a>
-        <button type="button" id="darkModeBtn" class="lang-btn dark-mode-btn" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌙</button>
-        <button type="button" id="langBtn" class="lang-btn" onclick="switchLang()">ES</button>
-    </nav>
-</header>
+<!-- BIKES -->
+<section class="bikes-section" id="bikes">
+  <div class="section-wrap">
+    <div class="bikes-header reveal">
+      <div class="bikes-header-text">
+        <div class="label" data-t="bikes_label"></div>
+        <h2 class="heading" data-t="bikes_title"></h2>
+      </div>
+      <a href="https://wa.me/573216172816?text=Hi%20I%20want%20to%20know%20more%20about%20your%20bikes" class="btn-ghost" target="_blank" rel="noopener" data-t="bikes_ask"></a>
+    </div>
+    <div class="bikes-grid">
 
-<section class="hero hero-stack" aria-label="Welcome">
-    <div class="hero-media">
-        <div class="hero-fallback-bg" aria-hidden="true"></div>
-        <video
-            class="hero-video"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            poster="images/hero/IMG_4070.jpg"
-        >
-            <source src="images/hero/video_hero.mp4" type="video/mp4">
-        </video>
-        <div class="hero-gradient" aria-hidden="true"></div>
-        <div class="hero-content">
-            <div class="hero-box hero-box--over-video">
-                <span class="hero-badge" id="heroBadge">Palomino · Colombia</span>
-                <h1 class="hero-title">Moto Moto Palomino</h1>
-                <p id="heroTagline" class="hero-subtitle">Explore Palomino by Motorcycle</p>
-                <p id="subtitle" class="hero-subtitle">Fast • Easy • Affordable</p>
-                <p class="hero-subtitle hero-benefits" id="heroBenefits">Helmets included • Unlimited km • Insurance included (SOAT) • Trusted by travelers</p>
-                <div class="hero-btn-container">
-                    <a class="btn hero-btn" href="#bikes" id="viewBtn">View Motos</a>
-                </div>
-            </div>
+      <!-- Honda Navi -->
+      <div class="bike-card reveal reveal-delay-1">
+        <div class="bike-img">
+          <img src="images/navi.jpeg" alt="Honda Navi 110 Automatic – motorcycle rental Palomino" loading="lazy">
+          <div class="bike-badges">
+            <span class="b-badge b-cc">110cc</span>
+            <span class="b-badge b-type" data-t="type_automatic"></span>
+          </div>
         </div>
-        <div class="hero-scroll-hint" aria-hidden="true"><span class="hero-scroll-arrow"></span></div>
-    </div>
-    <div class="hero-gallery-shell hero-gallery-shell--animate" aria-label="Hero photo gallery">
-        <!-- Reihenfolge: IMG_4020 zuerst, IMG_3851 zuletzt; IMG_3864 nicht verwendet -->
-        <div class="hero-gallery-track" role="list">
-            <div class="hero-gallery-item" role="listitem">
-                <button type="button" class="hero-gallery-card" onclick="openHeroLightbox(0)" aria-label="Open gallery at photo 1">
-                    <img src="images/hero/IMG_4020.JPG" alt="Palomino — Moto Moto gallery photo 1" width="480" height="300" loading="lazy" decoding="async">
-                </button>
-            </div>
-            <div class="hero-gallery-item" role="listitem">
-                <button type="button" class="hero-gallery-card" onclick="openHeroLightbox(1)" aria-label="Open gallery at photo 2">
-                    <img src="images/hero/IMG_4070.jpg" alt="Palomino — Moto Moto gallery photo 2" width="480" height="300" loading="lazy" decoding="async">
-                </button>
-            </div>
-            <div class="hero-gallery-item" role="listitem">
-                <button type="button" class="hero-gallery-card" onclick="openHeroLightbox(2)" aria-label="Open gallery at photo 3">
-                    <img src="images/hero/IMG_4072.jpg" alt="Palomino — Moto Moto gallery photo 3" width="480" height="300" loading="lazy" decoding="async">
-                </button>
-            </div>
-            <div class="hero-gallery-item" role="listitem">
-                <button type="button" class="hero-gallery-card" onclick="openHeroLightbox(3)" aria-label="Open gallery at photo 4">
-                    <img src="images/hero/IMG_5749.jpg" alt="Palomino — Moto Moto gallery photo 4" width="480" height="300" loading="lazy" decoding="async">
-                </button>
-            </div>
-            <div class="hero-gallery-item" role="listitem">
-                <button type="button" class="hero-gallery-card" onclick="openHeroLightbox(4)" aria-label="Open gallery at photo 5">
-                    <img src="images/hero/IMG_3851.JPG" alt="Palomino — Moto Moto gallery photo 5" width="480" height="300" loading="lazy" decoding="async">
-                </button>
-            </div>
+        <div class="bike-body">
+          <h3 class="bike-name">Honda Navi</h3>
+          <p class="bike-sub">Model 2026 · 110cc · <span data-t="type_automatic"></span></p>
+          <div class="bike-tags">
+            <span class="bike-tag" data-t="navi_tag1"></span>
+            <span class="bike-tag" data-t="navi_tag2"></span>
+            <span class="bike-tag" data-t="navi_tag3"></span>
+          </div>
+          <div class="bike-price-row">
+            <div class="price-cell"><span class="price-period" data-t="period_day"></span><span class="price-val">120k</span><span class="price-cur">COP</span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_week"></span><span class="price-val">600k</span><span class="price-cur">COP</span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_month"></span><span class="price-val">1.8M</span><span class="price-cur">COP</span></div>
+          </div>
+          <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20Honda%20Navi%20110%20Automatic" class="bike-book" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span data-t="book_wa"></span>
+          </a>
         </div>
+      </div>
+
+      <!-- AKT NKD 125 -->
+      <div class="bike-card featured reveal reveal-delay-2" data-popular="">
+        <div class="bike-img">
+          <img src="images/nkd.jpeg" alt="AKT NKD 125 Manual – motorcycle rental Palomino" loading="lazy">
+          <div class="bike-badges">
+            <span class="b-badge b-cc">125cc</span>
+            <span class="b-badge b-type" data-t="type_manual"></span>
+          </div>
+        </div>
+        <div class="bike-body">
+          <h3 class="bike-name">AKT NKD 125</h3>
+          <p class="bike-sub">Model 2026 · 125cc · <span data-t="type_manual"></span></p>
+          <div class="bike-tags">
+            <span class="bike-tag" data-t="nkd_tag1"></span>
+            <span class="bike-tag" data-t="nkd_tag2"></span>
+            <span class="bike-tag" data-t="nkd_tag3"></span>
+          </div>
+          <div class="bike-price-row">
+            <div class="price-cell"><span class="price-period" data-t="period_day"></span><span class="price-val">130k</span><span class="price-cur">COP</span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_week"></span><span class="price-val">650k</span><span class="price-cur">COP</span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_month"></span><span class="price-val">1.95M</span><span class="price-cur">COP</span></div>
+          </div>
+          <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20AKT%20NKD%20125%20Manual" class="bike-book" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span data-t="book_wa"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- AKT TTR 200 -->
+      <div class="bike-card reveal reveal-delay-3">
+        <div class="bike-img">
+          <img src="images/ttr.jpeg" alt="AKT TTR 200 Off-road – motorcycle rental Palomino" loading="lazy">
+          <div class="bike-badges">
+            <span class="b-badge b-cc">200cc</span>
+            <span class="b-badge b-type">Off-Road</span>
+          </div>
+        </div>
+        <div class="bike-body">
+          <h3 class="bike-name">AKT TTR 200</h3>
+          <p class="bike-sub">Model 2027 · 200cc · Manual</p>
+          <div class="bike-tags">
+            <span class="bike-tag" data-t="ttr_tag1"></span>
+            <span class="bike-tag" data-t="ttr_tag2"></span>
+            <span class="bike-tag" data-t="ttr_tag3"></span>
+          </div>
+          <div class="bike-price-row">
+            <div class="price-cell"><span class="price-period" data-t="period_day"></span><span class="price-val">160k</span><span class="price-cur">COP</span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_week"></span><span class="price-val">800k</span><span class="price-cur">COP</span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_month"></span><span class="price-val">2.8M</span><span class="price-cur">COP</span></div>
+          </div>
+          <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20AKT%20TTR%20200%20Manual" class="bike-book" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span data-t="book_wa"></span>
+          </a>
+        </div>
+      </div>
+
     </div>
+  </div>
 </section>
 
-<section id="bikes" class="section">
-    <h2 id="bikesTitle">Our Motos</h2>
-
-    <div class="bike">
-        <img src="images/navi.jpeg" alt="Honda Navi 110 Automatic – Moto rental Palomino" loading="lazy" onclick="openModal(this.src)" class="clickable-img">
-        <div class="bike-info">
-                <h3>Honda Navi 110cc automatic <span class="bike-model">(model 2026)</span></h3>
-            <ul class="bike-bullets" aria-label="Highlights">
-                <li class="bike-bullet" id="naviDesc1">Perfect for city rides &amp; short trips</li>
-                <li class="bike-bullet" id="naviDesc2">Easy-to-ride automatic scooter</li>
-            </ul>
-            <div class="price-container">
-                <div class="price-item"><span class="price-val">120.000 <small>COP</small></span><span class="price-label day">day</span></div>
-                <div class="price-item"><span class="price-val">600.000 <small>COP</small></span><span class="price-label week">week</span></div>
-                <div class="price-item"><span class="price-val">1.800.000 <small>COP</small></span><span class="price-label month">month</span></div>
-            </div>
-            <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20Honda%20Navi%20110%20Automatic" class="btn whatsapp bike-wa" target="_blank" rel="noopener noreferrer">
-                <img src="images/whatsapp.png" alt="" class="btn-icon"> <span id="bikeWaNaviText">Book now</span>
-            </a>
-        </div>
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="section-wrap">
+    <div class="reveal">
+      <div class="label" data-t="how_label"></div>
+      <h2 class="heading" style="margin-top:0.6rem" data-t="how_title"></h2>
     </div>
-
-    <div class="bike">
-        <img src="images/nkd.jpeg" alt="AKT NKD 125 Manual – Moto rental Palomino" loading="lazy" onclick="openModal(this.src)" class="clickable-img">
-        <div class="bike-info">
-                <h3>AKT NKD 125cc manual <span class="bike-model">(model 2026)</span></h3>
-            <ul class="bike-bullets" aria-label="Highlights">
-                <li class="bike-bullet" id="nkdDesc1">Ideal for exploring the countryside</li>
-                <li class="bike-bullet" id="nkdDesc2">Fuel efficient &amp; fun to ride</li>
-            </ul>
-            <div class="price-container">
-                <div class="price-item"><span class="price-val">130.000 <small>COP</small></span><span class="price-label day">day</span></div>
-                <div class="price-item"><span class="price-val">650.000 <small>COP</small></span><span class="price-label week">week</span></div>
-                <div class="price-item"><span class="price-val">1.950.000 <small>COP</small></span><span class="price-label month">month</span></div>
-            </div>
-            <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20AKT%20NKD%20125%20Manual" class="btn whatsapp bike-wa" target="_blank" rel="noopener noreferrer">
-                <img src="images/whatsapp.png" alt="" class="btn-icon"> <span id="bikeWaNkdText">Book now</span>
-            </a>
-        </div>
+    <div class="steps-grid">
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">01</div>
+        <div class="step-title" data-t="step1_title"></div>
+        <div class="step-desc" data-t="step1_desc"></div>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">02</div>
+        <div class="step-title" data-t="step2_title"></div>
+        <div class="step-desc" data-t="step2_desc"></div>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-num">03</div>
+        <div class="step-title" data-t="step3_title"></div>
+        <div class="step-desc" data-t="step3_desc"></div>
+      </div>
+      <div class="step reveal reveal-delay-4">
+        <div class="step-num">04</div>
+        <div class="step-title" data-t="step4_title"></div>
+        <div class="step-desc" data-t="step4_desc"></div>
+      </div>
     </div>
-
-    <div class="bike">
-        <img src="images/ttr.jpeg" alt="AKT TTR 200 Manual – Moto rental Palomino" loading="lazy" onclick="openModal(this.src)" class="clickable-img">
-        <div class="bike-info">
-                <h3>AKT TTR 200cc manual <span class="bike-model">(model 2027)</span></h3>
-            <ul class="bike-bullets" aria-label="Highlights">
-                <li class="bike-bullet" id="ttrDesc1">Built for off-road adventure</li>
-                <li class="bike-bullet" id="ttrDesc2">Powerful 200cc engine with luggage rack</li>
-            </ul>
-            <div class="price-container">
-                <div class="price-item"><span class="price-val">160.000 <small>COP</small></span><span class="price-label day">day</span></div>
-                <div class="price-item"><span class="price-val">800.000 <small>COP</small></span><span class="price-label week">week</span></div>
-                <div class="price-item"><span class="price-val">2.800.000 <small>COP</small></span><span class="price-label month">month</span></div>
-            </div>
-            <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20AKT%20TTR%20200%20Manual" class="btn whatsapp bike-wa" target="_blank" rel="noopener noreferrer">
-                <img src="images/whatsapp.png" alt="" class="btn-icon"> <span>Book now</span>
-            </a>
-        </div>
-    </div>
+  </div>
 </section>
 
-<section id="contact" class="section dark">
-    <h2 id="contactTitle">Contact</h2>
-    <div class="contact-info">
-        <p><strong id="phoneLabel">Phone:</strong> +57 321 6172816</p>
-        <p><strong id="emailLabel">Email:</strong> <a href="mailto:palominomotomoto@gmail.com">palominomotomoto@gmail.com</a></p>
-        
-        <div class="contact-buttons">
-            <a href="https://wa.me/573216172816?text=Hi%20I%20want%20to%20rent%20a%20motorbike" class="btn whatsapp">
-                <img src="images/whatsapp.png" alt="WhatsApp" class="btn-icon"> WhatsApp Chat
-            </a>
-            <a class="btn insta" href="https://www.instagram.com/palomino.motomoto/" target="_blank" rel="noopener noreferrer">
-                <img src="images/insta.png" alt="Instagram" class="btn-icon"> Instagram
-            </a>
-        </div>
+<!-- INCLUDED -->
+<section class="included-section" id="included">
+  <div class="section-wrap">
+    <div class="reveal">
+      <div class="label" data-t="inc_label"></div>
+      <h2 class="heading" style="margin-top:0.6rem" data-t="inc_title"></h2>
+    </div>
+    <div class="included-grid">
+      <div class="included-item reveal reveal-delay-1">
+        <div class="included-icon-wrap">⛑️</div>
+        <div><div class="included-name" data-t="inc1_name"></div><div class="included-desc" data-t="inc1_desc"></div></div>
+      </div>
+      <div class="included-item reveal reveal-delay-2">
+        <div class="included-icon-wrap">🛡️</div>
+        <div><div class="included-name" data-t="inc2_name"></div><div class="included-desc" data-t="inc2_desc"></div></div>
+      </div>
+      <div class="included-item reveal reveal-delay-3">
+        <div class="included-icon-wrap">🛣️</div>
+        <div><div class="included-name" data-t="inc3_name"></div><div class="included-desc" data-t="inc3_desc"></div></div>
+      </div>
+      <div class="included-item reveal reveal-delay-4">
+        <div class="included-icon-wrap">📋</div>
+        <div><div class="included-name" data-t="inc4_name"></div><div class="included-desc" data-t="inc4_desc"></div></div>
+      </div>
+      <div class="included-item reveal reveal-delay-5">
+        <div class="included-icon-wrap">📍</div>
+        <div><div class="included-name" data-t="inc5_name"></div><div class="included-desc" data-t="inc5_desc"></div></div>
+      </div>
+      <div class="included-item reveal reveal-delay-1">
+        <div class="included-icon-wrap">📞</div>
+        <div><div class="included-name" data-t="inc6_name"></div><div class="included-desc" data-t="inc6_desc"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <p class="address">
-            <strong>Moto Moto Palomino</strong><br>
-            Calle 1a C #8-26, Palomino, Colombia
-        </p>
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="section-wrap">
+    <div class="reveal">
+      <div class="label" data-t="gal_label"></div>
+      <h2 class="heading" style="margin-top:0.6rem" data-t="gal_title"></h2>
+    </div>
+    <div class="gallery-mosaic reveal" id="galleryMosaic">
+      <div class="gallery-cell" data-src="images/hero/IMG_4070.jpg"><img src="images/hero/IMG_4070.jpg" alt="Motorcycle in Palomino Colombia" loading="lazy"><div class="gallery-cell-overlay"></div></div>
+      <div class="gallery-cell" data-src="images/hero/IMG_4020.JPG"><img src="images/hero/IMG_4020.JPG" alt="Palomino scenery" loading="lazy"><div class="gallery-cell-overlay"></div></div>
+      <div class="gallery-cell" data-src="images/hero/IMG_4072.jpg"><img src="images/hero/IMG_4072.jpg" alt="Riding in Colombia" loading="lazy"><div class="gallery-cell-overlay"></div></div>
+      <div class="gallery-cell" data-src="images/hero/IMG_5749.jpg"><img src="images/hero/IMG_5749.jpg" alt="Sierra Nevada road" loading="lazy"><div class="gallery-cell-overlay"></div></div>
+      <div class="gallery-cell" data-src="images/hero/IMG_3851.JPG"><img src="images/hero/IMG_3851.JPG" alt="Palomino landscape" loading="lazy"><div class="gallery-cell-overlay"></div></div>
+    </div>
+  </div>
+</section>
 
-        <a class="btn map-link-btn" id="mapBtn" href="https://www.google.com/maps/search/?api=1&query=Moto+Moto+Palomino&query_place_id=ChIJN67hMry19I4Rwil7TuySrrs" target="_blank" rel="noopener noreferrer">
-            Open Map
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="section-wrap" style="padding-bottom:0">
+    <div class="reviews-header reveal">
+      <div>
+        <div class="label" data-t="rev_label"></div>
+        <h2 class="heading" style="margin-top:0.6rem" data-t="rev_title"></h2>
+      </div>
+      <div class="reviews-rating">
+        <div><div class="reviews-stars">★★★★★</div><div class="reviews-count" data-t="rev_count"></div></div>
+        <div class="reviews-avg">5.0</div>
+      </div>
+    </div>
+  </div>
+  <div style="padding: 2rem 0 4rem; overflow: hidden;">
+    <div class="reviews-track">
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Fair prices and very competent staff. Everything worked perfectly. Thank you!"</p><span class="rc-author">— Johanna E.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Staff is fluent in many languages, friendly and competent. New 125cc bikes – super fun and great value for money!"</p><span class="rc-author">— Julius L.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"I had a great trip, the motorbike was in very good condition. Always received quick and professional help on the road."</p><span class="rc-author">— Gina T.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Excellent service and very friendly, helpful and professional owners. The motorbikes are in perfect condition."</p><span class="rc-author">— Matthias M.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Great bike – super new, clean and dependable. We also appreciated the contract and professionalism."</p><span class="rc-author">— Katie Faye D.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Everything was excellent, great bikes and incredible service. I hope to ride those routes again!"</p><span class="rc-author">— Nashia Flores C.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"We rented the two Honda Navis for a week. The owners were very kind and attentive. Bikes are new and worked perfectly."</p><span class="rc-author">— Lina C.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Great moto rental, really good prices and awesome staff. Totally recommend it!"</p><span class="rc-author">— David E.</span></div>
+      <!-- duplicate for loop -->
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Fair prices and very competent staff. Everything worked perfectly. Thank you!"</p><span class="rc-author">— Johanna E.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Staff is fluent in many languages, friendly and competent. New 125cc bikes – super fun and great value for money!"</p><span class="rc-author">— Julius L.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"I had a great trip, the motorbike was in very good condition. Always received quick and professional help on the road."</p><span class="rc-author">— Gina T.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Excellent service and very friendly, helpful and professional owners. The motorbikes are in perfect condition."</p><span class="rc-author">— Matthias M.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Great bike – super new, clean and dependable. We also appreciated the contract and professionalism."</p><span class="rc-author">— Katie Faye D.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Everything was excellent, great bikes and incredible service. I hope to ride those routes again!"</p><span class="rc-author">— Nashia Flores C.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"We rented the two Honda Navis for a week. The owners were very kind and attentive. Bikes are new and worked perfectly."</p><span class="rc-author">— Lina C.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Great moto rental, really good prices and awesome staff. Totally recommend it!"</p><span class="rc-author">— David E.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-wrap">
+    <div class="faq-wrap">
+      <div class="faq-aside reveal">
+        <div class="label" data-t="faq_label"></div>
+        <h2 class="heading" style="margin-top:0.6rem" data-t="faq_title"></h2>
+        <p data-t="faq_sub"></p>
+        <a href="https://wa.me/573216172816" class="faq-contact-link" target="_blank" rel="noopener">
+          <span data-t="faq_ask"></span>
+          <svg viewBox="0 0 16 16" fill="none" style="width:12px;height:12px"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
+      </div>
+      <div class="faq-list reveal reveal-delay-2">
+        <div class="faq-item"><button class="faq-btn"><span data-t="faq_q1"></span><span class="faq-icon">+</span></button><div class="faq-answer" data-t="faq_a1"></div></div>
+        <div class="faq-item"><button class="faq-btn"><span data-t="faq_q2"></span><span class="faq-icon">+</span></button><div class="faq-answer" data-t="faq_a2"></div></div>
+        <div class="faq-item"><button class="faq-btn"><span data-t="faq_q3"></span><span class="faq-icon">+</span></button><div class="faq-answer" data-t="faq_a3"></div></div>
+        <div class="faq-item"><button class="faq-btn"><span data-t="faq_q4"></span><span class="faq-icon">+</span></button><div class="faq-answer" data-t="faq_a4"></div></div>
+        <div class="faq-item"><button class="faq-btn"><span data-t="faq_q5"></span><span class="faq-icon">+</span></button><div class="faq-answer" data-t="faq_a5"></div></div>
+        <div class="faq-item"><button class="faq-btn"><span data-t="faq_q6"></span><span class="faq-icon">+</span></button><div class="faq-answer" data-t="faq_a6"></div></div>
+      </div>
     </div>
-
-    <div class="map">
-        <!-- Offizieller Google Maps Embed: Adresse oder "Teilen > Karte einbetten" in Google Maps -->
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.6262446624915!2d-73.5570535!3d11.2450893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef4b2bc32e1ae37%3A0xbbae92ec4e7b29c2!2sMoto%20Moto%20Palomino!5e0!3m2!1sde!2sco!4v1739635200000!5m2!1sde!2sco"
-            width="100%"
-            height="350"
-            style="border:0; border-radius: 15px;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Moto Moto Palomino auf Google Maps">
-        </iframe>
-    </div>
+  </div>
 </section>
 
-<section id="reviews" class="section reviews-section">
-    <div class="reviews-header">
-        <h2 id="reviewsTitle">Customer Reviews</h2>
-        <p class="reviews-subtitle" id="reviewsSubtitle">What our riders say about us</p>
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-wrap">
+    <div class="reveal">
+      <div class="label" data-t="contact_label"></div>
+      <h2 class="heading" style="margin-top:0.6rem" data-t="contact_title"></h2>
     </div>
-    <div class="review-slider-container">
-        <button class="slider-btn left" onclick="slideReviews(-1)" aria-label="Previous reviews"><span class="slider-arrow"></span></button>
-        <div class="reviews-container" id="reviewsContainer">
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text" id="review1Text">Fair prices and very competent staff. Everything worked perfectly. Thank you!</p>
-                <div class="review-author"><span class="review-avatar">J</span> Johanna E</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text" id="review2Text">Staff is fluent in many languages, friendly and competent. New 125cc bikes – super fun and great value for money!</p>
-                <div class="review-author"><span class="review-avatar">J</span> Julius L</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text" id="review3Text">I had a great trip, the motorbike was in very good condition. I always received quick feedback and professional help from the owner whenever I had a question on the road. Totally recommend!</p>
-                <div class="review-author"><span class="review-avatar">G</span> Gina T.</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text" id="review4Text">Excellent service and very friendly, helpful and professional owners. The motorbikes are in perfect condition and we really enjoyed the flexibility they gave us for our trips around the region. Thank you!</p>
-                <div class="review-author"><span class="review-avatar">M</span> Matthias M.</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text" id="review5Text">Great bike – super new, clean and dependable. We also appreciated the contract and professionalism. Thank you!</p>
-                <div class="review-author"><span class="review-avatar">K</span> Katie Faye D.</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text" id="review6Text">Everything was excellent, great bikes and incredible service. I hope to ride those routes again – thank you Moto Moto!</p>
-                <div class="review-author"><span class="review-avatar">N</span> Nashia Flores C.</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text" id="review7Text">We rented the two Honda Navis for a week and visited places around Palomino, which we loved because we could explore more. The owners were very kind and attentive in case anything happened with the bikes, which are new and worked perfectly.</p>
-                <div class="review-author"><span class="review-avatar">L</span> Lina C.</div>
-            </div>
-            <div class="review-card">
-                <div class="review-stars">★★★★★</div>
-                <p class="review-text" id="review8Text">Great moto rental, really good prices and awesome staff. Totally recommend it! Thanks guys.</p>
-                <div class="review-author"><span class="review-avatar">D</span> David E.</div>
-            </div>
+    <div class="contact-grid">
+      <div class="reveal reveal-delay-1">
+        <div class="contact-details">
+          <div class="contact-row">
+            <div class="contact-icon">📞</div>
+            <div><span class="contact-lbl" data-t="contact_phone_lbl"></span><a href="tel:+573216172816" class="contact-val">+57 321 617 2816</a></div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">✉️</div>
+            <div><span class="contact-lbl">Email</span><a href="mailto:palominomotomoto@gmail.com" class="contact-val">palominomotomoto@gmail.com</a></div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">📍</div>
+            <div><span class="contact-lbl" data-t="contact_addr_lbl"></span><span class="contact-val">Calle 1a C #8-26, Palomino, Colombia</span></div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">🕐</div>
+            <div><span class="contact-lbl" data-t="contact_hours_lbl"></span><span class="contact-val" data-t="contact_hours_val"></span></div>
+          </div>
         </div>
-        <button class="slider-btn right" onclick="slideReviews(1)" aria-label="Next reviews"><span class="slider-arrow"></span></button>
+        <div class="contact-actions">
+          <a href="https://wa.me/573216172816?text=Hi%20I%20want%20to%20rent%20a%20motorbike" class="action-btn btn-wa" target="_blank" rel="noopener">
+            <img src="images/whatsapp.png" alt="WhatsApp"><span data-t="contact_wa"></span>
+          </a>
+          <a href="https://www.instagram.com/palomino.motomoto/" class="action-btn btn-ig" target="_blank" rel="noopener">
+            <img src="images/insta.png" alt="Instagram"><span>@palomino.motomoto</span>
+          </a>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <a href="https://www.google.com/maps/search/?api=1&query=Moto+Moto+Palomino&query_place_id=ChIJN67hMry19I4Rwil7TuySrrs" class="map-link" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span data-t="contact_maps"></span>
+        </a>
+      </div>
     </div>
+  </div>
 </section>
 
-<section id="faqs" class="section">
-    <h2 id="faqsTitle">FAQs</h2>
-    <div class="faq-list" role="list">
-        <div class="faq-item" role="listitem">
-            <button type="button" class="faq-question" id="faqBtn0" aria-expanded="false" aria-controls="faqPanel0" onclick="toggleFaq(0)">
-                <span class="faq-question__text" id="faqQ0">Is delivery available in Palomino?</span>
-                <span class="faq-question__icon" id="faqIcon0" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faqPanel0" hidden>
-                <p class="faq-answer__text" id="faqA0">Yes, we offer delivery in Palomino for an extra 10.000 COP.</p>
-            </div>
-        </div>
-        <div class="faq-item" role="listitem">
-            <button type="button" class="faq-question" id="faqBtn1" aria-expanded="false" aria-controls="faqPanel1" onclick="toggleFaq(1)">
-                <span class="faq-question__text" id="faqQ1">Is there a deposit?</span>
-                <span class="faq-question__icon" id="faqIcon1" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faqPanel1" hidden>
-                <p class="faq-answer__text" id="faqA1">Yes, the deposit is 200.000 COP.</p>
-            </div>
-        </div>
-        <div class="faq-item" role="listitem">
-            <button type="button" class="faq-question" id="faqBtn2" aria-expanded="false" aria-controls="faqPanel2" onclick="toggleFaq(2)">
-                <span class="faq-question__text" id="faqQ2">What documents do I need to rent a motorcycle?</span>
-                <span class="faq-question__icon" id="faqIcon2" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faqPanel2" hidden>
-                <p class="faq-answer__text" id="faqA2">You need your passport and a valid driver’s license.</p>
-            </div>
-        </div>
-        <div class="faq-item" role="listitem">
-            <button type="button" class="faq-question" id="faqBtn3" aria-expanded="false" aria-controls="faqPanel3" onclick="toggleFaq(3)">
-                <span class="faq-question__text" id="faqQ3">Is insurance included?</span>
-                <span class="faq-question__icon" id="faqIcon3" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faqPanel3" hidden>
-                <p class="faq-answer__text" id="faqA3">Yes, SOAT insurance is included in the rental.</p>
-            </div>
-        </div>
-        <div class="faq-item" role="listitem">
-            <button type="button" class="faq-question" id="faqBtn4" aria-expanded="false" aria-controls="faqPanel4" onclick="toggleFaq(4)">
-                <span class="faq-question__text" id="faqQ4">Do the bikes have a luggage rack?</span>
-                <span class="faq-question__icon" id="faqIcon4" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer" id="faqPanel4" hidden>
-                <p class="faq-answer__text" id="faqA4">A luggage rack is only available on the TTR 200.</p>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="#" class="footer-logo"><img src="images/logo.png" alt="Moto Moto Palomino"></a>
+    <nav class="footer-nav">
+      <a href="#bikes" data-t="nav_motos"></a>
+      <a href="#included" data-t="nav_included"></a>
+      <a href="#reviews" data-t="nav_reviews"></a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" data-t="contact_label"></a>
+    </nav>
+    <span class="footer-copy">© 2026 Moto Moto Palomino · Palomino, Colombia</span>
+  </div>
+</footer>
 
-<footer>© 2026 Moto Moto Palomino</footer>
-
-<a
-    class="floating-wa pulse-wa"
-    href="https://wa.me/573216172816?text=Hi%20I%20want%20to%20rent%20a%20motorbike"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Chat on WhatsApp"
->
-    <img src="images/whatsapp.png" alt="" class="floating-wa-icon">
+<!-- WA FAB -->
+<a href="https://wa.me/573216172816?text=Hi%20I%20want%20to%20rent%20a%20motorbike" class="wa-fab" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <img src="images/whatsapp.png" alt="WhatsApp">
 </a>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lb-close" id="lbClose">✕</button>
+  <button class="lb-prev" id="lbPrev">‹</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button class="lb-next" id="lbNext">›</button>
+</div>
+
 <script>
-window.addEventListener("scroll", function(){
-    var nav = document.getElementById("navbar");
-    nav.classList.toggle("navbar-scrolled", window.scrollY > 30);
+/* ── TRANSLATIONS ── */
+const LANGS = ['en', 'es', 'fr', 'de'];
+const LANG_LABELS = { en: 'ES', es: 'FR', fr: 'DE', de: 'EN' };
+
+const T = {
+  en: {
+    nav_motos: 'Motos', nav_included: 'Included', nav_reviews: 'Reviews', nav_book: 'Book now',
+    hero_sub: 'Rent a motorcycle in Palomino. Helmets, insurance & unlimited km — always included.',
+    hero_view: 'View Motos', hero_whatsapp: 'WhatsApp us',
+    stat_riders: 'Happy riders', stat_rating: 'Google rating', stat_bikes: 'Bikes available',
+    strip: ['Helmets included', 'SOAT insurance', 'Unlimited km', 'From 120k COP/day', 'Delivery available', '5★ Google reviews', 'Rental contract included'],
+    bikes_label: 'Our fleet', bikes_title: 'Choose Your Ride', bikes_ask: 'Ask us anything',
+    popular: 'Popular',
+    type_automatic: 'Automatic', type_manual: 'Manual',
+    navi_tag1: 'City & short trips', navi_tag2: 'Easy to ride', navi_tag3: 'Beginner friendly',
+    nkd_tag1: 'Countryside explorer', nkd_tag2: 'Fuel efficient', nkd_tag3: 'Fun to ride',
+    ttr_tag1: 'Off-road adventure', ttr_tag2: 'Luggage rack', ttr_tag3: 'Powerful 200cc',
+    period_day: 'Day', period_week: 'Week', period_month: 'Month',
+    book_wa: 'Book via WhatsApp',
+    how_label: 'Simple process', how_title: 'How It Works',
+    step1_title: 'Message us', step1_desc: 'Send us a WhatsApp — tell us which bike and which dates.',
+    step2_title: 'Bring your docs', step2_desc: 'Passport + driver\'s license from your home country. That\'s it.',
+    step3_title: 'Sign & pay', step3_desc: 'We sign a rental contract and collect a 200k COP deposit, fully refunded on return.',
+    step4_title: 'Ride!', step4_desc: 'Hit the road. We\'re always reachable if you need help on the way.',
+    inc_label: 'Every rental', inc_title: 'Always Included',
+    inc1_name: 'Helmet', inc1_desc: 'For every rider on the bike',
+    inc2_name: 'SOAT Insurance', inc2_desc: 'Colombian mandatory coverage',
+    inc3_name: 'Unlimited km', inc3_desc: 'No distance limits, ever',
+    inc4_name: 'Rental contract', inc4_desc: 'Professional & transparent',
+    inc5_name: 'Delivery in Palomino', inc5_desc: '+10.000 COP anywhere in town',
+    inc6_name: 'On-road support', inc6_desc: 'We\'re always reachable',
+    gal_label: 'Life on the road', gal_title: 'Palomino & Beyond',
+    rev_label: 'Happy riders', rev_title: 'What Riders Say', rev_count: 'Based on Google reviews',
+    faq_label: 'Good to know', faq_title: 'Common Questions',
+    faq_sub: 'Can\'t find your answer? We\'re happy to help — just send us a message.',
+    faq_ask: 'Ask via WhatsApp',
+    faq_q1: 'Is delivery available in Palomino?', faq_a1: 'Yes, we deliver anywhere in Palomino for an extra 10.000 COP.',
+    faq_q2: 'Is there a deposit?', faq_a2: 'Yes, the deposit is 200.000 COP and is fully refunded when you return the bike.',
+    faq_q3: 'What documents do I need?', faq_a3: 'Your passport and a valid driver\'s license from your home country. No Colombian license required.',
+    faq_q4: 'Is insurance included?', faq_a4: 'Yes — SOAT insurance (mandatory Colombian liability insurance) is included in every rental at no extra cost.',
+    faq_q5: 'Do the bikes have a luggage rack?', faq_a5: 'A luggage rack is available on the AKT TTR 200 only.',
+    faq_q6: 'Can I ride to Santa Marta or the Sierra Nevada?', faq_a6: 'Absolutely — unlimited km means you can go wherever the road takes you. We recommend the AKT NKD or TTR 200 for longer trips.',
+    contact_label: 'Contact', contact_title: 'Book Your Ride',
+    contact_phone_lbl: 'Phone / WhatsApp', contact_addr_lbl: 'Address',
+    contact_hours_lbl: 'Hours', contact_hours_val: 'Every day, 8am – 8pm',
+    contact_wa: 'Chat on WhatsApp', contact_maps: 'Open in Google Maps',
+  },
+  es: {
+    nav_motos: 'Motos', nav_included: 'Incluido', nav_reviews: 'Opiniones', nav_book: 'Reservar',
+    hero_sub: 'Alquila una moto en Palomino. Cascos, seguro y km ilimitados — siempre incluidos.',
+    hero_view: 'Ver Motos', hero_whatsapp: 'Escríbenos',
+    stat_riders: 'Clientes felices', stat_rating: 'Calificación Google', stat_bikes: 'Motos disponibles',
+    strip: ['Casco incluido', 'Seguro SOAT', 'Km ilimitados', 'Desde 120k COP/día', 'Entrega disponible', '5★ reseñas Google', 'Contrato de alquiler incluido'],
+    bikes_label: 'Nuestra flota', bikes_title: 'Elige Tu Moto', bikes_ask: 'Pregúntanos',
+    popular: 'Popular',
+    type_automatic: 'Automática', type_manual: 'Manual',
+    navi_tag1: 'Ciudad y viajes cortos', navi_tag2: 'Fácil de manejar', navi_tag3: 'Ideal para principiantes',
+    nkd_tag1: 'Explorar el campo', nkd_tag2: 'Bajo consumo', nkd_tag3: 'Muy divertida',
+    ttr_tag1: 'Aventura off-road', ttr_tag2: 'Parrilla de carga', ttr_tag3: 'Motor 200cc potente',
+    period_day: 'Día', period_week: 'Semana', period_month: 'Mes',
+    book_wa: 'Reservar por WhatsApp',
+    how_label: 'Proceso simple', how_title: 'Cómo Funciona',
+    step1_title: 'Escríbenos', step1_desc: 'Mándanos un WhatsApp — cuéntanos qué moto y qué fechas.',
+    step2_title: 'Trae tus documentos', step2_desc: 'Pasaporte + licencia de conducir de tu país. Eso es todo.',
+    step3_title: 'Firma y paga', step3_desc: 'Firmamos contrato y cobramos depósito de 200k COP, que se devuelve al regresar.',
+    step4_title: '¡A rodar!', step4_desc: 'A la carretera. Siempre disponibles si necesitas ayuda en ruta.',
+    inc_label: 'Cada alquiler', inc_title: 'Siempre Incluido',
+    inc1_name: 'Casco', inc1_desc: 'Para cada conductor',
+    inc2_name: 'Seguro SOAT', inc2_desc: 'Cobertura obligatoria colombiana',
+    inc3_name: 'Km ilimitados', inc3_desc: 'Sin límite de distancia',
+    inc4_name: 'Contrato de alquiler', inc4_desc: 'Profesional y transparente',
+    inc5_name: 'Entrega en Palomino', inc5_desc: '+10.000 COP en cualquier lugar',
+    inc6_name: 'Soporte en ruta', inc6_desc: 'Siempre disponibles',
+    gal_label: 'La vida en la ruta', gal_title: 'Palomino y Más Allá',
+    rev_label: 'Clientes satisfechos', rev_title: 'Lo Que Dicen', rev_count: 'Basado en reseñas de Google',
+    faq_label: 'Bueno saber', faq_title: 'Preguntas Frecuentes',
+    faq_sub: '¿No encuentras tu respuesta? Escríbenos con gusto.',
+    faq_ask: 'Preguntar por WhatsApp',
+    faq_q1: '¿Hay servicio de entrega en Palomino?', faq_a1: 'Sí, entregamos en cualquier parte de Palomino por 10.000 COP adicionales.',
+    faq_q2: '¿Hay depósito?', faq_a2: 'Sí, el depósito es de 200.000 COP y se devuelve íntegramente al devolver la moto.',
+    faq_q3: '¿Qué documentos necesito?', faq_a3: 'Pasaporte y licencia de conducir válida de tu país. No se requiere licencia colombiana.',
+    faq_q4: '¿Está incluido el seguro?', faq_a4: 'Sí — el seguro SOAT (seguro obligatorio colombiano) está incluido en cada alquiler sin costo adicional.',
+    faq_q5: '¿Las motos tienen parrilla de carga?', faq_a5: 'Solo la AKT TTR 200 tiene parrilla de carga.',
+    faq_q6: '¿Puedo ir a Santa Marta o la Sierra Nevada?', faq_a6: 'Por supuesto — km ilimitados significa que puedes ir donde quieras. Para rutas largas recomendamos la NKD o la TTR 200.',
+    contact_label: 'Contacto', contact_title: 'Reserva Tu Moto',
+    contact_phone_lbl: 'Teléfono / WhatsApp', contact_addr_lbl: 'Dirección',
+    contact_hours_lbl: 'Horario', contact_hours_val: 'Todos los días, 8am – 8pm',
+    contact_wa: 'Chatear por WhatsApp', contact_maps: 'Abrir en Google Maps',
+  },
+  fr: {
+    nav_motos: 'Motos', nav_included: 'Inclus', nav_reviews: 'Avis', nav_book: 'Réserver',
+    hero_sub: 'Louez une moto à Palomino. Casque, assurance & km illimités — toujours inclus.',
+    hero_view: 'Voir les Motos', hero_whatsapp: 'Nous écrire',
+    stat_riders: 'Clients satisfaits', stat_rating: 'Note Google', stat_bikes: 'Motos disponibles',
+    strip: ['Casque inclus', 'Assurance SOAT', 'Km illimités', 'Dès 120k COP/jour', 'Livraison disponible', '5★ avis Google', 'Contrat de location inclus'],
+    bikes_label: 'Notre flotte', bikes_title: 'Choisissez Votre Moto', bikes_ask: 'Posez-nous vos questions',
+    popular: 'Populaire',
+    type_automatic: 'Automatique', type_manual: 'Manuel',
+    navi_tag1: 'Ville & courtes balades', navi_tag2: 'Facile à conduire', navi_tag3: 'Idéal pour débutants',
+    nkd_tag1: 'Explorer la campagne', nkd_tag2: 'Économique', nkd_tag3: 'Très amusante',
+    ttr_tag1: 'Aventure hors-piste', ttr_tag2: 'Porte-bagages', ttr_tag3: 'Puissant 200cc',
+    period_day: 'Jour', period_week: 'Semaine', period_month: 'Mois',
+    book_wa: 'Réserver via WhatsApp',
+    how_label: 'Processus simple', how_title: 'Comment Ça Marche',
+    step1_title: 'Écrivez-nous', step1_desc: 'Envoyez-nous un WhatsApp — dites-nous quelle moto et quelles dates.',
+    step2_title: 'Apportez vos documents', step2_desc: 'Passeport + permis de conduire de votre pays. C\'est tout.',
+    step3_title: 'Signez & payez', step3_desc: 'Nous signons un contrat et encaissons une caution de 200k COP, remboursée intégralement au retour.',
+    step4_title: 'En route!', step4_desc: 'Prenez la route. Nous sommes toujours joignables si vous avez besoin d\'aide.',
+    inc_label: 'Chaque location', inc_title: 'Toujours Inclus',
+    inc1_name: 'Casque', inc1_desc: 'Pour chaque conducteur',
+    inc2_name: 'Assurance SOAT', inc2_desc: 'Couverture obligatoire colombienne',
+    inc3_name: 'Km illimités', inc3_desc: 'Sans limite de distance',
+    inc4_name: 'Contrat de location', inc4_desc: 'Professionnel & transparent',
+    inc5_name: 'Livraison à Palomino', inc5_desc: '+10.000 COP partout en ville',
+    inc6_name: 'Assistance en route', inc6_desc: 'Toujours joignables',
+    gal_label: 'La vie sur la route', gal_title: 'Palomino & Au-delà',
+    rev_label: 'Clients satisfaits', rev_title: 'Ce Que Disent Les Riders', rev_count: 'Basé sur les avis Google',
+    faq_label: 'Bon à savoir', faq_title: 'Questions Fréquentes',
+    faq_sub: 'Vous ne trouvez pas votre réponse? Écrivez-nous, nous serons ravis d\'aider.',
+    faq_ask: 'Demander via WhatsApp',
+    faq_q1: 'La livraison est-elle disponible à Palomino?', faq_a1: 'Oui, nous livrons partout à Palomino pour 10.000 COP supplémentaires.',
+    faq_q2: 'Y a-t-il une caution?', faq_a2: 'Oui, la caution est de 200.000 COP et est intégralement remboursée au retour.',
+    faq_q3: 'Quels documents faut-il?', faq_a3: 'Votre passeport et un permis de conduire valide de votre pays. Pas de permis colombien requis.',
+    faq_q4: "L'assurance est-elle incluse?", faq_a4: "Oui — l'assurance SOAT (assurance obligatoire colombienne) est incluse dans chaque location sans frais supplémentaires.",
+    faq_q5: 'Les motos ont-elles un porte-bagages?', faq_a5: "Un porte-bagages est disponible uniquement sur l'AKT TTR 200.",
+    faq_q6: 'Puis-je aller à Santa Marta ou dans la Sierra Nevada?', faq_a6: 'Absolument — les km illimités vous permettent d\'aller où vous voulez. Nous recommandons l\'AKT NKD ou TTR 200 pour les longs trajets.',
+    contact_label: 'Contact', contact_title: 'Réservez Votre Moto',
+    contact_phone_lbl: 'Téléphone / WhatsApp', contact_addr_lbl: 'Adresse',
+    contact_hours_lbl: "Heures d'ouverture", contact_hours_val: 'Tous les jours, 8h – 20h',
+    contact_wa: 'Chatter sur WhatsApp', contact_maps: 'Ouvrir dans Google Maps',
+  },
+  de: {
+    nav_motos: 'Motos', nav_included: 'Inklusive', nav_reviews: 'Bewertungen', nav_book: 'Jetzt buchen',
+    hero_sub: 'Miete ein Motorrad in Palomino. Helm, Versicherung & unbegrenzte km — immer inklusive.',
+    hero_view: 'Motos ansehen', hero_whatsapp: 'WhatsApp schreiben',
+    stat_riders: 'Zufriedene Fahrer', stat_rating: 'Google-Bewertung', stat_bikes: 'Verfügbare Motos',
+    strip: ['Helm inklusive', 'SOAT-Versicherung', 'Unbegrenzte km', 'Ab 120k COP/Tag', 'Lieferung möglich', '5★ Google-Bewertungen', 'Mietvertrag inklusive'],
+    bikes_label: 'Unsere Flotte', bikes_title: 'Wähle Deine Moto', bikes_ask: 'Frag uns',
+    popular: 'Beliebt',
+    type_automatic: 'Automatik', type_manual: 'Manuell',
+    navi_tag1: 'Stadt & kurze Touren', navi_tag2: 'Einfach zu fahren', navi_tag3: 'Anfängerfreundlich',
+    nkd_tag1: 'Landschaftstouren', nkd_tag2: 'Sparsam im Verbrauch', nkd_tag3: 'Fahrspaß pur',
+    ttr_tag1: 'Geländeabenteuer', ttr_tag2: 'Gepäckträger', ttr_tag3: 'Leistungsstarke 200cc',
+    period_day: 'Tag', period_week: 'Woche', period_month: 'Monat',
+    book_wa: 'Per WhatsApp buchen',
+    how_label: 'Einfacher Ablauf', how_title: "So Funktioniert's",
+    step1_title: 'Schreibt uns', step1_desc: 'Schickt uns eine WhatsApp — sagt uns welche Moto und welche Daten.',
+    step2_title: 'Dokumente mitbringen', step2_desc: 'Reisepass + Führerschein aus deinem Heimatland. Das ist alles.',
+    step3_title: 'Unterschreiben & zahlen', step3_desc: 'Wir unterschreiben einen Mietvertrag und nehmen eine Kaution von 200k COP, die bei Rückgabe vollständig erstattet wird.',
+    step4_title: 'Los geht\'s!', step4_desc: 'Ab auf die Straße. Wir sind immer erreichbar falls du unterwegs Hilfe brauchst.',
+    inc_label: 'Jede Miete', inc_title: 'Immer Dabei',
+    inc1_name: 'Helm', inc1_desc: 'Für jeden Fahrer',
+    inc2_name: 'SOAT-Versicherung', inc2_desc: 'Kolumbianische Pflichtversicherung',
+    inc3_name: 'Unbegrenzte km', inc3_desc: 'Keine Kilometerbeschränkung',
+    inc4_name: 'Mietvertrag', inc4_desc: 'Professionell & transparent',
+    inc5_name: 'Lieferung in Palomino', inc5_desc: '+10.000 COP überall in der Stadt',
+    inc6_name: 'Pannenhilfe unterwegs', inc6_desc: 'Immer erreichbar',
+    gal_label: 'Leben auf der Straße', gal_title: 'Palomino & Drumherum',
+    rev_label: 'Zufriedene Fahrer', rev_title: 'Was Fahrer Sagen', rev_count: 'Basierend auf Google-Bewertungen',
+    faq_label: 'Gut zu wissen', faq_title: 'Häufige Fragen',
+    faq_sub: 'Keine Antwort gefunden? Schreibt uns einfach — wir helfen gerne.',
+    faq_ask: 'Per WhatsApp fragen',
+    faq_q1: 'Gibt es Lieferservice in Palomino?', faq_a1: 'Ja, wir liefern überall in Palomino für 10.000 COP extra.',
+    faq_q2: 'Gibt es eine Kaution?', faq_a2: 'Ja, die Kaution beträgt 200.000 COP und wird bei Rückgabe vollständig erstattet.',
+    faq_q3: 'Welche Dokumente brauche ich?', faq_a3: 'Reisepass und gültiger Führerschein aus deinem Heimatland. Kein kolumbianischer Führerschein nötig.',
+    faq_q4: 'Ist die Versicherung inklusive?', faq_a4: 'Ja — die SOAT-Versicherung (kolumbianische Pflichtversicherung) ist in jeder Miete ohne Aufpreis enthalten.',
+    faq_q5: 'Haben die Motorräder einen Gepäckträger?', faq_a5: 'Ein Gepäckträger ist nur bei der AKT TTR 200 verfügbar.',
+    faq_q6: 'Kann ich nach Santa Marta oder in die Sierra Nevada fahren?', faq_a6: 'Absolut — unbegrenzte km bedeutet, du kannst fahren wohin du willst. Für längere Touren empfehlen wir die NKD oder TTR 200.',
+    contact_label: 'Kontakt', contact_title: 'Moto Buchen',
+    contact_phone_lbl: 'Telefon / WhatsApp', contact_addr_lbl: 'Adresse',
+    contact_hours_lbl: 'Öffnungszeiten', contact_hours_val: 'Täglich, 8 – 20 Uhr',
+    contact_wa: 'WhatsApp schreiben', contact_maps: 'In Google Maps öffnen',
+  }
+};
+
+/* ── APPLY TRANSLATIONS ── */
+let lang = 'en';
+
+function applyTranslations() {
+  const d = T[lang];
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-t]').forEach(el => {
+    const key = el.getAttribute('data-t');
+    if (d[key] !== undefined) el.textContent = d[key];
+  });
+
+  /* Strip */
+  const stripItems = d.strip;
+  const track = document.getElementById('stripTrack');
+  if (track) {
+    const html = [...stripItems, ...stripItems].map((s, i) =>
+      `<span class="strip-item"><span>${s}</span></span>${i < stripItems.length * 2 - 1 ? '<span class="strip-dot"></span>' : ''}`
+    ).join('');
+    track.innerHTML = html;
+  }
+
+  /* Popular badge via data-popular */
+  document.querySelectorAll('[data-popular]').forEach(el => {
+    el.setAttribute('data-popular', d.popular || 'Popular');
+  });
+
+  /* Lang switcher: highlight active */
+  document.querySelectorAll('#langSwitcher button').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+}
+
+/* ── NAV scroll ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+nav.classList.toggle('scrolled', window.scrollY > 40);
+
+/* ── Lang switcher ── */
+document.querySelectorAll('#langSwitcher button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    lang = btn.dataset.lang;
+    applyTranslations();
+  });
 });
 
-(function(){
-    var v = document.querySelector(".hero-video");
-    if (!v) return;
-    var tryPlay = function(){ v.play().catch(function(){}); };
-    tryPlay();
-    document.addEventListener("visibilitychange", function(){ if (!document.hidden) tryPlay(); });
-})();
+/* ── Hamburger / drawer ── */
+const hamburger = document.getElementById('hamburger');
+const drawer = document.getElementById('drawer');
+function closeDrawer() { hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); drawer.classList.remove('open'); document.body.style.overflow = ''; }
+hamburger.addEventListener('click', () => {
+  const open = hamburger.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', open);
+  drawer.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 
-(function(){
-    if (localStorage.getItem("darkMode") === "1") document.documentElement.classList.add("dark-mode");
-    updateDarkModeIcon();
-})();
-function toggleDarkMode(){
-    document.documentElement.classList.toggle("dark-mode");
-    localStorage.setItem("darkMode", document.documentElement.classList.contains("dark-mode") ? "1" : "0");
-    updateDarkModeIcon();
-}
-function updateDarkModeIcon(){
-    var btn = document.getElementById("darkModeBtn");
-    if (!btn) return;
-    btn.textContent = document.documentElement.classList.contains("dark-mode") ? "☀️" : "🌙";
-    btn.setAttribute("aria-label", document.documentElement.classList.contains("dark-mode") ? "Switch to light mode" : "Switch to dark mode");
-}
+/* ── Scroll reveal ── */
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-function openModal(src) { 
-    var modal = document.getElementById("imageModal");
-    modal.style.display = "block"; 
-    document.getElementById("fullImage").src = src;
-    document.getElementById("modalClose").focus();
-}
-function closeModal() { 
-    document.getElementById("imageModal").style.display = "none"; 
-}
-
-/** Hero-Galerie: gleiche Reihenfolge wie Thumbnails (4020 → … → 3851; ohne IMG_3864) */
-var HERO_GALLERY_URLS = [
-    "images/hero/IMG_4020.JPG",
-    "images/hero/IMG_4070.jpg",
-    "images/hero/IMG_4072.jpg",
-    "images/hero/IMG_5749.jpg",
-    "images/hero/IMG_3851.JPG"
-];
-var heroLightboxIndex = 0;
-var heroLightboxLastFocus = null;
-
-function heroLightboxIsOpen() {
-    var lb = document.getElementById("heroLightbox");
-    return lb && lb.classList.contains("is-open");
-}
-
-function openHeroLightbox(index) {
-    var lb = document.getElementById("heroLightbox");
-    if (!lb || !HERO_GALLERY_URLS.length) return;
-    heroLightboxLastFocus = document.activeElement;
-    heroLightboxIndex = Math.max(0, Math.min(index, HERO_GALLERY_URLS.length - 1));
-    lb.classList.add("is-open");
-    lb.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-    heroLightboxRender();
-    var c = document.getElementById("heroLightboxClose");
-    if (c) c.focus();
-}
-
-function closeHeroLightbox() {
-    var lb = document.getElementById("heroLightbox");
-    if (!lb) return;
-    lb.classList.remove("is-open");
-    lb.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-    var img = document.getElementById("heroLightboxImg");
-    if (img) img.removeAttribute("src");
-    if (heroLightboxLastFocus && typeof heroLightboxLastFocus.focus === "function") {
-        try { heroLightboxLastFocus.focus(); } catch (x) {}
-    }
-    heroLightboxLastFocus = null;
-}
-
-function heroLightboxOuterClick(e) {
-    if (e.target === e.currentTarget) closeHeroLightbox();
-}
-
-function heroLightboxStep(delta) {
-    if (!HERO_GALLERY_URLS.length) return;
-    heroLightboxIndex = (heroLightboxIndex + delta + HERO_GALLERY_URLS.length) % HERO_GALLERY_URLS.length;
-    heroLightboxRender();
-}
-
-function heroLightboxRender() {
-    var img = document.getElementById("heroLightboxImg");
-    var counter = document.getElementById("heroLightboxCounter");
-    var url = HERO_GALLERY_URLS[heroLightboxIndex];
-    if (img && url) {
-        img.src = url;
-        img.alt = "Gallery photo " + (heroLightboxIndex + 1) + " of " + HERO_GALLERY_URLS.length + " — Moto Moto Palomino";
-    }
-    if (counter) counter.textContent = (heroLightboxIndex + 1) + " / " + HERO_GALLERY_URLS.length;
-}
-
-(function initHeroLightboxSwipe(){
-    var stage = document.getElementById("heroLightboxStage");
-    if (!stage) return;
-    var startX = 0;
-    stage.addEventListener("touchstart", function(e) {
-        if (!heroLightboxIsOpen()) return;
-        startX = e.changedTouches[0].clientX;
-    }, { passive: true });
-    stage.addEventListener("touchend", function(e) {
-        if (!heroLightboxIsOpen()) return;
-        var dx = e.changedTouches[0].clientX - startX;
-        if (dx > 55) heroLightboxStep(-1);
-        else if (dx < -55) heroLightboxStep(1);
-    }, { passive: true });
-})();
-
-document.addEventListener("keydown", function(e) {
-    if (heroLightboxIsOpen()) {
-        if (e.key === "Escape") {
-            e.preventDefault();
-            closeHeroLightbox();
-            return;
-        }
-        if (e.key === "ArrowLeft") {
-            e.preventDefault();
-            heroLightboxStep(-1);
-            return;
-        }
-        if (e.key === "ArrowRight") {
-            e.preventDefault();
-            heroLightboxStep(1);
-            return;
-        }
-        return;
-    }
-    if (e.key === "Escape") closeModal();
+/* ── FAQ ── */
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
 });
 
-function toggleFaq(index){
-    var btn=document.getElementById("faqBtn"+index);
-    var panel=document.getElementById("faqPanel"+index);
-    var icon=document.getElementById("faqIcon"+index);
-    if(!btn || !panel) return;
-    var expanded = btn.getAttribute("aria-expanded") === "true";
-    btn.setAttribute("aria-expanded", String(!expanded));
-    panel.hidden = expanded;
-    if(icon) icon.textContent = expanded ? "+" : "−";
+/* ── Lightbox ── */
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+let lbItems = [], lbIdx = 0;
+
+function openLb(items, i) {
+  lbItems = items; lbIdx = i;
+  lbImg.src = lbItems[lbIdx].src; lbImg.alt = lbItems[lbIdx].alt;
+  const multi = lbItems.length > 1;
+  document.getElementById('lbPrev').style.display = multi ? '' : 'none';
+  document.getElementById('lbNext').style.display = multi ? '' : 'none';
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
+function closeLb() { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+function prevLb() { lbIdx = (lbIdx - 1 + lbItems.length) % lbItems.length; lbImg.src = lbItems[lbIdx].src; }
+function nextLb() { lbIdx = (lbIdx + 1) % lbItems.length; lbImg.src = lbItems[lbIdx].src; }
 
-let lang="en";
-function switchLang(){
-    const btn=document.getElementById("langBtn");
-    const navBikes = document.getElementById("navBikes");
-    const navContact = document.getElementById("navContact");
-    const heroTagline = document.getElementById("heroTagline");
-    const subtitle = document.getElementById("subtitle");
-    const heroBenefits = document.getElementById("heroBenefits");
-    const bikesTitle = document.getElementById("bikesTitle");
-    const reviewsTitle = document.getElementById("reviewsTitle");
-    const contactTitle = document.getElementById("contactTitle");
-    const viewBtn = document.getElementById("viewBtn");
-    const mapBtn = document.getElementById("mapBtn");
-    const phoneLabel = document.getElementById("phoneLabel");
-    const coming = document.getElementById("coming");
-    const heroBadge = document.getElementById("heroBadge");
-    const faqsTitle = document.getElementById("faqsTitle");
+const galleryCells = Array.from(document.querySelectorAll('.gallery-cell'));
+const galleryItems = galleryCells.map(c => ({ src: c.dataset.src || c.querySelector('img').src, alt: c.querySelector('img').alt }));
+galleryCells.forEach((cell, i) => cell.addEventListener('click', () => openLb(galleryItems, i)));
 
-    const faqQ0 = document.getElementById("faqQ0");
-    const faqA0 = document.getElementById("faqA0");
-    const faqQ1 = document.getElementById("faqQ1");
-    const faqA1 = document.getElementById("faqA1");
-    const faqQ2 = document.getElementById("faqQ2");
-    const faqA2 = document.getElementById("faqA2");
-    const faqQ3 = document.getElementById("faqQ3");
-    const faqA3 = document.getElementById("faqA3");
-    const faqQ4 = document.getElementById("faqQ4");
-    const faqA4 = document.getElementById("faqA4");
-    const naviSpec = document.getElementById("naviSpec");
-    const naviDesc1 = document.getElementById("naviDesc1");
-    const naviDesc2 = document.getElementById("naviDesc2");
-    const nkdSpec = document.getElementById("nkdSpec");
-    const nkdDesc1 = document.getElementById("nkdDesc1");
-    const nkdDesc2 = document.getElementById("nkdDesc2");
-    const ttrSpec = document.getElementById("ttrSpec");
-    const ttrDesc1 = document.getElementById("ttrDesc1");
-    const ttrDesc2 = document.getElementById("ttrDesc2");
+document.querySelectorAll('.bike-img img').forEach(img => {
+  img.addEventListener('click', () => openLb([{ src: img.src, alt: img.alt }], 0));
+});
 
-    if(lang==="en"){
-        lang="es"; btn.innerText="EN";
-        navBikes.innerText="Motos"; navContact.innerText="Contacto";
-        if(heroTagline) heroTagline.innerText="Explora Palomino en moto";
-        subtitle.innerText="Rápido • Fácil • Económico";
-        if(heroBenefits) heroBenefits.innerText="Cascos incluidos • Kilómetros ilimitados • Seguro incluido (SOAT) • Confiado por viajeros";
-        if(heroBadge) heroBadge.innerText="Palomino · Colombia";
-        if(faqsTitle) faqsTitle.innerText="Preguntas frecuentes";
-        if(faqQ0) faqQ0.innerText="¿Hay entrega disponible en Palomino?";
-        if(faqA0) faqA0.innerText="Sí, ofrecemos entrega en Palomino por 10.000 COP adicionales.";
-        if(faqQ1) faqQ1.innerText="¿Hay depósito?";
-        if(faqA1) faqA1.innerText="Sí, el depósito es de 200.000 COP.";
-        if(faqQ2) faqQ2.innerText="¿Qué documentos necesito para alquilar una moto?";
-        if(faqA2) faqA2.innerText="Necesitas tu pasaporte y una licencia de conducción válida.";
-        if(faqQ3) faqQ3.innerText="¿Incluye seguro?";
-        if(faqA3) faqA3.innerText="Sí, el seguro SOAT está incluido en el alquiler.";
-        if(faqQ4) faqQ4.innerText="¿Las motos tienen parrilla para equipaje?";
-        if(faqA4) faqA4.innerText="La parrilla para equipaje solo está disponible en la TTR 200.";
-        bikesTitle.innerText="Nuestras Motos"; reviewsTitle.innerText="Reseñas";
-        var reviewsSub = document.getElementById("reviewsSubtitle"); if(reviewsSub) reviewsSub.innerText="Lo que dicen nuestros clientes";
-        contactTitle.innerText="Contacto"; viewBtn.innerText="Ver Motos";
-        mapBtn.innerText="Abrir mapa"; phoneLabel.innerText="Teléfono:";
-        if(coming) coming.innerText="Próximamente — precios por definir";
-        if(naviSpec) naviSpec.innerText="110cc – Automática";
-        if(naviDesc1) naviDesc1.innerText="Perfecta para la ciudad y trayectos cortos";
-        if(naviDesc2) naviDesc2.innerText="Scooter automático fácil de manejar";
-        if(nkdSpec) nkdSpec.innerText="125cc – Manual";
-        if(nkdDesc1) nkdDesc1.innerText="Ideal para explorar el campo";
-        if(nkdDesc2) nkdDesc2.innerText="Eficiente en combustible y divertida de manejar";
-        if(ttrSpec) ttrSpec.innerText="200cc – Off-road";
-        if(ttrDesc1) ttrDesc1.innerText="Hecha para la aventura off-road";
-        if(ttrDesc2) ttrDesc2.innerText="Potente motor 200cc con parrilla portaequipaje";
-        document.querySelectorAll(".day").forEach(e=>e.innerText="día");
-        document.querySelectorAll(".week").forEach(e=>e.innerText="semana");
-        document.querySelectorAll(".month").forEach(e=>e.innerText="mes");
-        var t1=document.getElementById("bikeWaNaviText"); if(t1) t1.innerText="Reservar ahora";
-        var t2=document.getElementById("bikeWaNkdText"); if(t2) t2.innerText="Reservar ahora";
-        var r1=document.getElementById("review1Text"); if(r1) r1.innerText="Precios justos y personal muy competente. Todo funcionó perfectamente. ¡Gracias!";
-        var r2=document.getElementById("review2Text"); if(r2) r2.innerText="El personal habla varios idiomas, es amable y competente. Motos 125cc nuevas: súper divertidas y con gran relación calidad-precio.";
-        var r3=document.getElementById("review3Text"); if(r3) r3.innerText="Tuve un viaje increíble, la moto estaba en muy buen estado. Siempre recibí respuestas rápidas y ayuda profesional del dueño cuando tenía alguna duda en la carretera. ¡Totalmente recomendado!";
-        var r4=document.getElementById("review4Text"); if(r4) r4.innerText="Servicio excelente y dueños muy amables, atentos y profesionales. Las motos están en perfecto estado y disfrutamos mucho la flexibilidad que nos dieron para nuestros recorridos por la región. ¡Muchas gracias!";
-        var r5=document.getElementById("review5Text"); if(r5) r5.innerText="Moto excelente: muy nueva, limpia y confiable. También apreciamos el contrato y la profesionalidad. ¡Gracias!";
-        var r6=document.getElementById("review6Text"); if(r6) r6.innerText="Todo excelente, buenas motos e increíble atención. ¡Espero volver a manejar por esas rutas! ¡Gracias Moto Moto!";
-        var r7=document.getElementById("review7Text"); if(r7) r7.innerText="Rentamos las dos Honda Navis por una semana y estuvimos visitando lugares cercanos a Palomino, lo que nos encantó porque pudimos explorar más. Los dueños muy amables y atentos, y las motos nuevas funcionaron perfecto.";
-        var r8=document.getElementById("review8Text"); if(r8) r8.innerText="Excelente alquiler de motos, muy buenos precios y personal increíble. Totalmente recomendado, ¡gracias!";
-    } else {
-        lang="en"; btn.innerText="ES";
-        navBikes.innerText="Motos"; navContact.innerText="Contact";
-        if(heroTagline) heroTagline.innerText="Explore Palomino by Motorcycle";
-        subtitle.innerText="Fast • Easy • Affordable";
-        if(heroBenefits) heroBenefits.innerText="Helmets included • Unlimited km • Insurance included (SOAT) • Trusted by travelers";
-        if(heroBadge) heroBadge.innerText="Palomino · Colombia";
-        if(faqsTitle) faqsTitle.innerText="FAQs";
-        if(faqQ0) faqQ0.innerText="Is delivery available in Palomino?";
-        if(faqA0) faqA0.innerText="Yes, we offer delivery in Palomino for an extra 10.000 COP.";
-        if(faqQ1) faqQ1.innerText="Is there a deposit?";
-        if(faqA1) faqA1.innerText="Yes, the deposit is 200.000 COP.";
-        if(faqQ2) faqQ2.innerText="What documents do I need to rent a motorcycle?";
-        if(faqA2) faqA2.innerText="You need your passport and a valid driver’s license.";
-        if(faqQ3) faqQ3.innerText="Is insurance included?";
-        if(faqA3) faqA3.innerText="Yes, SOAT insurance is included in the rental.";
-        if(faqQ4) faqQ4.innerText="Do the bikes have a luggage rack?";
-        if(faqA4) faqA4.innerText="A luggage rack is only available on the TTR 200.";
-        bikesTitle.innerText="Our Motos"; reviewsTitle.innerText="Customer Reviews";
-        var reviewsSub = document.getElementById("reviewsSubtitle"); if(reviewsSub) reviewsSub.innerText="What our riders say about us";
-        contactTitle.innerText="Contact"; viewBtn.innerText="View Motos";
-        mapBtn.innerText="Open Map"; phoneLabel.innerText="Phone:";
-        if(coming) coming.innerText="Coming soon — Stay tuned!";
-        if(naviSpec) naviSpec.innerText="110cc – Automatic";
-        if(naviDesc1) naviDesc1.innerText="Perfect for city rides & short trips";
-        if(naviDesc2) naviDesc2.innerText="Easy-to-ride automatic scooter";
-        if(nkdSpec) nkdSpec.innerText="125cc – Manual";
-        if(nkdDesc1) nkdDesc1.innerText="Ideal for exploring the countryside";
-        if(nkdDesc2) nkdDesc2.innerText="Fuel efficient & fun to ride";
-        if(ttrSpec) ttrSpec.innerText="200cc – Off-road";
-        if(ttrDesc1) ttrDesc1.innerText="Built for off-road adventure";
-        if(ttrDesc2) ttrDesc2.innerText="Powerful 200cc engine with luggage rack";
-        document.querySelectorAll(".day").forEach(e=>e.innerText="day");
-        document.querySelectorAll(".week").forEach(e=>e.innerText="week");
-        document.querySelectorAll(".month").forEach(e=>e.innerText="month");
-        var t1=document.getElementById("bikeWaNaviText"); if(t1) t1.innerText="Book now";
-        var t2=document.getElementById("bikeWaNkdText"); if(t2) t2.innerText="Book now";
-        var r1=document.getElementById("review1Text"); if(r1) r1.innerText="Fair prices and very competent staff. Everything worked perfectly. Thank you!";
-        var r2=document.getElementById("review2Text"); if(r2) r2.innerText="Staff is fluent in many languages, friendly and competent. New 125cc bikes – super fun and great value for money!";
-        var r3=document.getElementById("review3Text"); if(r3) r3.innerText="I had a great trip, the motorbike was in very good condition. I always received quick feedback and professional help from the owner whenever I had a question on the road. Totally recommend!";
-        var r4=document.getElementById("review4Text"); if(r4) r4.innerText="Excellent service and very friendly, helpful and professional owners. The motorbikes are in perfect condition and we really enjoyed the flexibility they gave us for our trips around the region. Thank you!";
-        var r5=document.getElementById("review5Text"); if(r5) r5.innerText="Great bike – super new, clean and dependable. We also appreciated the contract and professionalism. Thank you!";
-        var r6=document.getElementById("review6Text"); if(r6) r6.innerText="Everything was excellent, great bikes and incredible service. I hope to ride those routes again – thank you Moto Moto!";
-        var r7=document.getElementById("review7Text"); if(r7) r7.innerText="We rented the two Honda Navis for a week and visited places around Palomino, which we loved because we could explore more. The owners were very kind and attentive in case anything happened with the bikes, which are new and worked perfectly.";
-        var r8=document.getElementById("review8Text"); if(r8) r8.innerText="Great moto rental, really good prices and awesome staff. Totally recommend it! Thanks guys.";
-    }
-}
+document.getElementById('lbClose').addEventListener('click', closeLb);
+document.getElementById('lbPrev').addEventListener('click', prevLb);
+document.getElementById('lbNext').addEventListener('click', nextLb);
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLb(); });
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLb();
+  if (e.key === 'ArrowLeft') prevLb();
+  if (e.key === 'ArrowRight') nextLb();
+});
 
-function slideReviews(direction){
-    const container=document.getElementById("reviewsContainer");
-    container.scrollBy({left:direction*320, behavior:"smooth"});
-}
+/* ── INIT ── */
+applyTranslations();
 </script>
 </body>
 </html>
