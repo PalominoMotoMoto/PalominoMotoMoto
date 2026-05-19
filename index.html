@@ -681,11 +681,11 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
       <h2 class="heading" style="margin-top:0.6rem" data-t="gal_title"></h2>
     </div>
     <div class="gallery-mosaic reveal" id="galleryMosaic">
-      <div class="gallery-cell" data-src="images/hero/IMG_4070.webp"><img src="images/hero/IMG_4070.webp" onerror="this.src='images/hero/IMG_4070.jpg'" alt="Motorcycle in Palomino Colombia"><div class="gallery-cell-overlay"></div></div>
-      <div class="gallery-cell" data-src="images/hero/IMG_4020.webp"><img src="images/hero/IMG_4020.webp" onerror="this.src='images/hero/IMG_4020.JPG'" alt="Palomino scenery"><div class="gallery-cell-overlay"></div></div>
-      <div class="gallery-cell" data-src="images/hero/IMG_4072.webp"><img src="images/hero/IMG_4072.webp" onerror="this.src='images/hero/IMG_4072.jpg'" alt="Riding in Colombia"><div class="gallery-cell-overlay"></div></div>
-      <div class="gallery-cell" data-src="images/hero/IMG_5749.webp"><img src="images/hero/IMG_5749.webp" onerror="this.src='images/hero/IMG_5749.jpg'" alt="Sierra Nevada road"><div class="gallery-cell-overlay"></div></div>
-      <div class="gallery-cell" data-src="images/hero/IMG_3851.webp"><img src="images/hero/IMG_3851.webp" onerror="this.src='images/hero/IMG_3851.JPG'" alt="Palomino landscape"><div class="gallery-cell-overlay"></div></div>
+      <div class="gallery-cell" data-full="images/hero/IMG_4070.jpg"><img src="images/hero/IMG_4070.webp" onerror="this.src='images/hero/IMG_4070.jpg'" alt="Motorcycle in Palomino Colombia"><div class="gallery-cell-overlay"></div></div>
+      <div class="gallery-cell" data-full="images/hero/IMG_4020.JPG"><img src="images/hero/IMG_4020.webp" onerror="this.src='images/hero/IMG_4020.JPG'" alt="Palomino scenery"><div class="gallery-cell-overlay"></div></div>
+      <div class="gallery-cell" data-full="images/hero/IMG_4072.jpg"><img src="images/hero/IMG_4072.webp" onerror="this.src='images/hero/IMG_4072.jpg'" alt="Riding in Colombia"><div class="gallery-cell-overlay"></div></div>
+      <div class="gallery-cell" data-full="images/hero/IMG_5749.jpg"><img src="images/hero/IMG_5749.webp" onerror="this.src='images/hero/IMG_5749.jpg'" alt="Sierra Nevada road"><div class="gallery-cell-overlay"></div></div>
+      <div class="gallery-cell" data-full="images/hero/IMG_3851.JPG"><img src="images/hero/IMG_3851.webp" onerror="this.src='images/hero/IMG_3851.JPG'" alt="Palomino landscape"><div class="gallery-cell-overlay"></div></div>
     </div>
   </div>
 </section>
@@ -1108,8 +1108,10 @@ function prevLb() { lbIdx = (lbIdx - 1 + lbItems.length) % lbItems.length; lbImg
 function nextLb() { lbIdx = (lbIdx + 1) % lbItems.length; lbImg.src = lbItems[lbIdx].src; }
 
 const galleryCells = Array.from(document.querySelectorAll('.gallery-cell'));
-const galleryItems = galleryCells.map(c => ({ src: c.dataset.src || c.querySelector('img').src, alt: c.querySelector('img').alt }));
-galleryCells.forEach((cell, i) => cell.addEventListener('click', () => openLb(galleryItems, i)));
+galleryCells.forEach((cell, i) => cell.addEventListener('click', () => {
+  const items = galleryCells.map(c => ({ src: c.dataset.full || c.querySelector('img').src, alt: c.querySelector('img').alt }));
+  openLb(items, i);
+}));
 
 document.querySelectorAll('.bike-img img').forEach(img => {
   img.addEventListener('click', () => openLb([{ src: img.src, alt: img.alt }], 0));
