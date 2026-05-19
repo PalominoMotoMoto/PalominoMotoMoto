@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/0.9">
+  <url>
+    <loc>https://motomotopalomino.com/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://motomotopalomino.com/images/hero/IMG_4070.jpg</image:loc>
+      <image:title>Moto Moto Palomino – Motorcycle Rental in Colombia</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://motomotopalomino.com/images/navi.jpeg</image:loc>
+      <image:title>Honda Navi 110 Automatic – motorcycle rental Palomino</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://motomotopalomino.com/images/nkd.jpeg</image:loc>
+      <image:title>AKT NKD 125 Manual – motorcycle rental Palomino</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://motomotopalomino.com/images/ttr.jpeg</image:loc>
+      <image:title>AKT TTR 200 Off-road – motorcycle rental Palomino</image:title>
+    </image:image>
+  </url>
+</urlset>
