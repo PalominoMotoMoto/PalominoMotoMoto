@@ -36,7 +36,7 @@
     "addressCountry": "CO"
   },
   "geo": { "@type": "GeoCoordinates", "latitude": 11.2603, "longitude": -73.5726 },
-  "openingHours": "Mo-Su 08:00-20:00",
+  "openingHours": "Mo-Su 08:00-18:00",
   "priceRange": "$$",
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "8" }
 }
@@ -48,17 +48,33 @@ html { scroll-behavior: smooth; font-size: 16px; }
 
 :root {
   --black:      #0a0908;
+  --black-soft: #0d0b08;
   --dark:       #111009;
   --dark-card:  #161410;
+  --dark-hover: #1f1c16;
   --border:     rgba(255,255,255,0.07);
+  --border-strong: rgba(255,255,255,0.12);
   --border-warm: rgba(200,129,42,0.2);
+  --overlay-light: rgba(255,255,255,0.05);
+  --overlay-medium: rgba(255,255,255,0.14);
   --gold:       #c8812a;
   --gold-light: #e8a84a;
   --gold-pale:  rgba(200,129,42,0.12);
+  --gold-dim:   rgba(200,129,42,0.5);
+  --gold-faint: rgba(200,129,42,0.18);
+  --gold-border:rgba(200,129,42,0.3);
   --sand:       #f0ebe0;
   --sand-muted: rgba(240,235,224,0.6);
   --sand-dim:   rgba(240,235,224,0.35);
   --white:      #faf9f6;
+  --wa-green:   #25d366;
+  --wa-text:    #4ade80;
+  --wa-bg:      rgba(37,211,102,0.08);
+  --wa-border:  rgba(37,211,102,0.2);
+  --wa-shadow:  rgba(37,211,102,0.35);
+  --ig-text:    #e879f9;
+  --ig-bg:      rgba(232,113,254,0.08);
+  --ig-border:  rgba(232,113,254,0.2);
   --radius:     6px;
   --radius-lg:  12px;
   --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
@@ -229,7 +245,7 @@ button { cursor: pointer; font-family: inherit; }
 .bikes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
 
 .bike-card { background: var(--dark-card); display: flex; flex-direction: column; transition: background var(--transition); position: relative; }
-.bike-card:hover { background: #1f1c16; }
+.bike-card:hover { background: var(--dark-hover); }
 .bike-card.featured::before {
   content: attr(data-popular);
   position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 10;
@@ -237,7 +253,7 @@ button { cursor: pointer; font-family: inherit; }
   font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
   padding: 0.25rem 1rem; border-radius: 0 0 var(--radius) var(--radius);
 }
-.bike-img { position: relative; aspect-ratio: 3/2; overflow: hidden; background: #0d0b08; }
+.bike-img { position: relative; aspect-ratio: 3/2; overflow: hidden; background: var(--black-soft); }
 .bike-img img {
   width: 100%; height: 100%; object-fit: cover;
   transition: transform 0.6s cubic-bezier(0.4,0,0.2,1), filter 0.4s;
@@ -247,20 +263,20 @@ button { cursor: pointer; font-family: inherit; }
 .bike-badges { position: absolute; bottom: 0.8rem; left: 0.8rem; display: flex; gap: 0.4rem; }
 .b-badge { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 3rem; }
 .b-cc { background: var(--gold); color: var(--black); }
-.b-type { background: rgba(10,9,8,0.75); backdrop-filter: blur(6px); color: var(--sand); border: 1px solid rgba(255,255,255,0.12); }
+.b-type { background: rgba(10,9,8,0.75); backdrop-filter: blur(6px); color: var(--sand); border: 1px solid var(--border-strong); }
 
 .bike-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
 .bike-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; letter-spacing: 0.03em; color: var(--white); margin-bottom: 0.2rem; }
 .bike-sub { font-size: 0.7rem; color: var(--sand-dim); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.1rem; }
 .bike-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1.25rem; }
-.bike-tag { font-size: 0.68rem; color: var(--sand-muted); background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 0.2rem 0.55rem; border-radius: 2rem; }
+.bike-tag { font-size: 0.68rem; color: var(--sand-muted); background: var(--overlay-light); border: 1px solid var(--border); padding: 0.2rem 0.55rem; border-radius: 2rem; }
 .bike-price-row { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 1.25rem; }
 .price-cell { padding: 0.85rem 0.5rem; text-align: center; }
 .price-cell + .price-cell { border-left: 1px solid var(--border); }
 .price-period { display: block; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sand-dim); margin-bottom: 0.3rem; }
 .price-val { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--white); letter-spacing: 0.02em; line-height: 1; }
 .price-cur { font-size: 0.58rem; color: var(--sand-dim); letter-spacing: 0.1em; display: block; margin-top: 0.2rem; }
-.price-usd { font-size: 0.58rem; color: rgba(200,129,42,0.5); letter-spacing: 0.04em; display: block; margin-top: 0.1rem; }
+.price-usd { font-size: 0.58rem; color: var(--gold-dim); letter-spacing: 0.04em; display: block; margin-top: 0.1rem; }
 .bike-book {
   display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.85rem;
   border-radius: var(--radius); border: 1px solid var(--border-warm); background: var(--gold-pale);
@@ -274,7 +290,7 @@ button { cursor: pointer; font-family: inherit; }
 .how-section { background: var(--black); border-top: 1px solid var(--border); }
 .steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-top: 3rem; }
 .step { background: var(--dark-card); padding: 2rem 1.5rem; }
-.step-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: rgba(200,129,42,0.18); line-height: 1; margin-bottom: 0.75rem; }
+.step-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: var(--gold-faint); line-height: 1; margin-bottom: 0.75rem; }
 .step-title { font-size: 0.9rem; font-weight: 600; color: var(--white); margin-bottom: 0.4rem; }
 .step-desc { font-size: 0.8rem; color: var(--sand-dim); line-height: 1.55; }
 
@@ -282,7 +298,7 @@ button { cursor: pointer; font-family: inherit; }
 .included-section { background: var(--dark); border-top: 1px solid var(--border); }
 .included-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-top: 3rem; }
 .included-item { background: var(--dark-card); padding: 2rem 1.75rem; display: flex; align-items: flex-start; gap: 1.1rem; transition: background var(--transition); }
-.included-item:hover { background: #1f1c16; }
+.included-item:hover { background: var(--dark-hover); }
 .included-icon-wrap { width: 42px; height: 42px; flex-shrink: 0; background: var(--gold-pale); border: 1px solid var(--border-warm); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
 .included-name { font-size: 0.88rem; font-weight: 600; color: var(--white); margin-bottom: 0.2rem; }
 .included-desc { font-size: 0.75rem; color: var(--sand-dim); }
@@ -323,7 +339,7 @@ button { cursor: pointer; font-family: inherit; }
 .faq-wrap { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; margin-top: 3rem; }
 .faq-aside .heading { margin-top: 0.6rem; }
 .faq-aside p { font-size: 0.88rem; color: var(--sand-dim); margin-top: 1rem; line-height: 1.65; }
-.faq-contact-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.25rem; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid rgba(200,129,42,0.3); padding-bottom: 2px; transition: border-color var(--transition); }
+.faq-contact-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.25rem; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid var(--gold-border); padding-bottom: 2px; transition: border-color var(--transition); }
 .faq-contact-link:hover { border-color: var(--gold); }
 .faq-item { border-bottom: 1px solid var(--border); }
 .faq-btn { width: 100%; background: none; border: none; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; padding: 1.25rem 0; color: var(--sand); font-size: 0.92rem; font-weight: 400; text-align: left; line-height: 1.4; transition: color var(--transition); }
@@ -346,8 +362,8 @@ button { cursor: pointer; font-family: inherit; }
 .action-btn { display: flex; align-items: center; gap: 0.85rem; padding: 1rem 1.25rem; border-radius: var(--radius); font-size: 0.85rem; font-weight: 500; transition: opacity var(--transition), transform 0.15s; border: 1px solid; }
 .action-btn:hover { opacity: 0.85; transform: translateX(4px); }
 .action-btn img { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; }
-.btn-wa { background: rgba(37,211,102,0.08); border-color: rgba(37,211,102,0.2); color: #4ade80; }
-.btn-ig { background: rgba(232,113,254,0.08); border-color: rgba(232,113,254,0.2); color: #e879f9; }
+.btn-wa { background: var(--wa-bg); border-color: var(--wa-border); color: var(--wa-text); }
+.btn-ig { background: var(--ig-bg); border-color: var(--ig-border); color: var(--ig-text); }
 .map-link { display: flex; flex-direction: column; align-items: center; justify-content: center; aspect-ratio: 4/3; border-radius: var(--radius-lg); border: 1px solid var(--border); background: var(--dark-card); gap: 0.75rem; color: var(--sand-dim); font-size: 0.82rem; transition: border-color var(--transition), color var(--transition); letter-spacing: 0.06em; }
 .map-link:hover { border-color: var(--gold); color: var(--gold-light); }
 .map-link svg { width: 28px; height: 28px; opacity: 0.45; }
@@ -366,7 +382,7 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
 .footer-copy { font-size: 0.72rem; color: var(--sand-dim); }
 
 /* WA FAB */
-.wa-fab { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 100; width: 54px; height: 54px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(37,211,102,0.35); transition: transform 0.2s, box-shadow 0.2s; }
+.wa-fab { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 100; width: 54px; height: 54px; background: var(--wa-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px var(--wa-shadow); transition: transform 0.2s, box-shadow 0.2s; }
 .wa-fab:hover { transform: scale(1.08); box-shadow: 0 6px 32px rgba(37,211,102,0.45); }
 .wa-fab img { width: 28px; height: 28px; }
 
@@ -374,8 +390,8 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
 .lightbox { display: none; position: fixed; inset: 0; z-index: 300; background: rgba(0,0,0,0.94); align-items: center; justify-content: center; }
 .lightbox.open { display: flex; }
 .lb-img { max-width: 90vw; max-height: 86vh; object-fit: contain; border-radius: var(--radius); }
-.lb-close, .lb-prev, .lb-next { position: absolute; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background var(--transition); }
-.lb-close:hover, .lb-prev:hover, .lb-next:hover { background: rgba(255,255,255,0.14); }
+.lb-close, .lb-prev, .lb-next { position: absolute; background: var(--overlay-light); border: 1px solid var(--border-strong); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background var(--transition); }
+.lb-close:hover, .lb-prev:hover, .lb-next:hover { background: var(--overlay-medium); }
 .lb-close { top: 1.25rem; right: 1.25rem; width: 40px; height: 40px; font-size: 1.1rem; }
 .lb-prev { left: 1.25rem; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; font-size: 1.3rem; }
 .lb-next { right: 1.25rem; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; font-size: 1.3rem; }
@@ -532,9 +548,9 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
             <span class="bike-tag" data-t="navi_tag3"></span>
           </div>
           <div class="bike-price-row">
-            <div class="price-cell"><span class="price-period" data-t="period_day"></span><span class="price-val">120k</span><span class="price-cur">COP</span><span class="price-usd">≈ $29</span></div>
-            <div class="price-cell"><span class="price-period" data-t="period_week"></span><span class="price-val">600k</span><span class="price-cur">COP</span><span class="price-usd">≈ $146</span></div>
-            <div class="price-cell"><span class="price-period" data-t="period_month"></span><span class="price-val">1.8M</span><span class="price-cur">COP</span><span class="price-usd">≈ $439</span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_day"></span><span class="price-val">120k</span><span class="price-cur">COP</span><span class="price-usd" data-cop="120000"></span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_week"></span><span class="price-val">600k</span><span class="price-cur">COP</span><span class="price-usd" data-cop="600000"></span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_month"></span><span class="price-val">1.8M</span><span class="price-cur">COP</span><span class="price-usd" data-cop="1800000"></span></div>
           </div>
           <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20Honda%20Navi%20110%20Automatic" class="bike-book" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -561,9 +577,9 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
             <span class="bike-tag" data-t="nkd_tag3"></span>
           </div>
           <div class="bike-price-row">
-            <div class="price-cell"><span class="price-period" data-t="period_day"></span><span class="price-val">130k</span><span class="price-cur">COP</span><span class="price-usd">≈ $32</span></div>
-            <div class="price-cell"><span class="price-period" data-t="period_week"></span><span class="price-val">650k</span><span class="price-cur">COP</span><span class="price-usd">≈ $159</span></div>
-            <div class="price-cell"><span class="price-period" data-t="period_month"></span><span class="price-val">1.95M</span><span class="price-cur">COP</span><span class="price-usd">≈ $476</span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_day"></span><span class="price-val">130k</span><span class="price-cur">COP</span><span class="price-usd" data-cop="130000"></span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_week"></span><span class="price-val">650k</span><span class="price-cur">COP</span><span class="price-usd" data-cop="650000"></span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_month"></span><span class="price-val">1.95M</span><span class="price-cur">COP</span><span class="price-usd" data-cop="1950000"></span></div>
           </div>
           <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20AKT%20NKD%20125%20Manual" class="bike-book" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -590,9 +606,9 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
             <span class="bike-tag" data-t="ttr_tag3"></span>
           </div>
           <div class="bike-price-row">
-            <div class="price-cell"><span class="price-period" data-t="period_day"></span><span class="price-val">160k</span><span class="price-cur">COP</span><span class="price-usd">≈ $39</span></div>
-            <div class="price-cell"><span class="price-period" data-t="period_week"></span><span class="price-val">800k</span><span class="price-cur">COP</span><span class="price-usd">≈ $195</span></div>
-            <div class="price-cell"><span class="price-period" data-t="period_month"></span><span class="price-val">2.8M</span><span class="price-cur">COP</span><span class="price-usd">≈ $683</span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_day"></span><span class="price-val">160k</span><span class="price-cur">COP</span><span class="price-usd" data-cop="160000"></span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_week"></span><span class="price-val">800k</span><span class="price-cur">COP</span><span class="price-usd" data-cop="800000"></span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_month"></span><span class="price-val">2.8M</span><span class="price-cur">COP</span><span class="price-usd" data-cop="2800000"></span></div>
           </div>
           <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20AKT%20TTR%20200%20Manual" class="bike-book" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -833,10 +849,10 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
-  <button class="lb-close" id="lbClose">✕</button>
-  <button class="lb-prev" id="lbPrev">‹</button>
+  <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Previous image">‹</button>
   <img class="lb-img" id="lbImg" src="" alt="">
-  <button class="lb-next" id="lbNext">›</button>
+  <button class="lb-next" id="lbNext" aria-label="Next image">›</button>
 </div>
 
 <script>
@@ -1094,6 +1110,14 @@ const lightbox = document.getElementById('lightbox');
 const lbImg = document.getElementById('lbImg');
 let lbItems = [], lbIdx = 0;
 
+function preloadNeighbors() {
+  if (lbItems.length < 2) return;
+  [lbIdx + 1, lbIdx - 1].forEach(idx => {
+    const wrapped = (idx + lbItems.length) % lbItems.length;
+    const pre = new Image();
+    pre.src = lbItems[wrapped].src;
+  });
+}
 function openLb(items, i) {
   lbItems = items; lbIdx = i;
   lbImg.src = lbItems[lbIdx].src; lbImg.alt = lbItems[lbIdx].alt;
@@ -1102,10 +1126,11 @@ function openLb(items, i) {
   document.getElementById('lbNext').style.display = multi ? '' : 'none';
   lightbox.classList.add('open');
   document.body.style.overflow = 'hidden';
+  preloadNeighbors();
 }
 function closeLb() { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
-function prevLb() { lbIdx = (lbIdx - 1 + lbItems.length) % lbItems.length; lbImg.src = lbItems[lbIdx].src; }
-function nextLb() { lbIdx = (lbIdx + 1) % lbItems.length; lbImg.src = lbItems[lbIdx].src; }
+function prevLb() { lbIdx = (lbIdx - 1 + lbItems.length) % lbItems.length; lbImg.src = lbItems[lbIdx].src; preloadNeighbors(); }
+function nextLb() { lbIdx = (lbIdx + 1) % lbItems.length; lbImg.src = lbItems[lbIdx].src; preloadNeighbors(); }
 
 const galleryCells = Array.from(document.querySelectorAll('.gallery-cell'));
 galleryCells.forEach((cell, i) => cell.addEventListener('click', () => {
@@ -1161,6 +1186,45 @@ document.addEventListener('keydown', e => {
   // Touch swipe (pause for 2s after touch)
   wrap.addEventListener('touchstart', () => paused = true, { passive: true });
   wrap.addEventListener('touchend', () => setTimeout(() => paused = false, 2000));
+})();
+
+/* ── Live USD exchange rate (COP → USD) ── */
+(function(){
+  const FALLBACK = 4100; // COP per 1 USD – fallback if API unreachable
+  const CACHE_KEY = 'cop_usd_rate';
+  const CACHE_MAX_AGE = 24 * 60 * 60 * 1000; // 24h
+
+  function renderUSD(rate) {
+    document.querySelectorAll('.price-usd[data-cop]').forEach(el => {
+      const cop = parseFloat(el.dataset.cop);
+      if (!cop) return;
+      const usd = Math.round(cop / rate);
+      el.textContent = '≈ $' + usd;
+    });
+  }
+
+  // Use cached rate immediately
+  let cached = null;
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Date.now() - parsed.t < CACHE_MAX_AGE) cached = parsed.r;
+    }
+  } catch(e) {}
+  renderUSD(cached || FALLBACK);
+
+  // Refresh in background
+  fetch('https://open.er-api.com/v6/latest/USD')
+    .then(r => r.json())
+    .then(d => {
+      const rate = d && d.rates && d.rates.COP;
+      if (rate && rate > 1000 && rate < 10000) {
+        renderUSD(rate);
+        try { localStorage.setItem(CACHE_KEY, JSON.stringify({ r: rate, t: Date.now() })); } catch(e) {}
+      }
+    })
+    .catch(() => {});
 })();
 
 /* ── INIT ── */
