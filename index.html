@@ -238,7 +238,6 @@ button { cursor: pointer; font-family: inherit; }
   padding: 0.25rem 1rem; border-radius: 0 0 var(--radius) var(--radius);
 }
 .bike-img { position: relative; aspect-ratio: 3/2; overflow: hidden; background: #0d0b08; }
-.bike-img picture { display: block; width: 100%; height: 100%; }
 .bike-img img {
   width: 100%; height: 100%; object-fit: cover;
   transition: transform 0.6s cubic-bezier(0.4,0,0.2,1), filter 0.4s;
@@ -518,7 +517,7 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
       <!-- Honda Navi -->
       <div class="bike-card reveal reveal-delay-1">
         <div class="bike-img">
-          <picture><source srcset="images/navi.webp" type="image/webp"><img src="images/navi.jpeg" alt="Honda Navi 110 Automatic – motorcycle rental Palomino"></picture>
+          <img src="images/navi.webp" onerror="this.src='images/navi.jpeg'" alt="Honda Navi 110 Automatic – motorcycle rental Palomino">
           <div class="bike-badges">
             <span class="b-badge b-cc">110cc</span>
             <span class="b-badge b-type" data-t="type_automatic"></span>
@@ -547,7 +546,7 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
       <!-- AKT NKD 125 -->
       <div class="bike-card reveal reveal-delay-2">
         <div class="bike-img">
-          <picture><source srcset="images/nkd.webp" type="image/webp"><img src="images/nkd.jpeg" alt="AKT NKD 125 Manual – motorcycle rental Palomino"></picture>
+          <img src="images/nkd.webp" onerror="this.src='images/nkd.jpeg'" alt="AKT NKD 125 Manual – motorcycle rental Palomino">
           <div class="bike-badges">
             <span class="b-badge b-cc">125cc</span>
             <span class="b-badge b-type" data-t="type_manual"></span>
@@ -576,7 +575,7 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
       <!-- AKT TTR 200 -->
       <div class="bike-card reveal reveal-delay-3">
         <div class="bike-img">
-          <picture><source srcset="images/ttr.webp" type="image/webp"><img src="images/ttr.jpeg" alt="AKT TTR 200 Off-road – motorcycle rental Palomino"></picture>
+          <img src="images/ttr.webp" onerror="this.src='images/ttr.jpeg'" alt="AKT TTR 200 Off-road – motorcycle rental Palomino">
           <div class="bike-badges">
             <span class="b-badge b-cc">200cc</span>
             <span class="b-badge b-type">Off-Road</span>
