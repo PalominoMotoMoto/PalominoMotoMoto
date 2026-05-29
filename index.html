@@ -36,11 +36,13 @@
     "addressCountry": "CO"
   },
   "geo": { "@type": "GeoCoordinates", "latitude": 11.2603, "longitude": -73.5726 },
-  "openingHours": "Mo-Su 08:00-18:00",
+  "openingHours": "Mo-Su 08:00-19:00",
   "priceRange": "$$",
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "8" }
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "14" }
 }
 </script>
+
+<script>(function(){try{if(localStorage.getItem('mmp-theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();</script>
 
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,6 +54,7 @@ html { scroll-behavior: smooth; font-size: 16px; }
   --dark:       #111009;
   --dark-card:  #161410;
   --dark-hover: #1f1c16;
+  --ink:        #0a0908;
   --border:     rgba(255,255,255,0.07);
   --border-strong: rgba(255,255,255,0.12);
   --border-warm: rgba(200,129,42,0.2);
@@ -78,6 +81,62 @@ html { scroll-behavior: smooth; font-size: 16px; }
   --radius:     6px;
   --radius-lg:  12px;
   --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ── LIGHT THEME ── */
+[data-theme="light"] {
+  --black:      #f4f1ea;
+  --black-soft: #efe9df;
+  --dark:       #fbf9f4;
+  --dark-card:  #ffffff;
+  --dark-hover: #f2ede3;
+  --border:        rgba(10,9,8,0.10);
+  --border-strong: rgba(10,9,8,0.17);
+  --border-warm:   rgba(200,129,42,0.30);
+  --overlay-light:  rgba(10,9,8,0.04);
+  --overlay-medium: rgba(10,9,8,0.10);
+  --gold-pale:  rgba(200,129,42,0.14);
+  --gold-faint: rgba(200,129,42,0.22);
+  --sand:       #2b2620;
+  --sand-muted: rgba(43,38,32,0.72);
+  --sand-dim:   rgba(43,38,32,0.55);
+  --white:      #1a1613;
+}
+/* Hero always sits over the dark video → re-pin its text vars to light */
+[data-theme="light"] .hero {
+  --white: #faf9f6; --sand: #f0ebe0;
+  --sand-muted: rgba(240,235,224,0.72); --sand-dim: rgba(240,235,224,0.45);
+  --border: rgba(255,255,255,0.18);
+}
+/* Nav: light controls while transparent over the hero, dark once it is a solid light bar */
+[data-theme="light"] .nav {
+  --white: #faf9f6; --sand: #f0ebe0;
+  --sand-muted: rgba(240,235,224,0.85); --sand-dim: rgba(240,235,224,0.65);
+  --border: rgba(255,255,255,0.20);
+}
+[data-theme="light"] .nav.scrolled {
+  background: rgba(244,241,234,0.92);
+  border-bottom-color: rgba(10,9,8,0.10);
+  --white: #1a1613; --sand: #2b2620;
+  --sand-muted: rgba(43,38,32,0.72); --sand-dim: rgba(43,38,32,0.55);
+  --border: rgba(10,9,8,0.12);
+}
+/* Dark photo badge keeps light text on top of bike images in both themes */
+[data-theme="light"] .b-type { background: rgba(10,9,8,0.72); color: #f0ebe0; border-color: rgba(255,255,255,0.18); }
+/* Lightbox backdrop is always dark → keep its controls light */
+[data-theme="light"] .lightbox {
+  --white: #faf9f6; --overlay-light: rgba(255,255,255,0.10);
+  --overlay-medium: rgba(255,255,255,0.20); --border-strong: rgba(255,255,255,0.25);
+}
+/* Mobile drawer is a dark immersive overlay in both themes */
+.mobile-drawer { --sand: #f0ebe0; --sand-dim: rgba(240,235,224,0.5); --white: #faf9f6; --border: rgba(255,255,255,0.12); }
+[data-theme="light"] .mobile-drawer { background: #0a0908; }
+/* While the drawer is open, float nav controls light over it (any theme / scroll state) */
+.drawer-open .nav {
+  background: transparent !important; border-bottom-color: transparent !important;
+  --white: #faf9f6; --sand: #f0ebe0;
+  --sand-muted: rgba(240,235,224,0.85); --sand-dim: rgba(240,235,224,0.65);
+  --border: rgba(255,255,255,0.20);
 }
 
 body {
@@ -123,8 +182,8 @@ button { cursor: pointer; font-family: inherit; }
   background: rgba(10,9,8,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   border-bottom-color: var(--border); height: 56px;
 }
-.nav-logo { display: flex; align-items: center; }
-.nav-logo img { height: 46px; width: 46px; clip-path: circle(43% at 50% 50%); }
+.nav-logo { display: flex; align-items: center; flex-shrink: 0; }
+.nav-logo img { height: 54px; width: 54px; clip-path: circle(43% at 50% 50%); }
 .nav-menu { display: flex; align-items: center; gap: 2rem; list-style: none; }
 .nav-menu a {
   font-size: 0.8rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase;
@@ -147,15 +206,27 @@ button { cursor: pointer; font-family: inherit; }
 }
 .lang-switcher button:last-child { border-right: none; }
 .lang-switcher button:hover { color: var(--white); }
-.lang-switcher button.active { background: var(--gold); color: var(--black); }
+.lang-switcher button.active { background: var(--gold); color: var(--ink); }
 
 .nav-cta {
-  background: var(--gold); color: var(--black);
+  background: var(--gold); color: var(--ink);
   font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
   padding: 0.5rem 1.2rem; border-radius: var(--radius);
   transition: background var(--transition);
 }
 .nav-cta:hover { background: var(--gold-light); }
+
+.theme-toggle {
+  background: none; border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--sand-dim); width: 34px; height: 34px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: color var(--transition), border-color var(--transition);
+}
+.theme-toggle:hover { color: var(--gold-light); border-color: var(--gold-border); }
+.theme-toggle svg { width: 17px; height: 17px; }
+.theme-toggle .icon-moon { display: none; }
+[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+[data-theme="light"] .theme-toggle .icon-moon { display: block; }
 
 .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 4px; }
 .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--sand); border-radius: 2px; transition: transform var(--transition), opacity var(--transition); }
@@ -177,8 +248,10 @@ button { cursor: pointer; font-family: inherit; }
 .mobile-drawer .drawer-cta {
   font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600;
   letter-spacing: 0.1em; text-transform: uppercase;
-  background: var(--gold); color: var(--black); padding: 0.9rem 2.5rem; border-radius: var(--radius);
+  background: var(--gold); color: var(--ink); padding: 0.9rem 2.5rem; border-radius: var(--radius);
 }
+.drawer-lang { margin-top: 0.5rem; }
+.drawer-lang button { padding: 0.6rem 1.05rem; font-size: 0.8rem; }
 
 /* HERO */
 .hero {
@@ -207,7 +280,7 @@ button { cursor: pointer; font-family: inherit; }
 
 .btn-primary {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  background: var(--gold); color: var(--black);
+  background: var(--gold); color: var(--ink);
   font-weight: 600; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
   padding: 0.95rem 2rem; border-radius: var(--radius);
   transition: background var(--transition), transform 0.15s;
@@ -235,7 +308,7 @@ button { cursor: pointer; font-family: inherit; }
 .strip { background: var(--gold); overflow: hidden; height: 40px; display: flex; align-items: center; }
 .strip-track { display: flex; gap: 3rem; animation: stripScroll 20s linear infinite; white-space: nowrap; width: max-content; }
 @keyframes stripScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.strip-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--black); }
+.strip-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink); }
 .strip-dot { width: 4px; height: 4px; background: rgba(0,0,0,0.3); border-radius: 50%; }
 
 /* BIKES */
@@ -249,7 +322,7 @@ button { cursor: pointer; font-family: inherit; }
 .bike-card.featured::before {
   content: attr(data-popular);
   position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 10;
-  background: var(--gold); color: var(--black);
+  background: var(--gold); color: var(--ink);
   font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
   padding: 0.25rem 1rem; border-radius: 0 0 var(--radius) var(--radius);
 }
@@ -262,7 +335,7 @@ button { cursor: pointer; font-family: inherit; }
 .bike-card:hover .bike-img img { transform: scale(1.05); filter: brightness(0.95) saturate(0.95); }
 .bike-badges { position: absolute; bottom: 0.8rem; left: 0.8rem; display: flex; gap: 0.4rem; }
 .b-badge { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 3rem; }
-.b-cc { background: var(--gold); color: var(--black); }
+.b-cc { background: var(--gold); color: var(--ink); }
 .b-type { background: rgba(10,9,8,0.75); backdrop-filter: blur(6px); color: var(--sand); border: 1px solid var(--border-strong); }
 
 .bike-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
@@ -276,14 +349,14 @@ button { cursor: pointer; font-family: inherit; }
 .price-period { display: block; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sand-dim); margin-bottom: 0.3rem; }
 .price-val { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--white); letter-spacing: 0.02em; line-height: 1; }
 .price-cur { font-size: 0.58rem; color: var(--sand-dim); letter-spacing: 0.1em; display: block; margin-top: 0.2rem; }
-.price-usd { font-size: 0.58rem; color: var(--gold-dim); letter-spacing: 0.04em; display: block; margin-top: 0.1rem; }
+.bike-hourly { font-size: 0.68rem; color: var(--sand-dim); text-align: center; letter-spacing: 0.04em; margin: -0.55rem 0 1.1rem; }
 .bike-book {
   display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.85rem;
   border-radius: var(--radius); border: 1px solid var(--border-warm); background: var(--gold-pale);
   color: var(--gold-light); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
   transition: background var(--transition), border-color var(--transition), color var(--transition); margin-top: auto;
 }
-.bike-book:hover { background: var(--gold); border-color: var(--gold); color: var(--black); }
+.bike-book:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
 .bike-book svg { width: 14px; height: 14px; flex-shrink: 0; }
 
 /* HOW */
@@ -346,8 +419,13 @@ button { cursor: pointer; font-family: inherit; }
 .faq-btn:hover { color: var(--white); }
 .faq-icon { width: 22px; height: 22px; flex-shrink: 0; border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--sand-dim); font-size: 1rem; transition: transform 0.3s, border-color var(--transition), color var(--transition); }
 .faq-item.open .faq-icon { transform: rotate(45deg); border-color: var(--gold); color: var(--gold); }
-.faq-answer { max-height: 0; overflow: hidden; font-size: 0.85rem; color: var(--sand-dim); line-height: 1.7; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.4s; }
-.faq-item.open .faq-answer { max-height: 200px; padding-bottom: 1.25rem; }
+.faq-answer { max-height: 0; overflow: hidden; font-size: 0.85rem; color: var(--sand-dim); line-height: 1.7; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1), padding 0.45s; }
+.faq-item.open .faq-answer { max-height: 460px; padding-bottom: 1.25rem; }
+.pay-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.25rem; }
+.pay-list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.4rem 0.6rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+.pay-list li:last-child { border-bottom: none; padding-bottom: 0; }
+.pay-method { color: var(--sand); font-weight: 600; font-size: 0.85rem; }
+.pay-cur { color: var(--sand-dim); font-size: 0.74rem; letter-spacing: 0.05em; }
 
 /* CONTACT */
 .contact-section { background: var(--dark); border-top: 1px solid var(--border); }
@@ -405,6 +483,7 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
 @media (max-width: 768px) {
   .nav-menu { display: none; }
   .nav-right .nav-cta { display: none; }
+  .nav-right .lang-switcher { display: none; }
   .hamburger { display: flex; }
   .hero-title { font-size: clamp(3.5rem, 18vw, 6rem); }
   .hero-stats { display: none; }
@@ -451,6 +530,10 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
     <li><a href="#faq">FAQ</a></li>
   </ul>
   <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode" title="Toggle light/dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
     <div class="lang-switcher" id="langSwitcher">
       <button data-lang="en">EN</button>
       <button data-lang="es">ES</button>
@@ -471,6 +554,12 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
   <a href="#reviews" class="drawer-link" data-t="nav_reviews"></a>
   <a href="#faq" class="drawer-link">FAQ</a>
   <a href="https://wa.me/573216172816?text=Hi%20I%20want%20to%20rent%20a%20motorbike" class="drawer-cta" target="_blank" rel="noopener" data-t="book_wa"></a>
+  <div class="lang-switcher drawer-lang" id="langSwitcherDrawer">
+    <button data-lang="en">EN</button>
+    <button data-lang="es">ES</button>
+    <button data-lang="fr">FR</button>
+    <button data-lang="de">DE</button>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -548,9 +637,9 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
             <span class="bike-tag" data-t="navi_tag3"></span>
           </div>
           <div class="bike-price-row">
-            <div class="price-cell"><span class="price-period" data-t="period_day"></span><span class="price-val">120k</span><span class="price-cur">COP</span><span class="price-usd" data-cop="120000"></span></div>
-            <div class="price-cell"><span class="price-period" data-t="period_week"></span><span class="price-val">600k</span><span class="price-cur">COP</span><span class="price-usd" data-cop="600000"></span></div>
-            <div class="price-cell"><span class="price-period" data-t="period_month"></span><span class="price-val">1.8M</span><span class="price-cur">COP</span><span class="price-usd" data-cop="1800000"></span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_day"></span><span class="price-val">120k</span><span class="price-cur">COP</span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_week"></span><span class="price-val">600k</span><span class="price-cur">COP</span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_month"></span><span class="price-val">1.8M</span><span class="price-cur">COP</span></div>
           </div>
           <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20Honda%20Navi%20110%20Automatic" class="bike-book" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -577,9 +666,9 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
             <span class="bike-tag" data-t="nkd_tag3"></span>
           </div>
           <div class="bike-price-row">
-            <div class="price-cell"><span class="price-period" data-t="period_day"></span><span class="price-val">130k</span><span class="price-cur">COP</span><span class="price-usd" data-cop="130000"></span></div>
-            <div class="price-cell"><span class="price-period" data-t="period_week"></span><span class="price-val">650k</span><span class="price-cur">COP</span><span class="price-usd" data-cop="650000"></span></div>
-            <div class="price-cell"><span class="price-period" data-t="period_month"></span><span class="price-val">1.95M</span><span class="price-cur">COP</span><span class="price-usd" data-cop="1950000"></span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_day"></span><span class="price-val">130k</span><span class="price-cur">COP</span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_week"></span><span class="price-val">650k</span><span class="price-cur">COP</span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_month"></span><span class="price-val">1.95M</span><span class="price-cur">COP</span></div>
           </div>
           <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20AKT%20NKD%20125%20Manual" class="bike-book" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -606,10 +695,11 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
             <span class="bike-tag" data-t="ttr_tag3"></span>
           </div>
           <div class="bike-price-row">
-            <div class="price-cell"><span class="price-period" data-t="period_day"></span><span class="price-val">160k</span><span class="price-cur">COP</span><span class="price-usd" data-cop="160000"></span></div>
-            <div class="price-cell"><span class="price-period" data-t="period_week"></span><span class="price-val">800k</span><span class="price-cur">COP</span><span class="price-usd" data-cop="800000"></span></div>
-            <div class="price-cell"><span class="price-period" data-t="period_month"></span><span class="price-val">2.8M</span><span class="price-cur">COP</span><span class="price-usd" data-cop="2800000"></span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_day"></span><span class="price-val">150k</span><span class="price-cur">COP</span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_week"></span><span class="price-val">750k</span><span class="price-cur">COP</span></div>
+            <div class="price-cell"><span class="price-period" data-t="period_month"></span><span class="price-val">2.25M</span><span class="price-cur">COP</span></div>
           </div>
+          <p class="bike-hourly" data-t="ttr_hourly"></p>
           <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20AKT%20TTR%20200%20Manual" class="bike-book" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             <span data-t="book_wa"></span>
@@ -724,22 +814,34 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
     <div class="reviews-scroll-wrap">
     <div class="reviews-track">
       <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Fair prices and very competent staff. Everything worked perfectly. Thank you!"</p><span class="rc-author">— Johanna E.</span></div>
-      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Staff is fluent in many languages, friendly and competent. New 125cc bikes – super fun and great value for money!"</p><span class="rc-author">— Julius L.</span></div>
-      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"I had a great trip, the motorbike was in very good condition. Always received quick and professional help on the road."</p><span class="rc-author">— Gina T.</span></div>
-      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Excellent service and very friendly, helpful and professional owners. The motorbikes are in perfect condition."</p><span class="rc-author">— Matthias M.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Booked the automatic for a few days around Palomino. Super easy — helmets included and they delivered it right to our hostel."</p><span class="rc-author">— Emma W.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Alquilé una moto para recorrer Palomino y Tayrona. Atención excelente y la moto en perfecto estado. ¡Totalmente recomendado!"</p><span class="rc-author">— Santiago R.</span></div>
       <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Great bike – super new, clean and dependable. We also appreciated the contract and professionalism."</p><span class="rc-author">— Katie Faye D.</span></div>
-      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Everything was excellent, great bikes and incredible service. I hope to ride those routes again!"</p><span class="rc-author">— Nashia Flores C.</span></div>
-      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"We rented the two Honda Navis for a week. The owners were very kind and attentive. Bikes are new and worked perfectly."</p><span class="rc-author">— Lina C.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Excellent service and very friendly, helpful and professional owners. The motorbikes are in perfect condition."</p><span class="rc-author">— Matthias M.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Personal muy amable y profesional. Moto nueva y bien cuidada, y el proceso de alquiler fue rápido y claro."</p><span class="rc-author">— Camila V.</span></div>
       <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Great moto rental, really good prices and awesome staff. Totally recommend it!"</p><span class="rc-author">— David E.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"We rented the two Honda Navis for a week. The owners were very kind and attentive. Bikes are new and worked perfectly."</p><span class="rc-author">— Lina C.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Muy buen servicio, precios justos y siempre disponibles por WhatsApp. Las motos están impecables."</p><span class="rc-author">— Andrés M.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Staff is fluent in many languages, friendly and competent. New 125cc bikes – super fun and great value for money!"</p><span class="rc-author">— Julius L.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Rode up to Minca on the TTR 200 — what a machine. Perfect condition and a fair price. Will definitely rent again."</p><span class="rc-author">— Tom B.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Everything was excellent, great bikes and incredible service. I hope to ride those routes again!"</p><span class="rc-author">— Nashia Flores C.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"I had a great trip, the motorbike was in very good condition. Always received quick and professional help on the road."</p><span class="rc-author">— Gina T.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Friendly, professional and flexible with the pick-up time. The scooter was perfect for the beaches. Highly recommend!"</p><span class="rc-author">— Sophie L.</span></div>
       <!-- duplicate for loop -->
       <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Fair prices and very competent staff. Everything worked perfectly. Thank you!"</p><span class="rc-author">— Johanna E.</span></div>
-      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Staff is fluent in many languages, friendly and competent. New 125cc bikes – super fun and great value for money!"</p><span class="rc-author">— Julius L.</span></div>
-      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"I had a great trip, the motorbike was in very good condition. Always received quick and professional help on the road."</p><span class="rc-author">— Gina T.</span></div>
-      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Excellent service and very friendly, helpful and professional owners. The motorbikes are in perfect condition."</p><span class="rc-author">— Matthias M.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Booked the automatic for a few days around Palomino. Super easy — helmets included and they delivered it right to our hostel."</p><span class="rc-author">— Emma W.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Alquilé una moto para recorrer Palomino y Tayrona. Atención excelente y la moto en perfecto estado. ¡Totalmente recomendado!"</p><span class="rc-author">— Santiago R.</span></div>
       <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Great bike – super new, clean and dependable. We also appreciated the contract and professionalism."</p><span class="rc-author">— Katie Faye D.</span></div>
-      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Everything was excellent, great bikes and incredible service. I hope to ride those routes again!"</p><span class="rc-author">— Nashia Flores C.</span></div>
-      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"We rented the two Honda Navis for a week. The owners were very kind and attentive. Bikes are new and worked perfectly."</p><span class="rc-author">— Lina C.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Excellent service and very friendly, helpful and professional owners. The motorbikes are in perfect condition."</p><span class="rc-author">— Matthias M.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Personal muy amable y profesional. Moto nueva y bien cuidada, y el proceso de alquiler fue rápido y claro."</p><span class="rc-author">— Camila V.</span></div>
       <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Great moto rental, really good prices and awesome staff. Totally recommend it!"</p><span class="rc-author">— David E.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"We rented the two Honda Navis for a week. The owners were very kind and attentive. Bikes are new and worked perfectly."</p><span class="rc-author">— Lina C.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Muy buen servicio, precios justos y siempre disponibles por WhatsApp. Las motos están impecables."</p><span class="rc-author">— Andrés M.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Staff is fluent in many languages, friendly and competent. New 125cc bikes – super fun and great value for money!"</p><span class="rc-author">— Julius L.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Rode up to Minca on the TTR 200 — what a machine. Perfect condition and a fair price. Will definitely rent again."</p><span class="rc-author">— Tom B.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Everything was excellent, great bikes and incredible service. I hope to ride those routes again!"</p><span class="rc-author">— Nashia Flores C.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"I had a great trip, the motorbike was in very good condition. Always received quick and professional help on the road."</p><span class="rc-author">— Gina T.</span></div>
+      <div class="review-card"><div class="rc-stars">★★★★★</div><p class="rc-text">"Friendly, professional and flexible with the pick-up time. The scooter was perfect for the beaches. Highly recommend!"</p><span class="rc-author">— Sophie L.</span></div>
     </div>
     </div>
   </div>
@@ -765,6 +867,18 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
         <div class="faq-item"><button class="faq-btn"><span data-t="faq_q4"></span><span class="faq-icon">+</span></button><div class="faq-answer" data-t="faq_a4"></div></div>
         <div class="faq-item"><button class="faq-btn"><span data-t="faq_q5"></span><span class="faq-icon">+</span></button><div class="faq-answer" data-t="faq_a5"></div></div>
         <div class="faq-item"><button class="faq-btn"><span data-t="faq_q6"></span><span class="faq-icon">+</span></button><div class="faq-answer" data-t="faq_a6"></div></div>
+        <div class="faq-item"><button class="faq-btn"><span data-t="faq_q7"></span><span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <ul class="pay-list">
+              <li><span class="pay-method" data-t="pay_cash"></span><span class="pay-cur">COP · EUR · USD · CHF</span></li>
+              <li><span class="pay-method">PayPal</span><span class="pay-cur">EUR</span></li>
+              <li><span class="pay-method">Revolut</span><span class="pay-cur">COP · EUR · USD · CHF</span></li>
+              <li><span class="pay-method">Wise</span><span class="pay-cur">COP · EUR · USD · CHF</span></li>
+              <li><span class="pay-method" data-t="pay_bancolombia"></span><span class="pay-cur">COP</span></li>
+              <li><span class="pay-method" data-t="pay_eubank"></span><span class="pay-cur">EUR</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -871,19 +985,20 @@ const T = {
     popular: 'Popular',
     type_automatic: 'Automatic', type_manual: 'Manual',
     navi_tag1: 'City & short trips', navi_tag2: 'Easy to ride', navi_tag3: 'Beginner friendly',
-    nkd_tag1: 'Countryside explorer', nkd_tag2: 'Fuel efficient', nkd_tag3: 'Fun to ride',
-    ttr_tag1: 'Off-road adventure', ttr_tag2: 'Luggage rack', ttr_tag3: 'Powerful 200cc',
+    nkd_tag1: 'Countryside explorer', nkd_tag2: 'Luggage rack', nkd_tag3: 'Fun to ride',
+    ttr_tag1: 'Off-road adventure', ttr_tag2: 'Top case', ttr_tag3: 'Powerful 200cc',
     period_day: 'Day', period_week: 'Week', period_month: 'Month',
+    ttr_hourly: 'Also by the hour · 25k COP / hour',
     book_wa: 'Book via WhatsApp',
     how_label: 'Simple process', how_title: 'How It Works',
     step1_title: 'Message us', step1_desc: 'Send us a WhatsApp — tell us which bike and which dates.',
     step2_title: 'Bring your docs', step2_desc: 'Passport + driver\'s license from your home country. That\'s it.',
-    step3_title: 'Sign & pay', step3_desc: 'We sign a rental contract and collect a 200k COP deposit, fully refunded on return.',
+    step3_title: 'Sign & pay', step3_desc: 'We sign a rental contract and collect a 200k COP deposit, fully refunded on return. See accepted payment methods below.',
     step4_title: 'Ride!', step4_desc: 'Hit the road. We\'re always reachable if you need help on the way.',
     inc_label: 'Every rental', inc_title: 'Always Included',
     inc1_name: 'Helmet', inc1_desc: 'For every rider on the bike',
     inc2_name: 'SOAT Insurance', inc2_desc: 'Colombian mandatory coverage',
-    inc3_name: 'Unlimited km', inc3_desc: 'No distance limits, ever',
+    inc3_name: 'Unlimited km', inc3_desc: 'No per-km charges',
     inc4_name: 'Rental contract', inc4_desc: 'Professional & transparent',
     inc5_name: 'Delivery in Palomino', inc5_desc: '+10.000 COP anywhere in town',
     inc6_name: 'On-road support', inc6_desc: 'We\'re always reachable',
@@ -893,14 +1008,16 @@ const T = {
     faq_sub: 'Can\'t find your answer? We\'re happy to help — just send us a message.',
     faq_ask: 'Ask via WhatsApp',
     faq_q1: 'Is delivery available in Palomino?', faq_a1: 'Yes, we deliver anywhere in Palomino for an extra 10.000 COP.',
-    faq_q2: 'Is there a deposit?', faq_a2: 'Yes, the deposit is 200.000 COP and is fully refunded when you return the bike.',
+    faq_q2: 'Is there a deposit?', faq_a2: 'Yes, the deposit is 200.000 COP. It is fully refunded when the bike is returned in the same condition. In case of damage, the corresponding repair or replacement value is deducted from the deposit.',
     faq_q3: 'What documents do I need?', faq_a3: 'Your passport and a valid driver\'s license from your home country. No Colombian license required.',
-    faq_q4: 'Is insurance included?', faq_a4: 'Yes — SOAT insurance (mandatory Colombian liability insurance) is included in every rental at no extra cost.',
-    faq_q5: 'Do the bikes have a luggage rack?', faq_a5: 'A luggage rack is available on the AKT TTR 200 only.',
-    faq_q6: 'Can I ride to Santa Marta or the Sierra Nevada?', faq_a6: 'Absolutely — unlimited km means you can go wherever the road takes you. We recommend the AKT NKD or TTR 200 for longer trips.',
+    faq_q4: 'Is insurance included?', faq_a4: 'Yes — SOAT is included in every rental at no extra cost. It is the mandatory Colombian health insurance that covers personal injuries in traffic accidents.',
+    faq_q5: 'Do the bikes have luggage storage?', faq_a5: 'Yes — the AKT TTR 200 comes with a lockable top case, and the AKT NKD 125 has a rear luggage rack.',
+    faq_q6: 'Can I ride to Riohacha, Santa Marta or Minca?', faq_a6: 'Yes — you get unlimited kilometers, but trips are limited to approved routes: up to Riohacha, Santa Marta and Minca. For longer journeys, just ask us first.',
+    faq_q7: 'What payment methods do you accept?',
+    pay_cash: 'Cash', pay_bancolombia: 'Bancolombia transfer', pay_eubank: 'European bank transfer (IBAN/BIC)',
     contact_label: 'Contact', contact_title: 'Book Your Ride',
     contact_phone_lbl: 'Phone / WhatsApp', contact_addr_lbl: 'Address',
-    contact_hours_lbl: 'Hours', contact_hours_val: 'Every day, 8am – 6pm',
+    contact_hours_lbl: 'Hours', contact_hours_val: 'Every day, 8am – 7pm',
     contact_wa: 'Chat on WhatsApp', contact_maps: 'Open in Google Maps',
   },
   es: {
@@ -913,19 +1030,20 @@ const T = {
     popular: 'Popular',
     type_automatic: 'Automática', type_manual: 'Manual',
     navi_tag1: 'Ciudad y viajes cortos', navi_tag2: 'Fácil de manejar', navi_tag3: 'Ideal para principiantes',
-    nkd_tag1: 'Explorar el campo', nkd_tag2: 'Bajo consumo', nkd_tag3: 'Muy divertida',
-    ttr_tag1: 'Aventura off-road', ttr_tag2: 'Parrilla de carga', ttr_tag3: 'Motor 200cc potente',
+    nkd_tag1: 'Explorar el campo', nkd_tag2: 'Parrilla de carga', nkd_tag3: 'Muy divertida',
+    ttr_tag1: 'Aventura off-road', ttr_tag2: 'Baúl (top case)', ttr_tag3: 'Motor 200cc potente',
     period_day: 'Día', period_week: 'Semana', period_month: 'Mes',
+    ttr_hourly: 'También por horas · 25k COP / hora',
     book_wa: 'Reservar por WhatsApp',
     how_label: 'Proceso simple', how_title: 'Cómo Funciona',
     step1_title: 'Escríbenos', step1_desc: 'Mándanos un WhatsApp — cuéntanos qué moto y qué fechas.',
     step2_title: 'Trae tus documentos', step2_desc: 'Pasaporte + licencia de conducir de tu país. Eso es todo.',
-    step3_title: 'Firma y paga', step3_desc: 'Firmamos contrato y cobramos depósito de 200k COP, que se devuelve al regresar.',
+    step3_title: 'Firma y paga', step3_desc: 'Firmamos contrato y cobramos un depósito de 200k COP, que se devuelve al regresar. Consulta los métodos de pago aceptados más abajo.',
     step4_title: '¡A rodar!', step4_desc: 'A la carretera. Siempre disponibles si necesitas ayuda en ruta.',
     inc_label: 'Cada alquiler', inc_title: 'Siempre Incluido',
     inc1_name: 'Casco', inc1_desc: 'Para cada conductor',
     inc2_name: 'Seguro SOAT', inc2_desc: 'Cobertura obligatoria colombiana',
-    inc3_name: 'Km ilimitados', inc3_desc: 'Sin límite de distancia',
+    inc3_name: 'Km ilimitados', inc3_desc: 'Sin cargos por kilómetro',
     inc4_name: 'Contrato de alquiler', inc4_desc: 'Profesional y transparente',
     inc5_name: 'Entrega en Palomino', inc5_desc: '+10.000 COP en cualquier lugar',
     inc6_name: 'Soporte en ruta', inc6_desc: 'Siempre disponibles',
@@ -935,14 +1053,16 @@ const T = {
     faq_sub: '¿No encuentras tu respuesta? Escríbenos con gusto.',
     faq_ask: 'Preguntar por WhatsApp',
     faq_q1: '¿Hay servicio de entrega en Palomino?', faq_a1: 'Sí, entregamos en cualquier parte de Palomino por 10.000 COP adicionales.',
-    faq_q2: '¿Hay depósito?', faq_a2: 'Sí, el depósito es de 200.000 COP y se devuelve íntegramente al devolver la moto.',
+    faq_q2: '¿Hay depósito?', faq_a2: 'Sí, el depósito es de 200.000 COP. Se devuelve íntegramente cuando la moto se entrega en las mismas condiciones. En caso de daños, se descuenta del depósito el valor correspondiente de reparación o reemplazo.',
     faq_q3: '¿Qué documentos necesito?', faq_a3: 'Pasaporte y licencia de conducir válida de tu país. No se requiere licencia colombiana.',
-    faq_q4: '¿Está incluido el seguro?', faq_a4: 'Sí — el seguro SOAT (seguro obligatorio colombiano) está incluido en cada alquiler sin costo adicional.',
-    faq_q5: '¿Las motos tienen parrilla de carga?', faq_a5: 'Solo la AKT TTR 200 tiene parrilla de carga.',
-    faq_q6: '¿Puedo ir a Santa Marta o la Sierra Nevada?', faq_a6: 'Por supuesto — km ilimitados significa que puedes ir donde quieras. Para rutas largas recomendamos la NKD o la TTR 200.',
+    faq_q4: '¿Está incluido el seguro?', faq_a4: 'Sí — el SOAT está incluido en cada alquiler sin costo adicional. Es el seguro médico obligatorio colombiano que cubre lesiones personales en accidentes de tránsito.',
+    faq_q5: '¿Las motos tienen espacio para equipaje?', faq_a5: 'Sí — la AKT TTR 200 viene con un baúl (top case) con llave, y la AKT NKD 125 tiene una parrilla de carga trasera.',
+    faq_q6: '¿Puedo ir a Riohacha, Santa Marta o Minca?', faq_a6: 'Sí — tienes kilómetros ilimitados, pero los recorridos se limitan a rutas aprobadas: hasta Riohacha, Santa Marta y Minca. Para ir más lejos, consúltanos primero.',
+    faq_q7: '¿Qué métodos de pago aceptan?',
+    pay_cash: 'Efectivo', pay_bancolombia: 'Transferencia Bancolombia', pay_eubank: 'Transferencia bancaria europea (IBAN/BIC)',
     contact_label: 'Contacto', contact_title: 'Reserva Tu Moto',
     contact_phone_lbl: 'Teléfono / WhatsApp', contact_addr_lbl: 'Dirección',
-    contact_hours_lbl: 'Horario', contact_hours_val: 'Todos los días, 8am – 6pm',
+    contact_hours_lbl: 'Horario', contact_hours_val: 'Todos los días, 8am – 7pm',
     contact_wa: 'Chatear por WhatsApp', contact_maps: 'Abrir en Google Maps',
   },
   fr: {
@@ -955,19 +1075,20 @@ const T = {
     popular: 'Populaire',
     type_automatic: 'Automatique', type_manual: 'Manuel',
     navi_tag1: 'Ville & courtes balades', navi_tag2: 'Facile à conduire', navi_tag3: 'Idéal pour débutants',
-    nkd_tag1: 'Explorer la campagne', nkd_tag2: 'Économique', nkd_tag3: 'Très amusante',
-    ttr_tag1: 'Aventure hors-piste', ttr_tag2: 'Porte-bagages', ttr_tag3: 'Puissant 200cc',
+    nkd_tag1: 'Explorer la campagne', nkd_tag2: 'Porte-bagages', nkd_tag3: 'Très amusante',
+    ttr_tag1: 'Aventure hors-piste', ttr_tag2: 'Top case', ttr_tag3: 'Puissant 200cc',
     period_day: 'Jour', period_week: 'Semaine', period_month: 'Mois',
+    ttr_hourly: "Aussi à l'heure · 25k COP / heure",
     book_wa: 'Réserver via WhatsApp',
     how_label: 'Processus simple', how_title: 'Comment Ça Marche',
     step1_title: 'Écrivez-nous', step1_desc: 'Envoyez-nous un WhatsApp — dites-nous quelle moto et quelles dates.',
     step2_title: 'Apportez vos documents', step2_desc: 'Passeport + permis de conduire de votre pays. C\'est tout.',
-    step3_title: 'Signez & payez', step3_desc: 'Nous signons un contrat et encaissons une caution de 200k COP, remboursée intégralement au retour.',
+    step3_title: 'Signez & payez', step3_desc: 'Nous signons un contrat et encaissons une caution de 200k COP, remboursée intégralement au retour. Voir les moyens de paiement acceptés ci-dessous.',
     step4_title: 'En route!', step4_desc: 'Prenez la route. Nous sommes toujours joignables si vous avez besoin d\'aide.',
     inc_label: 'Chaque location', inc_title: 'Toujours Inclus',
     inc1_name: 'Casque', inc1_desc: 'Pour chaque conducteur',
     inc2_name: 'Assurance SOAT', inc2_desc: 'Couverture obligatoire colombienne',
-    inc3_name: 'Km illimités', inc3_desc: 'Sans limite de distance',
+    inc3_name: 'Km illimités', inc3_desc: 'Aucun frais au kilomètre',
     inc4_name: 'Contrat de location', inc4_desc: 'Professionnel & transparent',
     inc5_name: 'Livraison à Palomino', inc5_desc: '+10.000 COP partout en ville',
     inc6_name: 'Assistance en route', inc6_desc: 'Toujours joignables',
@@ -977,14 +1098,16 @@ const T = {
     faq_sub: 'Vous ne trouvez pas votre réponse? Écrivez-nous, nous serons ravis d\'aider.',
     faq_ask: 'Demander via WhatsApp',
     faq_q1: 'La livraison est-elle disponible à Palomino?', faq_a1: 'Oui, nous livrons partout à Palomino pour 10.000 COP supplémentaires.',
-    faq_q2: 'Y a-t-il une caution?', faq_a2: 'Oui, la caution est de 200.000 COP et est intégralement remboursée au retour.',
+    faq_q2: 'Y a-t-il une caution?', faq_a2: "Oui, la caution est de 200.000 COP. Elle est intégralement remboursée lorsque la moto est rendue dans le même état. En cas de dommages, le coût de réparation ou de remplacement correspondant est déduit de la caution.",
     faq_q3: 'Quels documents faut-il?', faq_a3: 'Votre passeport et un permis de conduire valide de votre pays. Pas de permis colombien requis.',
-    faq_q4: "L'assurance est-elle incluse?", faq_a4: "Oui — l'assurance SOAT (assurance obligatoire colombienne) est incluse dans chaque location sans frais supplémentaires.",
-    faq_q5: 'Les motos ont-elles un porte-bagages?', faq_a5: "Un porte-bagages est disponible uniquement sur l'AKT TTR 200.",
-    faq_q6: 'Puis-je aller à Santa Marta ou dans la Sierra Nevada?', faq_a6: 'Absolument — les km illimités vous permettent d\'aller où vous voulez. Nous recommandons l\'AKT NKD ou TTR 200 pour les longs trajets.',
+    faq_q4: "L'assurance est-elle incluse?", faq_a4: "Oui — le SOAT est inclus dans chaque location sans frais supplémentaires. C'est l'assurance médicale obligatoire colombienne qui couvre les blessures corporelles en cas d'accident de la route.",
+    faq_q5: 'Les motos ont-elles un espace bagages?', faq_a5: "Oui — l'AKT TTR 200 est équipée d'un top case verrouillable, et l'AKT NKD 125 dispose d'un porte-bagages arrière.",
+    faq_q6: 'Puis-je aller à Riohacha, Santa Marta ou Minca?', faq_a6: "Oui — vous avez des kilomètres illimités, mais les trajets sont limités aux itinéraires approuvés : jusqu'à Riohacha, Santa Marta et Minca. Pour aller plus loin, demandez-nous d'abord.",
+    faq_q7: 'Quels moyens de paiement acceptez-vous?',
+    pay_cash: 'Espèces', pay_bancolombia: 'Virement Bancolombia', pay_eubank: 'Virement bancaire européen (IBAN/BIC)',
     contact_label: 'Contact', contact_title: 'Réservez Votre Moto',
     contact_phone_lbl: 'Téléphone / WhatsApp', contact_addr_lbl: 'Adresse',
-    contact_hours_lbl: "Heures d'ouverture", contact_hours_val: 'Tous les jours, 8h – 18h',
+    contact_hours_lbl: "Heures d'ouverture", contact_hours_val: 'Tous les jours, 8h – 19h',
     contact_wa: 'Chatter sur WhatsApp', contact_maps: 'Ouvrir dans Google Maps',
   },
   de: {
@@ -997,19 +1120,20 @@ const T = {
     popular: 'Beliebt',
     type_automatic: 'Automatik', type_manual: 'Manuell',
     navi_tag1: 'Stadt & kurze Touren', navi_tag2: 'Einfach zu fahren', navi_tag3: 'Anfängerfreundlich',
-    nkd_tag1: 'Landschaftstouren', nkd_tag2: 'Sparsam im Verbrauch', nkd_tag3: 'Fahrspaß pur',
-    ttr_tag1: 'Geländeabenteuer', ttr_tag2: 'Gepäckträger', ttr_tag3: 'Leistungsstarke 200cc',
+    nkd_tag1: 'Landschaftstouren', nkd_tag2: 'Gepäckträger', nkd_tag3: 'Fahrspaß pur',
+    ttr_tag1: 'Geländeabenteuer', ttr_tag2: 'Topcase', ttr_tag3: 'Leistungsstarke 200cc',
     period_day: 'Tag', period_week: 'Woche', period_month: 'Monat',
+    ttr_hourly: 'Auch stundenweise · 25k COP / Stunde',
     book_wa: 'Per WhatsApp buchen',
     how_label: 'Einfacher Ablauf', how_title: "So Funktioniert's",
     step1_title: 'Schreibt uns', step1_desc: 'Schickt uns eine WhatsApp — sagt uns welche Moto und welche Daten.',
     step2_title: 'Dokumente mitbringen', step2_desc: 'Reisepass + Führerschein aus deinem Heimatland. Das ist alles.',
-    step3_title: 'Unterschreiben & zahlen', step3_desc: 'Wir unterschreiben einen Mietvertrag und nehmen eine Kaution von 200k COP, die bei Rückgabe vollständig erstattet wird.',
+    step3_title: 'Unterschreiben & zahlen', step3_desc: 'Wir unterschreiben einen Mietvertrag und nehmen eine Kaution von 200k COP, die bei Rückgabe vollständig erstattet wird. Akzeptierte Zahlungsmethoden siehe unten.',
     step4_title: 'Los geht\'s!', step4_desc: 'Ab auf die Straße. Wir sind immer erreichbar falls du unterwegs Hilfe brauchst.',
     inc_label: 'Jede Miete', inc_title: 'Immer Dabei',
     inc1_name: 'Helm', inc1_desc: 'Für jeden Fahrer',
     inc2_name: 'SOAT-Versicherung', inc2_desc: 'Kolumbianische Pflichtversicherung',
-    inc3_name: 'Unbegrenzte km', inc3_desc: 'Keine Kilometerbeschränkung',
+    inc3_name: 'Unbegrenzte km', inc3_desc: 'Keine Kilometergebühren',
     inc4_name: 'Mietvertrag', inc4_desc: 'Professionell & transparent',
     inc5_name: 'Lieferung in Palomino', inc5_desc: '+10.000 COP überall in der Stadt',
     inc6_name: 'Pannenhilfe unterwegs', inc6_desc: 'Immer erreichbar',
@@ -1019,14 +1143,16 @@ const T = {
     faq_sub: 'Keine Antwort gefunden? Schreibt uns einfach — wir helfen gerne.',
     faq_ask: 'Per WhatsApp fragen',
     faq_q1: 'Gibt es Lieferservice in Palomino?', faq_a1: 'Ja, wir liefern überall in Palomino für 10.000 COP extra.',
-    faq_q2: 'Gibt es eine Kaution?', faq_a2: 'Ja, die Kaution beträgt 200.000 COP und wird bei Rückgabe vollständig erstattet.',
+    faq_q2: 'Gibt es eine Kaution?', faq_a2: 'Ja, die Kaution beträgt 200.000 COP. Sie wird vollständig erstattet, wenn die Moto im gleichen Zustand zurückgegeben wird. Bei Schäden wird der entsprechende Reparatur- oder Ersatzwert von der Kaution abgezogen.',
     faq_q3: 'Welche Dokumente brauche ich?', faq_a3: 'Reisepass und gültiger Führerschein aus deinem Heimatland. Kein kolumbianischer Führerschein nötig.',
-    faq_q4: 'Ist die Versicherung inklusive?', faq_a4: 'Ja — die SOAT-Versicherung (kolumbianische Pflichtversicherung) ist in jeder Miete ohne Aufpreis enthalten.',
-    faq_q5: 'Haben die Motorräder einen Gepäckträger?', faq_a5: 'Ein Gepäckträger ist nur bei der AKT TTR 200 verfügbar.',
-    faq_q6: 'Kann ich nach Santa Marta oder in die Sierra Nevada fahren?', faq_a6: 'Absolut — unbegrenzte km bedeutet, du kannst fahren wohin du willst. Für längere Touren empfehlen wir die NKD oder TTR 200.',
+    faq_q4: 'Ist die Versicherung inklusive?', faq_a4: 'Ja — die SOAT ist in jeder Miete ohne Aufpreis enthalten. Es ist die gesetzliche kolumbianische Personenversicherung, die Verletzungen bei Verkehrsunfällen abdeckt.',
+    faq_q5: 'Haben die Motorräder Stauraum für Gepäck?', faq_a5: 'Ja — die AKT TTR 200 hat ein abschließbares Topcase, und die AKT NKD 125 hat einen hinteren Gepäckträger.',
+    faq_q6: 'Kann ich nach Riohacha, Santa Marta oder Minca fahren?', faq_a6: 'Ja — du hast unbegrenzte Kilometer, aber die Fahrten sind auf freigegebene Routen beschränkt: bis Riohacha, Santa Marta und Minca. Für weitere Strecken sprich uns vorher einfach an.',
+    faq_q7: 'Welche Zahlungsmethoden akzeptiert ihr?',
+    pay_cash: 'Bargeld', pay_bancolombia: 'Bancolombia-Überweisung', pay_eubank: 'Europäische Banküberweisung (IBAN/BIC)',
     contact_label: 'Kontakt', contact_title: 'Moto Buchen',
     contact_phone_lbl: 'Telefon / WhatsApp', contact_addr_lbl: 'Adresse',
-    contact_hours_lbl: 'Öffnungszeiten', contact_hours_val: 'Täglich, 8 – 18 Uhr',
+    contact_hours_lbl: 'Öffnungszeiten', contact_hours_val: 'Täglich, 8 – 19 Uhr',
     contact_wa: 'WhatsApp schreiben', contact_maps: 'In Google Maps öffnen',
   }
 };
@@ -1058,8 +1184,8 @@ function applyTranslations() {
     el.setAttribute('data-popular', d.popular || 'Popular');
   });
 
-  /* Lang switcher: highlight active */
-  document.querySelectorAll('#langSwitcher button').forEach(btn => {
+  /* Lang switcher: highlight active (nav + drawer) */
+  document.querySelectorAll('.lang-switcher button').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
 }
@@ -1069,22 +1195,36 @@ const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
 nav.classList.toggle('scrolled', window.scrollY > 40);
 
-/* ── Lang switcher ── */
-document.querySelectorAll('#langSwitcher button').forEach(btn => {
+/* ── Lang switcher (nav + drawer) ── */
+document.querySelectorAll('.lang-switcher button').forEach(btn => {
   btn.addEventListener('click', () => {
     lang = btn.dataset.lang;
     applyTranslations();
   });
 });
 
+/* ── Theme toggle (dark ⇄ light, persisted) ── */
+(function(){
+  const root = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    const isLight = root.getAttribute('data-theme') === 'light';
+    if (isLight) root.removeAttribute('data-theme');
+    else root.setAttribute('data-theme', 'light');
+    try { localStorage.setItem('mmp-theme', isLight ? 'dark' : 'light'); } catch(e){}
+  });
+})();
+
 /* ── Hamburger / drawer ── */
 const hamburger = document.getElementById('hamburger');
 const drawer = document.getElementById('drawer');
-function closeDrawer() { hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); drawer.classList.remove('open'); document.body.style.overflow = ''; }
+function closeDrawer() { hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); drawer.classList.remove('open'); document.documentElement.classList.remove('drawer-open'); document.body.style.overflow = ''; }
 hamburger.addEventListener('click', () => {
   const open = hamburger.classList.toggle('open');
   hamburger.setAttribute('aria-expanded', open);
   drawer.classList.toggle('open', open);
+  document.documentElement.classList.toggle('drawer-open', open);
   document.body.style.overflow = open ? 'hidden' : '';
 });
 drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
@@ -1186,45 +1326,6 @@ document.addEventListener('keydown', e => {
   // Touch swipe (pause for 2s after touch)
   wrap.addEventListener('touchstart', () => paused = true, { passive: true });
   wrap.addEventListener('touchend', () => setTimeout(() => paused = false, 2000));
-})();
-
-/* ── Live USD exchange rate (COP → USD) ── */
-(function(){
-  const FALLBACK = 4100; // COP per 1 USD – fallback if API unreachable
-  const CACHE_KEY = 'cop_usd_rate';
-  const CACHE_MAX_AGE = 24 * 60 * 60 * 1000; // 24h
-
-  function renderUSD(rate) {
-    document.querySelectorAll('.price-usd[data-cop]').forEach(el => {
-      const cop = parseFloat(el.dataset.cop);
-      if (!cop) return;
-      const usd = Math.round(cop / rate);
-      el.textContent = '≈ $' + usd;
-    });
-  }
-
-  // Use cached rate immediately
-  let cached = null;
-  try {
-    const raw = localStorage.getItem(CACHE_KEY);
-    if (raw) {
-      const parsed = JSON.parse(raw);
-      if (Date.now() - parsed.t < CACHE_MAX_AGE) cached = parsed.r;
-    }
-  } catch(e) {}
-  renderUSD(cached || FALLBACK);
-
-  // Refresh in background
-  fetch('https://open.er-api.com/v6/latest/USD')
-    .then(r => r.json())
-    .then(d => {
-      const rate = d && d.rates && d.rates.COP;
-      if (rate && rate > 1000 && rate < 10000) {
-        renderUSD(rate);
-        try { localStorage.setItem(CACHE_KEY, JSON.stringify({ r: rate, t: Date.now() })); } catch(e) {}
-      }
-    })
-    .catch(() => {});
 })();
 
 /* ── INIT ── */
