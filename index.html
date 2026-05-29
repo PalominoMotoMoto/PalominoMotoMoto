@@ -349,7 +349,6 @@ button { cursor: pointer; font-family: inherit; }
 .price-period { display: block; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sand-dim); margin-bottom: 0.3rem; }
 .price-val { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--white); letter-spacing: 0.02em; line-height: 1; }
 .price-cur { font-size: 0.58rem; color: var(--sand-dim); letter-spacing: 0.1em; display: block; margin-top: 0.2rem; }
-.bike-hourly { font-size: 0.68rem; color: var(--sand-dim); text-align: center; letter-spacing: 0.04em; margin: -0.55rem 0 1.1rem; }
 .bike-book {
   display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.85rem;
   border-radius: var(--radius); border: 1px solid var(--border-warm); background: var(--gold-pale);
@@ -699,7 +698,6 @@ footer { background: var(--black); border-top: 1px solid var(--border); padding:
             <div class="price-cell"><span class="price-period" data-t="period_week"></span><span class="price-val">750k</span><span class="price-cur">COP</span></div>
             <div class="price-cell"><span class="price-period" data-t="period_month"></span><span class="price-val">2.25M</span><span class="price-cur">COP</span></div>
           </div>
-          <p class="bike-hourly" data-t="ttr_hourly"></p>
           <a href="https://wa.me/573216172816?text=Hi%2C%20I%20want%20to%20rent%20the%20AKT%20TTR%20200%20Manual" class="bike-book" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             <span data-t="book_wa"></span>
@@ -988,7 +986,6 @@ const T = {
     nkd_tag1: 'Countryside explorer', nkd_tag2: 'Luggage rack', nkd_tag3: 'Fun to ride',
     ttr_tag1: 'Off-road adventure', ttr_tag2: 'Top case', ttr_tag3: 'Powerful 200cc',
     period_day: 'Day', period_week: 'Week', period_month: 'Month',
-    ttr_hourly: 'Also by the hour · 25k COP / hour',
     book_wa: 'Book via WhatsApp',
     how_label: 'Simple process', how_title: 'How It Works',
     step1_title: 'Message us', step1_desc: 'Send us a WhatsApp — tell us which bike and which dates.',
@@ -1012,7 +1009,7 @@ const T = {
     faq_q3: 'What documents do I need?', faq_a3: 'Your passport and a valid driver\'s license from your home country. No Colombian license required.',
     faq_q4: 'Is insurance included?', faq_a4: 'Yes — SOAT is included in every rental at no extra cost. It is the mandatory Colombian health insurance that covers personal injuries in traffic accidents.',
     faq_q5: 'Do the bikes have luggage storage?', faq_a5: 'Yes — the AKT TTR 200 comes with a lockable top case, and the AKT NKD 125 has a rear luggage rack.',
-    faq_q6: 'Can I ride to Riohacha, Santa Marta or Minca?', faq_a6: 'Yes — you get unlimited kilometers, but trips are limited to approved routes: up to Riohacha, Santa Marta and Minca. For longer journeys, just ask us first.',
+    faq_q6: 'What are the riding limits?', faq_a6: 'You can ride up to Riohacha, Santa Marta and Minca with unlimited kilometers — but not beyond these destinations.',
     faq_q7: 'What payment methods do you accept?',
     pay_cash: 'Cash', pay_bancolombia: 'Bancolombia transfer', pay_eubank: 'European bank transfer (IBAN/BIC)',
     contact_label: 'Contact', contact_title: 'Book Your Ride',
@@ -1033,7 +1030,6 @@ const T = {
     nkd_tag1: 'Explorar el campo', nkd_tag2: 'Parrilla de carga', nkd_tag3: 'Muy divertida',
     ttr_tag1: 'Aventura off-road', ttr_tag2: 'Baúl (top case)', ttr_tag3: 'Motor 200cc potente',
     period_day: 'Día', period_week: 'Semana', period_month: 'Mes',
-    ttr_hourly: 'También por horas · 25k COP / hora',
     book_wa: 'Reservar por WhatsApp',
     how_label: 'Proceso simple', how_title: 'Cómo Funciona',
     step1_title: 'Escríbenos', step1_desc: 'Mándanos un WhatsApp — cuéntanos qué moto y qué fechas.',
@@ -1057,7 +1053,7 @@ const T = {
     faq_q3: '¿Qué documentos necesito?', faq_a3: 'Pasaporte y licencia de conducir válida de tu país. No se requiere licencia colombiana.',
     faq_q4: '¿Está incluido el seguro?', faq_a4: 'Sí — el SOAT está incluido en cada alquiler sin costo adicional. Es el seguro médico obligatorio colombiano que cubre lesiones personales en accidentes de tránsito.',
     faq_q5: '¿Las motos tienen espacio para equipaje?', faq_a5: 'Sí — la AKT TTR 200 viene con un baúl (top case) con llave, y la AKT NKD 125 tiene una parrilla de carga trasera.',
-    faq_q6: '¿Puedo ir a Riohacha, Santa Marta o Minca?', faq_a6: 'Sí — tienes kilómetros ilimitados, pero los recorridos se limitan a rutas aprobadas: hasta Riohacha, Santa Marta y Minca. Para ir más lejos, consúltanos primero.',
+    faq_q6: '¿Hasta dónde puedo ir?', faq_a6: 'Puedes ir hasta Riohacha, Santa Marta y Minca con kilómetros ilimitados, pero no más lejos de estos destinos.',
     faq_q7: '¿Qué métodos de pago aceptan?',
     pay_cash: 'Efectivo', pay_bancolombia: 'Transferencia Bancolombia', pay_eubank: 'Transferencia bancaria europea (IBAN/BIC)',
     contact_label: 'Contacto', contact_title: 'Reserva Tu Moto',
@@ -1078,7 +1074,6 @@ const T = {
     nkd_tag1: 'Explorer la campagne', nkd_tag2: 'Porte-bagages', nkd_tag3: 'Très amusante',
     ttr_tag1: 'Aventure hors-piste', ttr_tag2: 'Top case', ttr_tag3: 'Puissant 200cc',
     period_day: 'Jour', period_week: 'Semaine', period_month: 'Mois',
-    ttr_hourly: "Aussi à l'heure · 25k COP / heure",
     book_wa: 'Réserver via WhatsApp',
     how_label: 'Processus simple', how_title: 'Comment Ça Marche',
     step1_title: 'Écrivez-nous', step1_desc: 'Envoyez-nous un WhatsApp — dites-nous quelle moto et quelles dates.',
@@ -1102,7 +1097,7 @@ const T = {
     faq_q3: 'Quels documents faut-il?', faq_a3: 'Votre passeport et un permis de conduire valide de votre pays. Pas de permis colombien requis.',
     faq_q4: "L'assurance est-elle incluse?", faq_a4: "Oui — le SOAT est inclus dans chaque location sans frais supplémentaires. C'est l'assurance médicale obligatoire colombienne qui couvre les blessures corporelles en cas d'accident de la route.",
     faq_q5: 'Les motos ont-elles un espace bagages?', faq_a5: "Oui — l'AKT TTR 200 est équipée d'un top case verrouillable, et l'AKT NKD 125 dispose d'un porte-bagages arrière.",
-    faq_q6: 'Puis-je aller à Riohacha, Santa Marta ou Minca?', faq_a6: "Oui — vous avez des kilomètres illimités, mais les trajets sont limités aux itinéraires approuvés : jusqu'à Riohacha, Santa Marta et Minca. Pour aller plus loin, demandez-nous d'abord.",
+    faq_q6: "Jusqu'où puis-je rouler?", faq_a6: "Vous pouvez rouler jusqu'à Riohacha, Santa Marta et Minca avec des kilomètres illimités, mais pas au-delà de ces destinations.",
     faq_q7: 'Quels moyens de paiement acceptez-vous?',
     pay_cash: 'Espèces', pay_bancolombia: 'Virement Bancolombia', pay_eubank: 'Virement bancaire européen (IBAN/BIC)',
     contact_label: 'Contact', contact_title: 'Réservez Votre Moto',
@@ -1123,7 +1118,6 @@ const T = {
     nkd_tag1: 'Landschaftstouren', nkd_tag2: 'Gepäckträger', nkd_tag3: 'Fahrspaß pur',
     ttr_tag1: 'Geländeabenteuer', ttr_tag2: 'Topcase', ttr_tag3: 'Leistungsstarke 200cc',
     period_day: 'Tag', period_week: 'Woche', period_month: 'Monat',
-    ttr_hourly: 'Auch stundenweise · 25k COP / Stunde',
     book_wa: 'Per WhatsApp buchen',
     how_label: 'Einfacher Ablauf', how_title: "So Funktioniert's",
     step1_title: 'Schreibt uns', step1_desc: 'Schickt uns eine WhatsApp — sagt uns welche Moto und welche Daten.',
@@ -1147,7 +1141,7 @@ const T = {
     faq_q3: 'Welche Dokumente brauche ich?', faq_a3: 'Reisepass und gültiger Führerschein aus deinem Heimatland. Kein kolumbianischer Führerschein nötig.',
     faq_q4: 'Ist die Versicherung inklusive?', faq_a4: 'Ja — die SOAT ist in jeder Miete ohne Aufpreis enthalten. Es ist die gesetzliche kolumbianische Personenversicherung, die Verletzungen bei Verkehrsunfällen abdeckt.',
     faq_q5: 'Haben die Motorräder Stauraum für Gepäck?', faq_a5: 'Ja — die AKT TTR 200 hat ein abschließbares Topcase, und die AKT NKD 125 hat einen hinteren Gepäckträger.',
-    faq_q6: 'Kann ich nach Riohacha, Santa Marta oder Minca fahren?', faq_a6: 'Ja — du hast unbegrenzte Kilometer, aber die Fahrten sind auf freigegebene Routen beschränkt: bis Riohacha, Santa Marta und Minca. Für weitere Strecken sprich uns vorher einfach an.',
+    faq_q6: 'Wie weit darf ich fahren?', faq_a6: 'Du kannst bis Riohacha, Santa Marta und Minca fahren – mit unbegrenzten Kilometern. Weiter weg darfst du nicht fahren.',
     faq_q7: 'Welche Zahlungsmethoden akzeptiert ihr?',
     pay_cash: 'Bargeld', pay_bancolombia: 'Bancolombia-Überweisung', pay_eubank: 'Europäische Banküberweisung (IBAN/BIC)',
     contact_label: 'Kontakt', contact_title: 'Moto Buchen',
